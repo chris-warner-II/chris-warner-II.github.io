@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Chris Warner"
-  avatar           : "Warner_Head_Shot"
+  avatar           : "images/Warner_Head_Shot.jpg"
   bio              : "I am a scientist with a passion for neuroscience, creativity and algorithmic intelligence."
   location         : "Berkeley, CA"
   employer         :
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : ''
+  linkedin         : 'https://www.linkedin.com/in/chris-warner-ii/'
   orcid            : #"http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
