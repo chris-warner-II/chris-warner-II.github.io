@@ -81,8 +81,8 @@ analytics:
 # Site Author
 author:
   name             : "Chris Warner"
-  avatar           : "Warner_Head_Shot.JPEG"
-  bio              : "Your biography for the left-hand sidebar"
+  avatar           : "./images/Warner_Head_Shot.JPEG"
+  bio              : "I am a scientist with a passion for neuroscience, creativity and algorithmic intelligence."
   location         : "Berkeley, CA"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
