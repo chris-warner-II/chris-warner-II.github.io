@@ -4,16 +4,12 @@ excerpt: "<img src='/images/img_seg_model.png' width='500' height='400'/> &nbsp;
 collection: portfolio
 ---
 
-<p align="center">
-  <img src='/images/img_seg_model.png' width='500' height='400'/> 
-</p>
+<img src='/images/img_seg_model.png' align='center' width='500' height='400'/> 
 <br/> This is a markdown file for image segmentation project. This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.
 
 
-<p align="right">
-  <img src='/images/SegAssessPipeline.png' width='500' height='400'/> 
-</p>
-<br/> This is a markdown file for image segmentation project. This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.
+<img src='/images/SegAssessPipeline.png' align='left' width='500' height='400'/> 
+ This is a markdown file for image segmentation project. This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.
 
 
-<img src='/images/cartoonization.png' width='300' height='200'/> This is a markdown file for image segmentation project. This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.
+<img src='/images/cartoonization.png' align='right' width='300' height='200'/> This is a markdown file for image segmentation project. This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.
