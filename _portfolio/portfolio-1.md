@@ -4,12 +4,12 @@ excerpt: "<img src='/images/img_seg_model.png' width='500' height='400'/> &nbsp;
 collection: portfolio
 ---
 
-<img src='/images/img_seg_model.png' align='center' width='500' height='400'/> 
-<br/> This is a markdown file for image segmentation project. This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.
-
+<img src='/images/img_seg_model.png' align='center' width='700' height='550'/> 
+<br/> 
+We investigate the hypothesis that synchrony in periodic retinal spike trains could convey contextual information of the visual input, which is extracted by computations in the retinal network. We propose a computational model for image segmentation consisting of a Kuramoto model of coupled oscillators whose phases model the timing of individual retinal spikes. The phase couplings between oscillators are shaped by the stimulus structure, causing cells to synchronize if the local contrast in their receptive fields is similar. In essence, relaxation in the oscillator network solves a graph clustering problem with the graph representing feature similarity between different points in the image. 
 
 <img src='/images/SegAssessPipeline.png' align='left' width='500' height='400'/> 
- This is a markdown file for image segmentation project. This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.
+ We tested different model versions on the Berkeley Image Segmentation Data Set (BSDS). Networks with phase interactions set by standard representations of the feature graph (adjacency matrix, Graph Laplacian or modularity) failed to exhibit segmentation performance significantly over the baseline, a model of independent sensors. In contrast, a network with phase interactions that takes into account not only feature similarities but also geometric distances between receptive fields exhibited segmentation performance significantly above baseline.
 
 
 <img src='/images/cartoonization.png' align='right' width='300' height='200'/> This is a markdown file for image segmentation project. This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.This is a markdown file for image segmentation project.
