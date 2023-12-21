@@ -3,9 +3,9 @@ title: "Ensemble Coding in Retina"
 collection: publications
 permalink: /publication/2019-thesis-0
 # Use simpler shorter blurb from abstract here/
-excerpt: 'My PhD thesis contains the combined work of my two main projects, both published in Arxiv, the thrust of which explore halmarks of ensemble coding in retinal image processing. First, we built a computational model of retina based on coupled oscillator simulation and graph clustering that performed image segmentation. Second, we explore population spike trains responding to natural movie stimulus using a binary latent variable model to extract latent "cell assembly" causes of coordinated spiking activity across groups of retinal ganglion cells.'
+excerpt: 'This PhD thesis contains the combined work of my two main projects, both published in Arxiv, the thrust of which explore halmarks of ensemble coding in retinal image processing. First, we built a computational model of retina based on coupled oscillator simulation and graph clustering that performed image segmentation. Second, we explore population spike trains responding to natural movie stimulus using a binary latent variable model to extract latent "cell assembly" causes of coordinated spiking activity across groups of retinal ganglion cells.'
 date: 2019-08-31
-venue: 'University of California, Berkeley Theses Archives' 
+venue: 'University of California, Berkeley Library' 
 #paperurl: 'https://escholarship.org/uc/item/0qb7r2c9'
 citation: 'CJ Warner. (2019). &quot;Ensemble Coding in Retina.&quot; <i>University of California, Berkeley PhD thesis</i>.'
 # This part shows up inside the link you click on. Use full abstract
