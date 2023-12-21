@@ -1,9 +1,9 @@
 ---
-title: "1. Coupled oscillator model for image segmentation"
-excerpt: "Inspired by neuroscience and the retina, we pioneered a computer vision model that performs image segmentation by grouping together nearby image regions with similar features in phase space, resulting in an image with smoothed texture inside segments and yet with crisp boundaries across segments maintained - a "cartoonization" of the image. The model recasts image segmentation as a graph clustering problem, simulating phase relaxation in a system of coupled Kuramoto oscillators with the strength of interaction defined by the Topographic Modularity between regions in the image. We demonstrate that this method outperforms other graph theoretic network construction methods as well as spectral Eigen-based methods for community detection by evaluating performance on the Berkeley Image Segmentation Dataset (BSDS)."
+title: "Img Seg Project"
+excerpt: "Short description of portfolio item number 2 <br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
-<!-- <img src='/images/img_seg_model.png' width='550' height='400'/> <img src='/images/cartoonization.png' width='350' height='200'/> <br/>  -->
+
 Synchrony in periodic retinal spike trains may convey contextual information about the visual input, which is extracted by computations in the retinal network. To explore this hypothesis, we construct a computational model for image segmentation consisting of a Kuramoto model of coupled oscillators whose phases model the timing of individual retinal spikes. Phase couplings between oscillators are shaped by the stimulus structure, causing cells to synchronize when the local contrast in their receptive fields is similar. In essence, phase relaxation in the oscillator network solves a graph clustering problem with the graph representing feature similarity between different points in the image. The resulting spike trains can multiplex these two types of information, local contrast in individual spike rates, and image segments in sets of neurons that fire nearly synchronously. <br/> 
 <p align="center" width="100%">
   <img src='/images/img_seg_model_full.png'/>
