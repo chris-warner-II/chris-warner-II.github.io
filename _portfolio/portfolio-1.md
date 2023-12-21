@@ -6,6 +6,8 @@ collection: portfolio
 
 Synchrony in periodic retinal spike trains may convey contextual information about the visual input, which is extracted by computations in the retinal network. To explore this hypothesis, we propose a computational model for image segmentation consisting of a Kuramoto model of coupled oscillators whose phases model the timing of individual retinal spikes. Phase couplings between oscillators are shaped by the stimulus structure, causing cells to synchronize when the local contrast in their receptive fields is similar. In essence, relaxation in the oscillator network solves a graph clustering problem with the graph representing feature similarity between different points in the image. The resulting spike trains multiplex the two types of information, local contrast in individual spike rates, and image segments in sets of neurons that fire nearly synchronously. <br/> 
 <img src='/images/img_seg_model.png' align='center' width='750' height='500'/>
+<p style="text-align: center; font-size:11pt"><strong>fig. 1</strong> Figure caption here. </p>
+
 
 <img src='/images/cartoonization.png' align='right' width='550' height='250' padding-left='10px'/> Qualitatively, the phase map after relaxation provides a qualitative "cartoonization" of the original image, smoothing away texture within segments while keeping boundaries at the edges of objects crisp. This provides a rudimentary image segmentation that could feasibly occur within the hardware of and using what signals are available to the retina.  
 
