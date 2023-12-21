@@ -8,18 +8,21 @@ Synchrony in periodic retinal spike trains may convey contextual information abo
 <img src='/images/img_seg_model.png' align='center' width='750' height='500'/>
 <p style="text-align: center; font-size:11pt"><strong>fig. 1</strong> Figure caption here. </p>
 
-
-<img src='/images/cartoonization.png' align='right' width='550' height='250' padding-left='10px'/> 
-<p style="text-align: center; font-size:11pt"><strong>fig. 2</strong> Figure caption here. </p>
-
 Qualitatively, the phase map after relaxation provides a qualitative "cartoonization" of the original image, smoothing away texture within segments while keeping boundaries at the edges of objects crisp. This provides a rudimentary image segmentation that could feasibly occur within the hardware of and using what signals are available to the retina.  
+
+<img src='/images/cartoonization.png' align='center' width='550' height='250'/> 
+<p style="text-align: center; font-size:11pt"><strong>fig. 2</strong> Figure caption here. </p>
 
 Here, topographic modularity vs Laplacian, Association and Modularity and Kuramoto vs spectral Eigen methods.
 
-<img src='/images/SegAssessPipeline.png' align='left' width='500' height='400' padding-right='10px'/> 
+
+
+To assess the model's performance and compare it to other methods, we leverage the Berkeley Image Segmentation Data Set (BSDS), and develop a performance evaluation pipeline computing Precision, Recall and F-measure metrics between human annotations and boundaries discovered by the algorithm. 
+
+<img src='/images/SegAssessPipeline.png' align='center' width='500' height='400'/> 
 <p style="text-align: center; font-size:11pt"><strong>fig. 3</strong> Figure caption here. </p>
 
-To assess the model's performance and compare it to other methods, we leverage the Berkeley Image Segmentation Data Set (BSDS), and develop a performance evaluation pipeline computing Precision, Recall and F-measure metrics between human annotations and boundaries discovered by the algorithm. The F-measure metric demonstrates the improvement in boundary detection provided by the 2D Topographic Modularity method with Kuramoto relaxation over other methods.
+The F-measure metric demonstrates the improvement in boundary detection provided by the 2D Topographic Modularity method with Kuramoto relaxation over other methods.
 
 <img src='/images/Fmax_img_seg.jpg' align='center' width='750' height='500'/>
 <p style="text-align: center; font-size:11pt"><strong>fig. 4</strong> Figure caption here. </p>
