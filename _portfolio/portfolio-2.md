@@ -8,7 +8,7 @@ collection: portfolio
 This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project.
 
 <p align="center" width="100%">
-  <img src='/images/CA_model.png' align='center' width='350' height='300'/> 
+  <img src='/images/CA_model.png' align='center' width='500' height='400'/> 
   <p style="text-align: center; font-size:10pt"><strong>fig. 1</strong> Image Caption Here. </p>
 </p>
 
@@ -16,7 +16,7 @@ This is a markdown file for Cell Assembly project. This is a markdown file for C
 This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project.
 
 <p align="center" width="100%">
-  <img src='/images/CA_Robustness.png' align='center' width='550' height='350'/>
+  <img src='/images/CA_Robustness.png' align='center' width='750' height='550'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 2</strong> Image Caption Here. </p>
 </p>
 
