@@ -12,24 +12,60 @@ Visual inspection of retinal responses to white noise stimulus vs. natural movie
 
 
   <!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
+  <div style="display: flex; width: 100%;">
+
+    <figure style="width: 33%;">
+      <video controls width="100%">
+        <source src="/images/movie_wnrep.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Caption for First Video</figcaption>
+    </figure>
+
+    <figure style="width: 33%;">
+      <img src="/images/CA_RFs.jpg" alt="Image" style="width: 100%;">
+      <figcaption>Caption for Image1</figcaption>
+    </figure>
+
+    <figure style="width: 33%;">
+      <video controls width="100%">
+        <source src="/images/movie_catrep.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Caption for Second Video</figcaption>
+    </figure>
+
+  </div>
+
+  <figure style="width: 100%;">
+    <img src="/images/CA_PSTHs.jpg" alt="Image" style="width: 100%;">
+    <figcaption>Caption for Image2</figcaption>
+  </figure>
+
+
+
+<!--
   <div>
-    <video controls width="25%"autoplay loop muted >
+    <video controls width="25%" autoplay loop muted >
       <source src="/images/movie_wnrep.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <p style="text-align: center; font-size:10pt"> White Noise </p>
+    <p style="text-align: left; font-size:10pt"> White Noise Stim </p>
 
     <video controls width="25%" autoplay loop muted >
       <source src="/images/movie_catrep.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <p style="text-align: center; font-size:10pt"> Natural Movie </p>
+    <p style="text-align: left; font-size:10pt"> Natural Movie Stim </p>
   </div>
 
 <p align="center" width="100%">
+<div>  
   <img src='/images/CA_retina_responses.png' align='center' width='850' height='550'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 1</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering. </p>
+</div>
 </p>
+-->
 
 
 We build a model that allows for two causes for a cell's firing, its intrinsic firing rate and its membership in a cell assembly. Explain the intuition of model and perhaps work through some math derivation
