@@ -1,17 +1,42 @@
 ---
 title: "2. Probabilistic binary latent variable model infers hidden structure in spike trains."
-excerpt: "<img src='/images/CA_model.png' width='350' height='300'/> <img src='/images/CA_Robustness.png' width='550' height='400'/><br/> We introduce a novel, probabilistic binary latent variable (BLV) model to detect noisy or approximate repeats of patterns in sparse binary data. We adapt the framework of the 'Noisy-OR model', previously used to infer hidden diseases from observed symptoms, to neuron spiking mechanics and demonstrate the model's capability by extracting structure in recordings from retinal neurons, where the task is to 'explain' spikes of individual neurons in terms of groups of neurons, 'Cell Assemblies' (CAs), that often fire together, due to mutual interactions or other causes. The conditional probability kernels of the latent components are learned from the data in an expectation maximization scheme, alternately involving inference of latent states and parameter adjustments to the model. We thoroughly validate the model on synthesized spike trains constructed to statistically resemble recorded retinal responses to white noise stimulus and natural movie stimulus in data. We also apply our model to spiking responses recorded in retinal ganglion cells (RGCs) during stimulation with a movie and discuss the found structure."
+excerpt: "<img src='/images/CA_model.png' width='350' height='300'/> <img src='/images/CA_Robustness.png' width='550' height='400'/><br/> We introduce a novel, probabilistic binary latent variable (BLV) model to detect noisy or approximate repeats of patterns in sparse binary data. We adapt the framework of the 'Noisy-OR model', previously used to infer hidden diseases from observed symptoms, to neuron spiking mechanics and demonstrate the model's capability by extracting structure in recordings from retinal neurons. There, the task is to 'explain' spikes of individual neurons in terms of groups of neurons, 'Cell Assemblies' (CAs), that often fire together, due to mutual interactions or other causes. The conditional probability kernels of the latent components are learned from the data in an expectation maximization scheme, alternately performing inference of latent states and parameter adjustments to the model. We thoroughly validate the model on synthesized spike trains constructed to statistically resemble recorded retinal responses to white noise stimulus and natural movie stimulus in data. Finally, we apply our model to spiking responses recorded in retinal ganglion cells (RGCs) during stimulation with a movie and discuss the found structure."
 collection: portfolio
 ---
 
+Visual inspection of retinal responses to white noise stimulus vs. natural movie stimulus reveal clear spatial and temporal differences. The figure below shows peristimulus time histograms (PSTH) of a population of retinal ganglion cells (RGCs) responding to the two stimulus types, with and without spatial and temporal correlations
 
-The responses from retinal ganglion cells shown white noise vs natural movies is very different. GLMs well capture the responses to white noise, but not natural movies with spatial and temporal correlations in the stimulus.
 
+ GLMs well capture the responses to white noise, but not natural movies with spatial and temporal correlations in the stimulus.
+
+
+
+  <!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
+  <div>
+    <video controls width="100%">
+      <source src="movie_wnrep..mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <video controls width="100%">
+      <source src="movie_catrep..mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div>
+    <img src="/images/CA_retina_responses.png" alt="Image" width="100%">
+  </div>
+
+
+
+
+<!-- 
 <p align="center" width="100%">
   <img src='/images/CA_retina_responses.png' align='center' width='850' height='550'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 1</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering. </p>
 </p>
-
+-->
 
 We build a model that allows for two causes for a cell's firing, its intrinsic firing rate and its membership in a cell assembly. Explain the intuition of model and perhaps work through some math derivation
 
@@ -21,7 +46,7 @@ We build a model that allows for two causes for a cell's firing, its intrinsic f
 </p>
 
 
-Making synthetic data with moments fit to recorded retina data. Different model parameters when fit to white noise vs natural movies. Maybe use table.
+Making synthetic data with moments fit to recorded retina data. Different model parameters when fit to white noise vs natural movies. Maybe just use table, no figure? Since we have 4 figures below.
 
 
 <p align="center" width="100%">
@@ -34,28 +59,34 @@ Making synthetic data with moments fit to recorded retina data. Different model 
 Validating synthetic model using ground truth. Don't need metrics explained here yet. Have 4 figures.
 
 <p align="center" width="100%">
-  <img src='/images/image-alignment-150x150.jpg' align='center' width='150' height='150'/>
+  <img src='/images/image-alignment-150x150.jpg' align='center' width='750' height='550'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 4</strong> Image Caption Here. </p>
 
 
 
 
-Exploratory Data Analysis and metrics used to make statements about data. Have 4 figures.
+Exploratory Data Analysis and metrics used to make statements about data
 
 <p align="center" width="100%">
-  <img src='/images/image-alignment-150x150.jpg' align='center' width='150' height='150'/>
+  <img src='/images/image-alignment-150x150.jpg' align='center' width='750' height='550'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 5</strong> Image Caption Here. </p>
 </p>
 
 
 
 
-Results on real retina data using EDA paradigm. Have 8 figures.
+<<<<<<< HEAD
+Results on real retina data using EDA paradigm. Have 8 figures. Use all, or just some?
+=======
+Results on real retina data.
+>>>>>>> parent of f28e793 (framework)
 
 <p align="center" width="100%">
-  <img src='/images/image-alignment-150x150.jpg' align='center' width='150' height='150'/>
+  <img src='/images/CA_Robustness.png' align='center' width='750' height='550'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Image Caption Here. </p>
 </p>
+
+
 
 
 
