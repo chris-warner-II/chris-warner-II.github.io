@@ -1,22 +1,60 @@
 ---
 title: "2. Probabilistic binary latent variable model infers hidden structure in spike trains."
-excerpt: "<img src='/images/CA_model.png' width='350' height='300'/> <img src='/images/CA_Robustness.png' width='550' height='400'/><br/> We introduce a novel, probabilistic binary latent variable model to detect noisy or approximate repeats of patterns in sparse binary data. We adapt the framework of the 'Noisy-OR model', previously used to infer hidden diseases from observed symptoms, to neuron spiking mechanics and demonstrate the model's capability by extracting structure in recordings from retinal neurons, where the task is to 'explain' spikes of individual neurons in terms of groups of neurons, 'Cell Assemblies' (CAs), that often fire together, due to mutual interactions or other causes. The conditional probability kernels of the latent components are learned from the data in an expectation maximization scheme, alternately involving inference of latent states and parameter adjustments to the model. We thoroughly validate the model on synthesized spike trains constructed to statistically resemble recorded retinal responses to white noise stimulus and natural movie stimulus in data. We also apply our model to spiking responses recorded in retinal ganglion cells (RGCs) during stimulation with a movie and discuss the found structure."
+excerpt: "<img src='/images/CA_model.png' width='350' height='300'/> <img src='/images/CA_Robustness.png' width='550' height='400'/><br/> We introduce a novel, probabilistic binary latent variable (BLV) model to detect noisy or approximate repeats of patterns in sparse binary data. We adapt the framework of the 'Noisy-OR model', previously used to infer hidden diseases from observed symptoms, to neuron spiking mechanics and demonstrate the model's capability by extracting structure in recordings from retinal neurons, where the task is to 'explain' spikes of individual neurons in terms of groups of neurons, 'Cell Assemblies' (CAs), that often fire together, due to mutual interactions or other causes. The conditional probability kernels of the latent components are learned from the data in an expectation maximization scheme, alternately involving inference of latent states and parameter adjustments to the model. We thoroughly validate the model on synthesized spike trains constructed to statistically resemble recorded retinal responses to white noise stimulus and natural movie stimulus in data. We also apply our model to spiking responses recorded in retinal ganglion cells (RGCs) during stimulation with a movie and discuss the found structure."
 collection: portfolio
 ---
 
-This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project.
+
+The responses from retinal ganglion cells shown white noise vs natural movies is very different. GLMs well capture the responses to white noise, but not natural movies with spatial and temporal correlations in the stimulus.
 
 <p align="center" width="100%">
-  <img src='/images/CA_model.png' align='center' width='500' height='400'/> 
-  <p style="text-align: center; font-size:10pt"><strong>fig. 1</strong> Image Caption Here. </p>
+  <img src='/images/CA_retina_responses.png' align='center' width='850' height='550'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 1</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering. </p>
 </p>
 
 
-This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project. This is a markdown file for Cell Assembly project.
+We build a model that allows for two causes for a cell's firing, its intrinsic firing rate and its membership in a cell assembly. Explain the intuition of model and perhaps work through some math derivation
+
+<p align="center" width="100%">
+  <img src='/images/CA_model.png' align='center' width='500' height='400'/> 
+  <p style="text-align: center; font-size:10pt"><strong>fig. 2</strong> Schematic of BLV model applied to detect patterns in recordings of neural activity: In the model, individual spikes in a spike-word $\mathbf{y}$ can arise from two sources. First, each of the N cells has some probability of firing without any latent unit activity, expressed by N-vector $\mathbf{R}$. Second, a cell can fire because it is a member of a latent cell group, which is active. For the M latent variables, the membership structure between latent and observed variables is expressed by the MxN Matrix $\mathbf{P}$ of conditional probabilities. The scalar Q parameter sets a binomial prior on the activity in the sparse vector of latent variables, $\mathbf{z}$. </p>
+</p>
+
+
+Making synthetic data with moments fit to recorded retina data. Different model parameters when fit to white noise vs natural movies. Maybe use table.
+
+
+<p align="center" width="100%">
+  <img src='/images/CA_synthetic_data_moments.png' align='center' width='750' height='550'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 3</strong> Fitting synthetic model to recorded spike-word moments: Comparison of spike-word moments from retinal responses to white noise (Wnz) in green, and natural movie (Mov) in blue to synthetic data fitted to natural movie responses (Syn) in red. Recording data binned at 5ms. Top row from left to right shows probability density functions for spike-word length, |y|, average single-cell activity, ⟨yi⟩, and pairwise cell coactivity, ⟨yi · yj⟩. Bottom row shows quantile-quantile (QQ) plots - a pair of cumulative density function plotted against each other. See legend, left plot. QQ values measure average deviation from the unity line, larger values indicating bigger differences between distributions. </p>
+</p>
+
+
+
+Validating synthetic model using ground truth. Don't need metrics explained here yet. Have 4 figures.
+
+<p align="center" width="100%">
+  <img src='/images/image-alignment-150x150.jpg' align='center' width='750' height='550'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 4</strong> Image Caption Here. </p>
+
+
+
+
+Exploratory Data Analysis and metrics used to make statements about data
+
+<p align="center" width="100%">
+  <img src='/images/image-alignment-150x150.jpg' align='center' width='750' height='550'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 5</strong> Image Caption Here. </p>
+</p>
+
+
+
+
+Results on real retina data.
 
 <p align="center" width="100%">
   <img src='/images/CA_Robustness.png' align='center' width='750' height='550'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 2</strong> Image Caption Here. </p>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Image Caption Here. </p>
 </p>
 
 
