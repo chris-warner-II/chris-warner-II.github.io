@@ -62,17 +62,16 @@ White Noise stimulus (ie., "TV snow"), uncorrelated in space and time, is very d
   </figure>
 
 
-To explore the phenomenon of shared variability across the RGC population in response to natural movies, we build a model that allows for two causes for a cell's observed firing, $y_i$, that is: its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership in a Cell Assembly, $\mathbf{P}_{ia}$. The Binary Latent Variable (BLV) Model assumes that different latent units, $z_a$, which are active simultaneously, increase the probability of a observed unit activity, according to a noisy-OR combination. We assume sparse activation and binomial distribution of latent states with $Q=p(z_a=1)$, conditional independence of observation vector $\mathbf{y}$ given latent variables $\mathbf{z}$. This yeilds the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by: <br/>
+To explore the phenomenon of shared variability across the RGC population in response to natural movies, we build a model that allows for two causes for a cell's observed firing, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership in a Cell Assembly, $\mathbf{P}_{ia}$. The Binary Latent Variable (BLV) Model assumes that different latent units, $z_a$, which are active simultaneously, increase the probability of a observed unit activity, $y_i$, according to a noisy-OR combination. We assume sparse activation and binomial distribution of latent states, conditional independence of observation vector $\mathbf{y}$ given latent variables $\mathbf{z}$. This yeilds the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by: <br/>
 
-$p(y_i,\vec{z}) = {M\choose |\vec{z}|} \cdot  Q^{|\vec{z}|}\cdot (1-Q)^{\big( M - |\vec{z}| \big)}   \bigg [ P_i^{ \big ( 1 - \frac{|\vec{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  P_i^{ \big ( 1 - \frac{|\vec{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ 
 
-<p align="center" width="100%">
+<p align="center" width="80%">
   <img src='/images/CA_model.png' align='center' width='500' height='400'/> 
   <p style="text-align: center; font-size:10pt"><strong>fig. 2</strong> Schematic of BLV model applied to detect patterns in recordings of neural activity: In the model, individual spikes in a spike-word $\mathbf{y}$ can arise from two sources. First, each of the N cells has some probability of firing without any latent unit activity, expressed by N-vector $\mathbf{R}$. Second, a cell can fire because it is a member of a latent cell group, which is active. For the M latent variables, the membership structure between latent and observed variables is expressed by the MxN Matrix $\mathbf{P}$ of conditional probabilities. The scalar Q parameter sets a binomial prior on the activity in the sparse vector of latent variables, $\mathbf{z}$. </p>
 </p>
 
 
-
+$p(y_i,\vec{z}) = {M\choose |\vec{z}|} \cdot  Q^{|\vec{z}|}\cdot (1-Q)^{\big( M - |\vec{z}| \big)}   \bigg [ P_i^{ \big ( 1 - \frac{|\vec{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  P_i^{ \big ( 1 - \frac{|\vec{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ 
 
 
 
