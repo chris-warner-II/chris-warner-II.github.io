@@ -11,9 +11,7 @@ collection: portfolio
 
   figure {
     width: 31%; /* Adjusted to leave space for boundaries */
-    margin: 0 1%; /* Added margin for space between figures */
-    border: 1px solid #ccc; /* Border around each figure */
-    box-sizing: border-box;
+    margin: 0.5 0.5%; /* Added margin for space between figures */
     padding: 10px;
   }
 
@@ -26,10 +24,7 @@ collection: portfolio
 
 
 
-Visual inspection of retinal responses to white noise stimulus vs. natural movie stimulus reveal clear spatial and temporal differences. The figure below shows peristimulus time histograms (PSTH) of a population of retinal ganglion cells (RGCs) responding to the two stimulus types, with and without spatial and temporal correlations
-
-
- GLMs well capture the responses to white noise, but not natural movies with spatial and temporal correlations in the stimulus.
+White Noise stimulus (ie., "TV snow"), uncorrelated in space and time, is very different from Natural Movie stimulus and the retina responds very differently to the two types of input. Visual inspection of retinal responses to white noise stimulus vs. natural movie stimulus reveal clear spatial and temporal differences. The figure below shows peristimulus time histograms (PSTH) of a population of retinal ganglion cells (RGCs) responding to the two stimulus types. <a href="https://www.nature.com/articles/nature07140.pdf">Generalized Linear Models (GLMs)</a> of retina well capture the responses to white noise, but they fail to capture responses to natural movies, which contain spatial and temporal correlations in the stimulus and responses.
 
 
 
@@ -63,31 +58,6 @@ Visual inspection of retinal responses to white noise stimulus vs. natural movie
     <img src="/images/CA_PSTHs.jpg" alt="Image" style="width: 100%;">
     <figcaption><strong>fig. 1</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering.</figcaption>
   </figure>
-
-
-
-<!--
-  <div>
-    <video controls width="25%" autoplay loop muted >
-      <source src="/images/movie_wnrep.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <p style="text-align: left; font-size:10pt"> White Noise Stim </p>
-
-    <video controls width="25%" autoplay loop muted >
-      <source src="/images/movie_catrep.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <p style="text-align: left; font-size:10pt"> Natural Movie Stim </p>
-  </div>
-
-<p align="center" width="100%">
-<div>  
-  <img src='/images/CA_retina_responses.png' align='center' width='850' height='550'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 1</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering. </p>
-</div>
-</p>
--->
 
 
 We build a model that allows for two causes for a cell's firing, its intrinsic firing rate and its membership in a cell assembly. Explain the intuition of model and perhaps work through some math derivation
