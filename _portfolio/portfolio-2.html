@@ -72,11 +72,11 @@ To explore this phenomenon, we construct a model that allows for two causes for 
 
 This yields the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by: (see paper for further discussion)<br/>
 
-$p(y_i,\vec{z}) = p(\vec{z}) p(y_i \vert \vec{z}) <br/>
+$p(y_i,\vec{z}) = p(\vec{z}) p(y_i \vert \vec{z})$ <br/>
 
-$p(y_i,\vec{z}) = p(\vec{z}) p(y_i=0 \vert \vec{z})^{(1-y_i)} p(y_i=1 \vert \vec{z})^{y_i} <br/>
+$p(y_i,\vec{z}) = p(\vec{z}) p(y_i=0 \vert \vec{z})^{(1-y_i)} p(y_i=1 \vert \vec{z})^{y_i}$ <br/>
 
-$p(y_i,\vec{z}) = p(\vec{z}) p(y_i=0 \vert \vec{z})^{(1-y_i)} (1-p(y_i=0 \vert \vec{z}))^{y_i} <br/>
+$p(y_i,\vec{z}) = p(\vec{z}) p(y_i=0 \vert \vec{z})^{(1-y_i)} (1-p(y_i=0 \vert \vec{z}))^{y_i}$ <br/>
 
 $p(y_i,\vec{z}) = {M\choose |\vec{z}|} \cdot  Q^{|\vec{z}|}\cdot (1-Q)^{\big( M - |\vec{z}| \big)}   \bigg [ R_i^{ \big ( 1 - \frac{|\vec{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  R_i^{ \big ( 1 - \frac{|\vec{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ <br/>
 
