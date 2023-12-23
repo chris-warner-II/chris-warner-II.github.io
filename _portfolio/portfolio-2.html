@@ -80,7 +80,7 @@ $p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} \bigg [ 1
 
 $p(y_i,\mathbf{z}) = {M\choose |\mathbf{z}|} \cdot  Q^{|\mathbf{z}|}\cdot (1-Q)^{\big( M - |\mathbf{z}| \big)}   \bigg [ R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ <br/><br/>
 
-Once the BLV model is derived, we fit it to data using an Expectation Maximization (EM) framework. For each observed spike-word $\mathbf{y}$, learning proceeds in two steps. First, the latent variables $\mathbf{z}$ are inferred with the current fixed model parameters. Then, model parameters are adjusted to maximize the derivative of the log joint probability of latent and observed states $p(\mathbf{y},\mathbf{z})$. with respect to each parameter. Derivatives are computed with respect to unconstrained variables ($q, r, \rho$) passed through a logistic parametrization to force outputs toward binary values. Derivatives with respect to each model parameter are shown below. <br/><br/>
+Once the BLV model is derived, we fit it to data using an Expectation Maximization (EM) framework. For each observed spike-word $\mathbf{y}$, learning proceeds in two steps. First, the latent variables $\mathbf{z}$ are inferred with the current fixed model parameters. Then, model parameters are adjusted to maximize the derivative of the log joint probability of latent and observed states $p(\mathbf{y},\mathbf{z})$. with respect to each parameter. Derivatives are computed with respect to unconstrained variables ($q, r, \rho$) passed through a logistic parametrization ($\sigma(x)$) to force outputs toward binary values. Derivatives with respect to each model parameter are shown below. <br/><br/>
 
 
 $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial q} = |\mathbf{z}| -  M \sigma(q)$ <br/><br/>
@@ -89,9 +89,7 @@ $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial r_i} = \bigg ( 1-\frac{|\m
 
 $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial \rho_{ia}} = z_a \: \bigg (1-\sigma(\rho_{ia}) \bigg ) \: \bigg [ (1-y_i) - \frac{y_i \:C_i}{(1-C_i)} \bigg ]$ <br/><br/>
 
-where <br/><br/>
-
-$\quad C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
+where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
 
 
 
