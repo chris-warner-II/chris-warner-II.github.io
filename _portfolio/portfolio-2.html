@@ -23,38 +23,38 @@ collection: portfolio
 </style>
 
 
- <p style="text-align: center; font-size:11pt"><strong>Expertise Demonstrated:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis </p>
+<p style="text-align: center; font-size:11pt"><strong>Expertise Demonstrated:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis </p>
 
 
-White Noise stimulus (ie., "TV snow"), uncorrelated in space and time, is very different from Natural Movie stimulus and the retina responds very differently to the two types of input. Visual inspection of retinal responses to white noise stimulus vs. natural movie stimulus reveal clear spatial and temporal differences. The figure below shows peristimulus time histograms (PSTH) of a population of retinal ganglion cells (RGCs) responding to the two stimulus types. <a href="https://www.nature.com/articles/nature07140.pdf">Generalized Linear Models (GLMs)</a> of retina well capture the responses to white noise, but they fail to capture responses to natural movies, which contain spatial and temporal correlations in the stimulus and responses. Aside from the clear spatial correlations in responses to natural movies, it appears that single cell responses are also more variable (smeared out) in time trial-to-trial and that those temporal variations may be shared across clusters of cells.
+<!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
+<div style="display: flex; width: 100%;">
+
+  <figure style="width: 31%;">
+    <video controls width="100%" autoplay loop muted >
+      <source src="/images/movie_wnrep.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption>White Noise Stimulus</figcaption>
+  </figure>
+
+  <figure style="width: 31%;">
+    <img src="/images/CA_RFs.jpg" alt="Image" style="width: 100%;">
+    <figcaption>Receptive Fields of 55 RGC's</figcaption>
+  </figure>
+
+  <figure style="width: 31%;">
+    <video controls width="100%" autoplay loop muted >
+      <source src="/images/movie_catrep.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption>Natural Movie Stimulus</figcaption>
+  </figure>
+
+</div> 
 
 
+White Noise stimulus, uncorrelated in space and time, is very different from Natural Movie stimulus and the retina responds very differently to the two types of input. Visual inspection of retinal responses to white noise stimulus vs. natural movie stimulus reveal clear spatial and temporal differences. The figure below shows peristimulus time histograms (PSTH) of a population of retinal ganglion cells (RGCs) responding to the two stimulus types. <a href="https://www.nature.com/articles/nature07140.pdf">Generalized Linear Models (GLMs)</a> of retina well capture the responses to white noise, but they fail to capture responses to natural movies, which contain spatial and temporal correlations in the stimulus and responses. Aside from the clear spatial correlations in responses to natural movies, it appears that single cell responses are also more variable (smeared out) in time trial-to-trial and that those temporal variations may be shared across clusters of cells.
 
-  <!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
-  <div style="display: flex; width: 100%;">
-
-    <figure style="width: 31%;">
-      <video controls width="100%" autoplay loop muted >
-        <source src="/images/movie_wnrep.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <figcaption>White Noise Stimulus</figcaption>
-    </figure>
-
-    <figure style="width: 31%;">
-      <img src="/images/CA_RFs.jpg" alt="Image" style="width: 100%;">
-      <figcaption>Receptive Fields of 55 RGC's</figcaption>
-    </figure>
-
-    <figure style="width: 31%;">
-      <video controls width="100%" autoplay loop muted >
-        <source src="/images/movie_catrep.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <figcaption>Natural Movie Stimulus</figcaption>
-    </figure>
-
-  </div>
 
   <figure style="width: 100%;">
     <img src="/images/CA_PSTHs.jpg" alt="Image" style="width: 100%;">
@@ -62,15 +62,15 @@ White Noise stimulus (ie., "TV snow"), uncorrelated in space and time, is very d
   </figure>
 
 
-To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model, which allows for two causes for a cell's observed firing, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership in a Cell Assembly, $\mathbf{P}_{ia}$. We assume sparse activation and binomial distribution of latent states $\mathbf{z}$ and conditional independence of observation vector $\mathbf{y}$ given latent variables $\mathbf{z}$. <br/>
+To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model, which allows for two causes of a cell's observed firing $\mathbf{y}$, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership in an active Cell Assembly, $\mathbf{P}_{ia}$. We assume sparse activation and binomial distribution of latent states $\mathbf{z}$ and conditional independence of observation vector given latent variables. The model schematic is displayed below.<br/>
 
 
 <p align="center" width="100%">
-  <img src='/images/CA_model.png' align='center' width='400' height='300'/> 
+  <img src='/images/CA_model.png' align='center' width='400' height='250'/> 
   <p style="text-align: center; font-size:10pt"><strong>fig. 2</strong> Schematic of BLV model applied to detect patterns in recordings of neural activity: In the model, individual spikes in a spike-word $\mathbf{y}$ can arise from two sources. First, each of the N cells has some probability of firing without any latent unit activity, expressed by N-vector $\mathbf{R}$. Second, a cell can fire because it is a member of a latent cell group, which is active. For the M latent variables, the membership structure between latent and observed variables is expressed by the MxN Matrix $\mathbf{P}$ of conditional probabilities. The scalar Q parameter sets a binomial prior on the activity in the sparse vector of latent variables, $\mathbf{z}$. </p>
 </p>
 
-This yields the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by (see <a href="https://chris-warner-ii.github.io/publication/2022-paper-3">paper</a> for thorough derivation):<br/><br/>
+This model yields the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by (see <a href="https://chris-warner-ii.github.io/publication/2022-paper-3">paper</a> for thorough derivation):<br/><br/>
 
 $p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i \vert \mathbf{z})$ <br/><br/>
 
@@ -80,7 +80,7 @@ $p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} \bigg [ 1
 
 $p(y_i,\mathbf{z}) = {M\choose |\mathbf{z}|} \cdot  Q^{|\mathbf{z}|}\cdot (1-Q)^{\big( M - |\mathbf{z}| \big)}   \bigg [ R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ <br/><br/>
 
-Once the BLV model is derived, we fit it to data using an Expectation Maximization (EM) framework. For each observed spike-word $\mathbf{y}$, learning proceeds in two steps. First, the latent variables $\mathbf{z}$ are inferred with the current fixed model parameters. Then, model parameters are adjusted to maximize the derivative of the log joint probability of latent and observed states $p(\mathbf{y},\mathbf{z})$. with respect to each parameter. Derivatives are computed with respect to unconstrained variables ($q, r, \rho$) passed through a logistic parametrization ($\sigma(x)$) to force outputs toward binary values. Derivatives with respect to each model parameter are shown below. <br/><br/>
+Next, we fit the BLV Model to data using an Expectation Maximization (EM) framework. For each observed spike-word $\mathbf{y}$, learning proceeds in two steps. First, the latent variables $\mathbf{z}$ are inferred with the current fixed model parameters. Then, model parameters are adjusted to maximize the derivative of the log joint probability of latent and observed states $p(\mathbf{y},\mathbf{z})$. with respect to each parameter. Derivatives are computed with respect to unconstrained variables ($q, r, \rho$) and passed through a logistic parametrization ($\sigma(.)$) to enable the interpretation of their constrained values ($Q, R, P$) as probabilities $\in [0,1]$. Derivatives with respect to each model parameter are shown below. <br/><br/>
 
 
 $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial q} = |\mathbf{z}| -  M \sigma(q)$ <br/><br/>
@@ -92,13 +92,7 @@ $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial \rho_{ia}} = z_a \: \bigg 
 where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
 
 
-
-
-
-
-
-
-Making synthetic data with moments fit to recorded retina data. Different model parameters when fit to white noise vs natural movies. Maybe just use table, no figure? Since we have 4 figures below.
+Before unleashing the model on real retinal data, it is crucial to first validate the model using synthetic data ... Making synthetic data with moments fit to recorded retina data. Different model parameters when fit to white noise vs natural movies. Maybe just use table, no figure? Since we have 4 figures below.
 
 
 <p align="center" width="100%">
