@@ -62,7 +62,7 @@ White Noise stimulus (ie., "TV snow"), uncorrelated in space and time, is very d
   </figure>
 
 
-To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model, which allows for two causes for a cell's observed firing, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership in a Cell Assembly, $\mathbf{P}_{ia}$. We assume sparse activation and binomial distribution of latent states and conditional independence of observation vector $\mathbf{y}$ given latent variables $\mathbf{z}$. <br/>
+To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model, which allows for two causes for a cell's observed firing, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership in a Cell Assembly, $\mathbf{P}_{ia}$. We assume sparse activation and binomial distribution of latent states $\mathbf{z}$ and conditional independence of observation vector $\mathbf{y}$ given latent variables $\mathbf{z}$. <br/>
 
 
 <p align="center" width="100%">
@@ -70,15 +70,33 @@ To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model,
   <p style="text-align: center; font-size:10pt"><strong>fig. 2</strong> Schematic of BLV model applied to detect patterns in recordings of neural activity: In the model, individual spikes in a spike-word $\mathbf{y}$ can arise from two sources. First, each of the N cells has some probability of firing without any latent unit activity, expressed by N-vector $\mathbf{R}$. Second, a cell can fire because it is a member of a latent cell group, which is active. For the M latent variables, the membership structure between latent and observed variables is expressed by the MxN Matrix $\mathbf{P}$ of conditional probabilities. The scalar Q parameter sets a binomial prior on the activity in the sparse vector of latent variables, $\mathbf{z}$. </p>
 </p>
 
-This yields the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by (see <a href="https://chris-warner-ii.github.io/publication/2022-paper-3">paper</a> for more thorough discussion):<br/>
+This yields the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by (see <a href="https://chris-warner-ii.github.io/publication/2022-paper-3">paper</a> for thorough derivation):<br/><br/>
 
 $p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i \vert \mathbf{z})$ <br/><br/>
 
 $p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} p(y_i=1 \vert \mathbf{z})^{y_i}$ <br/><br/>
 
-$p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} (1-p(y_i=0 \vert \mathbf{z}))^{y_i}$ <br/><br/>
+$p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} \bigg [ 1-p(y_i=0 \vert \mathbf{z}) \bigg ] ^{y_i}$ <br/><br/>
 
-$p(y_i,\mathbf{z}) = {M\choose |\mathbf{z}|} \cdot  Q^{|\mathbf{z}|}\cdot (1-Q)^{\big( M - |\mathbf{z}| \big)}   \bigg [ R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ <br/>
+$p(y_i,\mathbf{z}) = {M\choose |\mathbf{z}|} \cdot  Q^{|\mathbf{z}|}\cdot (1-Q)^{\big( M - |\mathbf{z}| \big)}   \bigg [ R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ <br/><br/>
+
+Once the BLV model is derived, we fit it to data using an Expectation Maximization (EM) framework. For each observed spike-word $\mathbf{y}$, learning proceeds in two steps. First, the latent variables $\mathbf{z}$ are inferred with the current fixed model parameters. Then, model parameters are adjusted to maximize the derivative of the log joint probability of latent and observed states $p(\mathbf{y},\mathbf{z})$. with respect to each parameter. Derivatives are computed with respect to unconstrained variables ($q, r, \rho$) passed through a logistic parametrization to force outputs toward binary values.  <br/><br/>
+
+
+$\frac{\partial \: log \: p(y_i,\vec{z})}{\partial q} =   |\vec{z}| \: \bigg ( 1-\sigma(q) \bigg ) -  \bigg ( M- |\vec{z}| \bigg ) \: \sigma(q)$ <br/><br/>
+
+$\frac{\partial \: log \: p(y_i,\vec{z})}{\partial r_i} = \bigg ( 1-\frac{|\vec{z}|}{M} \bigg ) \: \bigg (1-\sigma(r_i) \bigg ) \: \bigg [ (1-y_i) - \frac{y_i \:C_i}{(1-C_i)} \bigg ]$ <br/><br/>
+
+$\frac{\partial \: log \: p(y_i,\vec{z})}{\partial \rho_{ia}} = z_a \: \bigg (1-\sigma(\rho_{ia}) \bigg ) \: \bigg [ (1-y_i) - \frac{y_i \:C_i}{(1-C_i)} \bigg ]$ <br/><br/>
+
+where <br/><br/>
+
+$\quad C_i \coloneqq \sigma(r_i)^{\big ( 1-\frac{|\vec{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
+
+
+
+
+
 
 
 
