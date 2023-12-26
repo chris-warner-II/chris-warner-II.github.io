@@ -105,26 +105,26 @@ Before applying the model to real retinal data, it is important to first validat
 
 
 
-Validating synthetic model using ground truth. Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.
+With 
 
-<!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
+
 <div style="display: flex; width: 100%;">
 
   <figure style="width: 49%;">
     <img src="/images/CA_synth_natMov1.png" alt="Image" style="width: 100%;">
-    <figcaption>caption 1</figcaption>
+    <figcaption>Assessing similarity of cell assembly structure learned by different models: Model trained on synthetic data fitted to natural movie responses. Left column shows M × M matrices of cosine similarity (cs) values between all cell assembly pairs across a pair models. Top, with arbitrary order and bottom, with cell assemblies matched across models based on pairwise cs. Right shows the pair of P matrices with columns, cell assemblies, aligned to maximize cs across all matched pairs. Blue bars in bottom right of panel show cs for each matching column pair above. Note that blue bars are equivalent to diagonal elements in matched cs matrix in bottom left. The difference between diagonal means of the matched (bottom left) and the unmatched (top left) cs matrices, $\Delta cs$, provides a simple scalar measure of model similarity. In this example, $\Delta cs$ is 0.61.</figcaption>
   </figure>
 
   <figure style="width: 49%;">
     <img src="/images/CA_synth_natMov2.png" alt="Image" style="width: 100%;">
-    <figcaption>caption 2</figcaption>
+    <figcaption>Cross-validation of models trained on synthetic data matched to recorded responses: Six models trained on synthetic data fitted to natural movie responses. Each element in matrix shows average $\Delta cs$ (relative to null without CA matching) between all matched CA pairs within a model pair. Note that for visual clarity using this color scheme, the unity diagonal elements have been set to zero. Vector labeled ’GT’ on right shows average $\Delta cs$ metric between model and ground truth.</figcaption>
   </figure>
 
 </div> 
 
 <figure style="width: 100%;">
   <img src="/images/CA_synth_natMov3.png" alt="Image" style="width: 100%;">
-  <figcaption>caption 3</figcaption>
+  <figcaption>Individual cross-validated CAs often match GT: Results for synthetic data fitted to natural movie responses. The left plot compares the cosine similarity (cs) between matched pairs of CAs in two learned models (Mod1 and Mod2) on the x-coordinate to cs between each model’s CA and matching CA in the GT on the y-coordinate. Each point represents similarities between one CA in a model (Mod1 in blue and Mod2 in green) and a matching CA in the GT. The points are connected by a faint grey vertical line if CAs in models are matched to different GT CAs. Red ’o’ highlights CA in model pair with smaller cs match to GT, and a black diamond marks points for which the two models are matched to the same CA in the GT (i.e., where green and blue points coincide). Larger blue and green ’+’ show $\mu$ and $\sigma$ of each model’s CA population. The right plot shows the distribution of distances in the left plot between points and the unity line. Pearson correlation coefficients (r) for three scatter groups in left plots are shown in legend on the right.</figcaption>
 </figure>
 
 
