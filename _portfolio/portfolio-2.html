@@ -35,12 +35,12 @@ collection: portfolio
       <source src="/images/movie_wnrep.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <figcaption>White Noise Stimulus</figcaption>
+    <figcaption><strong>a)</strong>  White Noise Stimulus</figcaption>
   </figure>
 
   <figure style="width: 31%;">
     <img src="/images/CA_RFs.jpg" alt="Image" style="width: 100%;">
-    <figcaption>Receptive Fields of 55 RGC's</figcaption>
+    <figcaption><strong>b)</strong> Receptive Fields of 55 RGC's</figcaption>
   </figure>
 
   <figure style="width: 31%;">
@@ -48,10 +48,12 @@ collection: portfolio
       <source src="/images/movie_catrep.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <figcaption>Natural Movie Stimulus</figcaption>
+    <figcaption><strong>c)</strong> Natural Movie Stimulus</figcaption>
   </figure>
 
 </div> 
+
+<p style="text-align: center; font-size:10pt"><strong>fig. 1</strong> Stimulus and Retinal Ganglion Cell Receptive Field Lattice </p>
 
 
 White Noise stimulus, uncorrelated in space and time, is very different from Natural Movie stimulus and the retina responds very differently to the two types of input. Visual inspection of retinal responses to white noise stimulus vs. natural movie stimulus reveal clear spatial and temporal differences. The figure below shows peristimulus time histograms (PSTH) of a population of retinal ganglion cells (RGCs) responding to the two stimulus types. <a href="https://www.nature.com/articles/nature07140.pdf">Generalized Linear Models (GLMs)</a> of retina well capture the responses to white noise, but they fail to capture responses to natural movies, which contain spatial and temporal correlations in the stimulus and responses. Aside from the clear spatial correlations in responses to natural movies, it appears that single cell responses are also more variable (smeared out) in time trial-to-trial and that those temporal variations may be shared across clusters of cells.
@@ -59,7 +61,7 @@ White Noise stimulus, uncorrelated in space and time, is very different from Nat
 
   <figure style="width: 100%;">
     <img src="/images/CA_PSTHs.jpg" alt="Image" style="width: 100%;">
-    <figcaption><strong>fig. 1</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering.</figcaption>
+    <figcaption><strong>fig. 2</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering.</figcaption>
   </figure>
 
 <header style="text-align: center">The Model</header>
@@ -69,7 +71,7 @@ To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model,
 
 <p align="center" width="100%">
   <img src='/images/CA_model.png' align='center' width='400' height='250'/> 
-  <p style="text-align: center; font-size:10pt"><strong>fig. 2</strong> Schematic of BLV model applied to detect patterns in recordings of neural activity: In the model, individual spikes in a spike-word $\mathbf{y}$ can arise from two sources. First, each of the N cells has some probability of firing without any latent unit activity, expressed by N-vector $\mathbf{R}$. Second, a cell can fire because it is a member of a latent cell group, which is active. For the M latent variables, the membership structure between latent and observed variables is expressed by the MxN Matrix $\mathbf{P}$ of conditional probabilities. The scalar Q parameter sets a binomial prior on the activity in the sparse vector of latent variables, $\mathbf{z}$. </p>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 3</strong> Schematic of BLV model applied to detect patterns in recordings of neural activity: In the model, individual spikes in a spike-word $\mathbf{y}$ can arise from two sources. First, each of the N cells has some probability of firing without any latent unit activity, expressed by N-vector $\mathbf{R}$. Second, a cell can fire because it is a member of a latent cell group, which is active. For the M latent variables, the membership structure between latent and observed variables is expressed by the MxN Matrix $\mathbf{P}$ of conditional probabilities. The scalar Q parameter sets a binomial prior on the activity in the sparse vector of latent variables, $\mathbf{z}$. </p>
 </p>
 
  Assuming sparse activation and binomial distribution of latent states and conditional independence of observation vector given latent variables, the model yields the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by (see <a href="https://chris-warner-ii.github.io/publication/2022-paper-3">paper</a> for further model assumptions and full derivation):<br/><br/>
@@ -98,15 +100,15 @@ where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M
 
 <header style="text-align: center">Model Validation</header>
 
-Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data that  matched certain moments measured in retinal spike train responses to white noise and natural movies, process described in fig 3 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
+Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data that  matched certain moments measured in retinal spike train responses to white noise and natural movies, process described in figure 4 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
 
 
 <p align="center" width="100%">
   <img src='/images/CA_synthetic_data_moments.png' align='center' width='750' height='550'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 3</strong> Fitting synthetic model to recorded spike-word moments: Comparison of spike-word moments from retinal responses to white noise (Wnz) in green, and natural movie (Mov) in blue to synthetic data fitted to natural movie responses (Syn) in red. Recording data binned at 5ms. Top row from left to right shows probability density functions for spike-word length, |y|, average single-cell activity, ⟨yi⟩, and pairwise cell coactivity, ⟨yi · yj⟩. Bottom row shows quantile-quantile (QQ) plots - a pair of cumulative density function plotted against each other. See legend, left plot. QQ values measure average deviation from the unity line, larger values indicating bigger differences between distributions. </p>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 4</strong> Fitting synthetic model to recorded spike-word moments: Comparison of spike-word moments from retinal responses to white noise (Wnz) in green, and natural movie (Mov) in blue to synthetic data fitted to natural movie responses (Syn) in red. Recording data binned at 5ms. Top row from left to right shows probability density functions for spike-word length, |y|, average single-cell activity, ⟨yi⟩, and pairwise cell coactivity, ⟨yi · yj⟩. Bottom row shows quantile-quantile (QQ) plots - a pair of cumulative density function plotted against each other. See legend, left plot. QQ values measure average deviation from the unity line, larger values indicating bigger differences between distributions. </p>
 </p>
 
-Multiple models were trained on synthetic data and the structure discovered by each model was compared to the ground truth and to the structure discovered in all other models. Figure 4 walks through the process of quantifying model match to other models and model match to ground truth. We used the cosine similarity measure for this purpose, defined as the angle between two N-dimensional vectors in cell-assembly membership space:  <br/><br/>
+Multiple models were trained on synthetic data and the structure discovered by each model was compared to the ground truth and to the structure discovered in all other models. Figure 5 walks through the process of quantifying model match to other models and model match to ground truth. We used the cosine similarity measure for this purpose, defined as the angle between two N-dimensional vectors in cell-assembly membership space:  <br/><br/>
 
 <p align="center" width="100%">
   $cs(v_1,v_2)= \frac{(v_1)^\top v_2}{\|v_1\| \|v_2\|}$  <br/><br/>
@@ -131,7 +133,7 @@ And some other things too...
 
 <figure style="width: 100%;">
   <img src="/images/CA_synth_natMov3.png" alt="Image" style="width: 100%;">
-  <figcaption><strong>fig. 4 c)</strong> Individual cross-validated CAs often match GT: Results for synthetic data fitted to natural movie responses. The left plot compares the cosine similarity (cs) between matched pairs of CAs in two learned models (Mod1 and Mod2) on the x-coordinate to cs between each model’s CA and matching CA in the GT on the y-coordinate. Each point represents similarities between one CA in a model (Mod1 in blue and Mod2 in green) and a matching CA in the GT. The points are connected by a faint grey vertical line if CAs in models are matched to different GT CAs. Red ’o’ highlights CA in model pair with smaller cs match to GT, and a black diamond marks points for which the two models are matched to the same CA in the GT (i.e., where green and blue points coincide). Larger blue and green ’+’ show $\mu$ and $\sigma$ of each model’s CA population. The right plot shows the distribution of distances in the left plot between points and the unity line. Pearson correlation coefficients (r) for three scatter groups in left plots are shown in legend on the right.</figcaption>
+  <figcaption><strong>fig. 5 c)</strong> Individual cross-validated CAs often match GT: Results for synthetic data fitted to natural movie responses. The left plot compares the cosine similarity (cs) between matched pairs of CAs in two learned models (Mod1 and Mod2) on the x-coordinate to cs between each model’s CA and matching CA in the GT on the y-coordinate. Each point represents similarities between one CA in a model (Mod1 in blue and Mod2 in green) and a matching CA in the GT. The points are connected by a faint grey vertical line if CAs in models are matched to different GT CAs. Red ’o’ highlights CA in model pair with smaller cs match to GT, and a black diamond marks points for which the two models are matched to the same CA in the GT (i.e., where green and blue points coincide). Larger blue and green ’+’ show $\mu$ and $\sigma$ of each model’s CA population. The right plot shows the distribution of distances in the left plot between points and the unity line. Pearson correlation coefficients (r) for three scatter groups in left plots are shown in legend on the right.</figcaption>
 </figure>
 
 
@@ -153,7 +155,7 @@ Exploratory Data Analysis and metrics used to make statements about data
 
 <p align="center" width="100%">
   <img src='/images/image-alignment-150x150.jpg' align='center' width='750' height='550'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 5</strong> Image Caption Here. </p>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Image Caption Here. </p>
 </p>
 
 <header style="text-align: center">Results in Retina</header>
@@ -164,7 +166,7 @@ Results on real retina data using EDA paradigm. Have 8 figures. Use all, or just
 
 <p align="center" width="100%">
   <img src='/images/CA_Robustness.png' align='center' width='750' height='550'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Image Caption Here. </p>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 7</strong> Image Caption Here. </p>
 </p>
 
 
