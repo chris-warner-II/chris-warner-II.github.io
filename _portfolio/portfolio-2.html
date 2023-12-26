@@ -108,13 +108,13 @@ Before applying the model to real retinal data, it is important to first validat
   <p style="text-align: center; font-size:10pt"><strong>fig. 4</strong> Fitting synthetic model to recorded spike-word moments: Comparison of spike-word moments from retinal responses to white noise (Wnz) in green, and natural movie (Mov) in blue to synthetic data fitted to natural movie responses (Syn) in red. Recording data binned at 5ms. Top row from left to right shows probability density functions for spike-word length, |y|, average single-cell activity, ⟨yi⟩, and pairwise cell coactivity, ⟨yi · yj⟩. Bottom row shows quantile-quantile (QQ) plots - a pair of cumulative density function plotted against each other. See legend, left plot. QQ values measure average deviation from the unity line, larger values indicating bigger differences between distributions. </p>
 </p>
 
-Multiple models were trained on synthetic data and the structure discovered by each model was compared to the ground truth and to the structure discovered in all other models. Figure 5 walks through the process of quantifying model match to other models and model match to ground truth. We used the cosine similarity measure for this purpose, defined as the angle between two N-dimensional vectors in cell-assembly membership space:  <br/><br/>
+Multiple models were trained on synthetic data and the structure discovered by each model was compared to what other models learned and to the ground truth. Figure 5 walks through the process of quantifying model match to other models and model match to ground truth. The cosine similarity measure, defined as the angle between two N-dimensional vectors in cell-assembly membership space, was used:  <br/><br/>
 
 <p align="center" width="100%">
   $cs(v_1,v_2)= \frac{(v_1)^\top v_2}{\|v_1\| \|v_2\|}$  <br/><br/>
 </p>
 
-And some other things too...
+From the model validation procedure, we verified that when two models trained on structure resembling natural movie responses learned similar structure, that structure also existed in the ground truth model. This allows us to be reasonably confident that cell assembly structure that is learned robustly across multiple models in real neural data is meaningful.
 
 
 <div style="display: flex; width: 100%;">
@@ -138,18 +138,7 @@ And some other things too...
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<header>Exploratory Data Analysis</header>
+<hr style="width:25%"><header>Exploratory Data Analysis</header><hr style="width:25%">
 
 Exploratory Data Analysis and metrics used to make statements about data
 
@@ -158,7 +147,7 @@ Exploratory Data Analysis and metrics used to make statements about data
   <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Image Caption Here. </p>
 </p>
 
-<header style="text-align: center">Results in Retina</header>
+<hr style="width:25%"><header style="text-align: center">Results in Retina</header><hr style="width:25%">
 
 Results on real retina data using EDA paradigm. Have 8 figures. Use all, or just some?
 
