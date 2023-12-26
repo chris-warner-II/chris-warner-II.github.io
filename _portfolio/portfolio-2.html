@@ -74,28 +74,31 @@ To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model,
 
  Assuming sparse activation and binomial distribution of latent states and conditional independence of observation vector given latent variables, the model yields the joint probability for a single observed unit's activity $y_i$ and latent vector $\mathbf{z}$ given by (see <a href="https://chris-warner-ii.github.io/publication/2022-paper-3">paper</a> for further model assumptions and full derivation):<br/><br/>
 
-$p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i \vert \mathbf{z})$ <br/><br/>
+<p align="center" width="100%">
+  $p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i \vert \mathbf{z})$ <br/><br/>
 
-$p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} p(y_i=1 \vert \mathbf{z})^{y_i}$ <br/><br/>
+  $p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} p(y_i=1 \vert \mathbf{z})^{y_i}$ <br/><br/>
 
-$p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} \bigg [ 1-p(y_i=0 \vert \mathbf{z}) \bigg ] ^{y_i}$ <br/><br/>
+  $p(y_i,\mathbf{z}) = p(\mathbf{z}) p(y_i=0 \vert \mathbf{z})^{(1-y_i)} \bigg [ 1-p(y_i=0 \vert \mathbf{z}) \bigg ] ^{y_i}$ <br/><br/>
 
-$p(y_i,\mathbf{z}) = {M\choose |\mathbf{z}|} \cdot  Q^{|\mathbf{z}|}\cdot (1-Q)^{\big( M - |\mathbf{z}| \big)}   \bigg [ R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ <br/><br/>
+  $p(y_i,\mathbf{z}) = {M\choose |\mathbf{z}|} \cdot  Q^{|\mathbf{z}|}\cdot (1-Q)^{\big( M - |\mathbf{z}| \big)}   \bigg [ R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{(1-y_i)} \bigg [ 1 -  R_i^{ \big ( 1 - \frac{|\mathbf{z}|}{M} \big ) } \prod_{a=1}^M (P_{ia})^{z_a} \bigg ]^{y_i}$ <br/><br/>
+</p>
 
 We fit the BLV Model using an Expectation Maximization (EM) framework. For each observed spike-word $\mathbf{y}$, learning proceeds in two steps. First, the latent variables $\mathbf{z}$ are inferred with model parameters fixed. Then, model parameters are adjusted to maximize the derivative of the log joint probability of latent and observed states $p(\mathbf{y},\mathbf{z})$. with respect to each parameter. Derivatives are computed with respect to unconstrained parameters ($q, r, \rho$) and passed through a logistic parametrization, $P = \sigma(\rho)$, to enable the interpretation of constrained parameter values ($Q, R, P$) as probabilities $\in [0,1]$. Derivatives with respect to each model parameter are shown below: <br/><br/>
 
+<p align="center" width="100%">
+  $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial q} = |\mathbf{z}| -  M \sigma(q)$ <br/><br/>
 
-$\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial q} = |\mathbf{z}| -  M \sigma(q)$ <br/><br/>
+  $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial r_i} = \bigg ( 1-\frac{|\mathbf{z}|}{M} \bigg ) \: \bigg (1-\sigma(r_i) \bigg ) \: \bigg [ (1-y_i) - \frac{y_i \:C_i}{(1-C_i)} \bigg ]$ <br/><br/>
 
-$\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial r_i} = \bigg ( 1-\frac{|\mathbf{z}|}{M} \bigg ) \: \bigg (1-\sigma(r_i) \bigg ) \: \bigg [ (1-y_i) - \frac{y_i \:C_i}{(1-C_i)} \bigg ]$ <br/><br/>
-
-$\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial \rho_{ia}} = z_a \: \bigg (1-\sigma(\rho_{ia}) \bigg ) \: \bigg [ (1-y_i) - \frac{y_i \:C_i}{(1-C_i)} \bigg ]$ <br/><br/>
+  $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial \rho_{ia}} = z_a \: \bigg (1-\sigma(\rho_{ia}) \bigg ) \: \bigg [ (1-y_i) - \frac{y_i \:C_i}{(1-C_i)} \bigg ]$ <br/><br/>
+</p>
 
 where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
 
 <header style="text-align: center">Model Validation</header>
 
-Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data to match certain moments measured in retinal spike train responses to white noise and natural movies, process described in fig 3 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
+Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data that  matched certain moments measured in retinal spike train responses to white noise and natural movies, process described in fig 3 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
 
 
 <p align="center" width="100%">
@@ -103,28 +106,32 @@ Before applying the model to real retinal data, it is important to first validat
   <p style="text-align: center; font-size:10pt"><strong>fig. 3</strong> Fitting synthetic model to recorded spike-word moments: Comparison of spike-word moments from retinal responses to white noise (Wnz) in green, and natural movie (Mov) in blue to synthetic data fitted to natural movie responses (Syn) in red. Recording data binned at 5ms. Top row from left to right shows probability density functions for spike-word length, |y|, average single-cell activity, ⟨yi⟩, and pairwise cell coactivity, ⟨yi · yj⟩. Bottom row shows quantile-quantile (QQ) plots - a pair of cumulative density function plotted against each other. See legend, left plot. QQ values measure average deviation from the unity line, larger values indicating bigger differences between distributions. </p>
 </p>
 
+Multiple models were trained on synthetic data and the structure discovered by each model was compared to the ground truth and to the structure discovered in all other models. Figure 4 walks through the process of quantifying model match to other models and model match to ground truth. We used the cosine similarity measure for this purpose, defined as the angle between two N-dimensional vectors in cell-assembly membership space:  <br/><br/>
 
+<p align="center" width="100%">
+  $cs(v_1,v_2)= \frac{(v_1)^\top v_2}{\|v_1\| \|v_2\|}$  <br/><br/>
+</p>
 
-With 
+And some other things too...
 
 
 <div style="display: flex; width: 100%;">
 
   <figure style="width: 49%;">
     <img src="/images/CA_synth_natMov1.png" alt="Image" style="width: 100%;">
-    <figcaption>Assessing similarity of cell assembly structure learned by different models trained on synthetic data fitted to natural movie responses. Left column shows M × M matrices of cosine similarity (cs) values between all cell assembly pairs across a pair models. Top, with arbitrary order and bottom, with cell assemblies matched across models based on pairwise cs. Right shows the pair of P matrices with columns, cell assemblies, aligned to maximize cs across all matched pairs. Blue bars in bottom right of panel show cs for each matching column pair above. Note that blue bars are equivalent to diagonal elements in matched cs matrix in bottom left. The difference between diagonal means of the matched (bottom left) and the unmatched (top left) cs matrices, $\Delta cs$, provides a simple scalar measure of model similarity. In this example, $\Delta cs$ is 0.61.</figcaption>
+    <figcaption><strong>a</strong> Assessing similarity of cell assembly structure learned by different models trained on synthetic data fitted to natural movie responses. Left column shows M × M matrices of cosine similarity (cs) values between all cell assembly pairs across a pair models. Top, with arbitrary order and bottom, with cell assemblies matched across models based on pairwise cs. Right shows the pair of P matrices with columns, cell assemblies, aligned to maximize cs across all matched pairs. Blue bars in bottom right of panel show cs for each matching column pair above. Note that blue bars are equivalent to diagonal elements in matched cs matrix in bottom left. The difference between diagonal means of the matched (bottom left) and the unmatched (top left) cs matrices, $\Delta cs$, provides a simple scalar measure of model similarity.</figcaption>
   </figure>
 
   <figure style="width: 49%;">
     <img src="/images/CA_synth_natMov2.png" alt="Image" style="width: 100%;">
-    <figcaption>Cross-validation of models trained on synthetic data matched to recorded responses: Six models trained on synthetic data fitted to natural movie responses. Each element in matrix shows average $\Delta cs$ (relative to null without CA matching) between all matched CA pairs within a model pair. Note that for visual clarity using this color scheme, the unity diagonal elements have been set to zero. Vector labeled ’GT’ on right shows average $\Delta cs$ metric between model and ground truth model used to generate the data. Example described in left panel, comparison between Mod2 and Mod1B, contained in 5th row and 4th column of matrix. Each element of matrix contains a similar pairwise model comparison.</figcaption>
+    <figcaption><strong>b</strong> Cross-validation of models trained on synthetic data matched to recorded responses: Six models trained on synthetic data fitted to natural movie responses. Each element in matrix shows average $\Delta cs$ (relative to null without CA matching) between all matched CA pairs within a model pair. Note that for visual clarity using this color scheme, the unity diagonal elements have been set to zero. Vector labeled ’GT’ on right shows average $\Delta cs$ metric between model and ground truth model used to generate the data. Example described in left panel, comparison between Mod2 and Mod1B, contained in 5th row and 4th column of matrix. Each element of matrix contains a similar pairwise model comparison.</figcaption>
   </figure>
 
 </div> 
 
 <figure style="width: 100%;">
   <img src="/images/CA_synth_natMov3.png" alt="Image" style="width: 100%;">
-  <figcaption><strong>fig. 4</strong> Individual cross-validated CAs often match GT: Results for synthetic data fitted to natural movie responses. The left plot compares the cosine similarity (cs) between matched pairs of CAs in two learned models (Mod1 and Mod2) on the x-coordinate to cs between each model’s CA and matching CA in the GT on the y-coordinate. Each point represents similarities between one CA in a model (Mod1 in blue and Mod2 in green) and a matching CA in the GT. The points are connected by a faint grey vertical line if CAs in models are matched to different GT CAs. Red ’o’ highlights CA in model pair with smaller cs match to GT, and a black diamond marks points for which the two models are matched to the same CA in the GT (i.e., where green and blue points coincide). Larger blue and green ’+’ show $\mu$ and $\sigma$ of each model’s CA population. The right plot shows the distribution of distances in the left plot between points and the unity line. Pearson correlation coefficients (r) for three scatter groups in left plots are shown in legend on the right.</figcaption>
+  <figcaption><strong>fig. 4 c</strong> Individual cross-validated CAs often match GT: Results for synthetic data fitted to natural movie responses. The left plot compares the cosine similarity (cs) between matched pairs of CAs in two learned models (Mod1 and Mod2) on the x-coordinate to cs between each model’s CA and matching CA in the GT on the y-coordinate. Each point represents similarities between one CA in a model (Mod1 in blue and Mod2 in green) and a matching CA in the GT. The points are connected by a faint grey vertical line if CAs in models are matched to different GT CAs. Red ’o’ highlights CA in model pair with smaller cs match to GT, and a black diamond marks points for which the two models are matched to the same CA in the GT (i.e., where green and blue points coincide). Larger blue and green ’+’ show $\mu$ and $\sigma$ of each model’s CA population. The right plot shows the distribution of distances in the left plot between points and the unity line. Pearson correlation coefficients (r) for three scatter groups in left plots are shown in legend on the right.</figcaption>
 </figure>
 
 
