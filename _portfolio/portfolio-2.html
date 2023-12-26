@@ -25,7 +25,7 @@ collection: portfolio
 
 <p style="text-align: center; font-size:11pt"><strong>Expertise Demonstrated:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis </p>
 
-<header>The Data</header>
+<header style="text-align: center">The Data</header>
 
 <!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
 <div style="display: flex; width: 100%;">
@@ -62,7 +62,7 @@ White Noise stimulus, uncorrelated in space and time, is very different from Nat
     <figcaption><strong>fig. 1</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering.</figcaption>
   </figure>
 
-<header>The Model</header>
+<header style="text-align: center">The Model</header>
 
 To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model, which allows for two causes of a cell's observed firing $\mathbf{y}$, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership $\mathbf{P}_{ia}$ in an active Cell Assembly $\mathbf{z}$. The model schematic is displayed below.<br/>
 
@@ -93,12 +93,9 @@ $\frac{\partial \: log \: p(y_i,\mathbf{z})}{\partial \rho_{ia}} = z_a \: \bigg 
 
 where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
 
-<header>Model Validation</header>
+<header style="text-align: center">Model Validation</header>
 
-Before applying the model to real retinal data, it was important to first validate the model using synthetic data to ensure that the model was able to learn structure embedded into the data. To that end, we constructed synthetic data to match certain moments measured in retinal spike train responses to white noise and natural movies.
-
-
- ... Making synthetic data with moments fit to recorded retina data. Different model parameters when fit to white noise vs natural movies. Maybe just use table, no figure? Since we have 4 figures below.
+Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data to match certain moments measured in retinal spike train responses to white noise and natural movies, process described in fig 3 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
 
 
 <p align="center" width="100%">
@@ -108,11 +105,40 @@ Before applying the model to real retinal data, it was important to first valida
 
 
 
-Validating synthetic model using ground truth. Don't need metrics explained here yet. Have 4 figures.
+Validating synthetic model using ground truth. Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.Validating synthetic model using ground truth.
 
-<p align="center" width="100%">
-  <img src='/images/image-alignment-150x150.jpg' align='center' width='750' height='550'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 4</strong> Image Caption Here. </p>
+<!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
+<div style="display: flex; width: 100%;">
+
+  <figure style="width: 49%;">
+    <img src="/images/CA_synth_natMov1.png" alt="Image" style="width: 100%;">
+    <figcaption>caption 1</figcaption>
+  </figure>
+
+  <figure style="width: 49%;">
+    <img src="/images/CA_synth_natMov2.png" alt="Image" style="width: 100%;">
+    <figcaption>caption 2</figcaption>
+  </figure>
+
+</div> 
+
+<figure style="width: 100%;">
+  <img src="/images/CA_synth_natMov3.png" alt="Image" style="width: 100%;">
+  <figcaption>caption 3</figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <header>Exploratory Data Analysis</header>
 
@@ -123,7 +149,7 @@ Exploratory Data Analysis and metrics used to make statements about data
   <p style="text-align: center; font-size:10pt"><strong>fig. 5</strong> Image Caption Here. </p>
 </p>
 
-<header>Results in Retina</header>
+<header style="text-align: center">Results in Retina</header>
 
 Results on real retina data using EDA paradigm. Have 8 figures. Use all, or just some?
 
