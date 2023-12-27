@@ -138,17 +138,42 @@ From the model validation procedure, we verified that when two models trained on
 
 <header style="text-align: center"><hr style="width:25%">Exploratory Data Analysis<hr style="width:25%"></header>
 
-In order to more systematically and methodically quantify the type of structure found by our BLV model in neural data, we constructed four metrics.
+In order to more systematically and methodically quantify the type of structure found by our BLV model in neural data, we constructed four metrics.<br/>
 
-<strong>(Q1).</strong>  How many cells participate in a CA? Are the CA’s membership boundaries crisp or diffuse?
-<strong>(M1). Membership Crispness ($C_M$)</strong> 
+<strong>(Q1).</strong>  How many cells participate in a CA? Are the CA’s membership boundaries crisp or diffuse?<br/>
+<strong>(M1). Membership Crispness ($C_M$)</strong><br/>
+
+ provides a measure of how well defined is the membership of cells to a CA. Based on a d′ metric, from Signal Detection Theory, $C_M$ quantifies how well member cells and nonmember cells are separated in the corresponding column $P_{.a}$ of the learned model parameters. The conditional activation probabilities of member and nonmember cells are modeled by normal distributions. $C_M$ is computed as: 
+
+<p align="center" width="100%">
+  $C_M = \frac{\mu_{in}-\mu_{out}}{\sqrt(\sigma_{in}^2+\sigma_{out}^2)} $  <br/><br/>
+</p>
+
+with $\mu_{in}$ and $\sigma_{in}$ the mean and standard deviation of P values of cells determined to be ”in” the CA, the remainder
+of cells being labeled as ”out”. Three illustrative examples of CAs with varying CM values are shown in figure 6.
+
 
 <p align="center" width="100%">
   <img src='/images/CA_Crispness.png' align='center' width='750' height='150'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Membership Crispness $C_M$ example: Cell assembly $C_M$ values ranging from ”diffuse” (a) to ”crisp” (c). In each panel, numbered ovals represent the cells the receptive fields with the saturation of the red color indicating the degree of CA membership, legend above dashed line. Corresponding column $P_{·a}$ of fitted model parameters shown on the right.</p>
 </p>
 
+<strong>(Q2).</strong>  Are individual CAs found robustly across models, with similar spatial membership structure and similar temporal response profiles?<br/>
+<strong>(M2). Cross-validation Robustness ($R_X$)</strong><br/>
 
+ provides: 
+
+<p align="center" width="100%">
+  $R_X = \sqrt( \langle cs_{\tau} \rangle _X \dot \langle cs_M \rangle _X ) $  <br/><br/>
+</p>
+
+with ... shown in figure 7.
+
+
+<p align="center" width="100%">
+  <img src='/images/CA_Robustness.png' align='center' width='750' height='350'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 7</strong> Cross-validation Robustness RX example: (a). Top two panels show raster plots time vs. trial for activity in latent variable for CA z50 (red) and in observed variables (spikes) for the member cells of z50, y7 (green), y10 (blue), y31 (black), and y35 (cyan). (b). PSTHs of activity of the CA corresponding to z50 above inferred by six cross-validated models, each normalized with total number of activations of this CA (white numbers on right). Different models are arranged on the y-axis, PSTH from CA z50 shown above is the top line, PSTHs from CAs in other models, matched to z50, shown in other rows. (c). Membership cosine similarity vs. temporal cosine similarity for each CA in model with matching CAs, averaged across 5 matching CAs in 5 cross-validation models. (d). Cross-validation Robustness RX vs. Membership Crispness CM metrics for all CAs in one model. CA z50 highlighted with red ”50” in panels c & d. (e). Cell RFs. Saturation level of red color indicates CA membership strength, P·a value, and outline colors match raster colors in panel a. (f). Matching columns of P matrices of different models for CA z50, with z50 in the leftmost column and matching CAs of the other cross-validation models in other columns, labels (model, CA id) as in (b).</p>
+</p>
 
 
 
