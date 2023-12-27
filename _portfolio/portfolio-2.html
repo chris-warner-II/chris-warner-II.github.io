@@ -136,21 +136,32 @@ From the model validation procedure, we verified that when two models trained on
   <figcaption><strong>fig. 5 c)</strong> Individual cross-validated CAs often match GT: Results for synthetic data fitted to natural movie responses. The left plot compares the cosine similarity (cs) between matched pairs of CAs in two learned models (Mod1 and Mod2) on the x-coordinate to cs between each model’s CA and matching CA in the GT on the y-coordinate. Each point represents similarities between one CA in a model (Mod1 in blue and Mod2 in green) and a matching CA in the GT. The points are connected by a faint grey vertical line if CAs in models are matched to different GT CAs. Red ’o’ highlights CA in model pair with smaller cs match to GT, and a black diamond marks points for which the two models are matched to the same CA in the GT (i.e., where green and blue points coincide). Larger blue and green ’+’ show $\mu$ and $\sigma$ of each model’s CA population. The right plot shows the distribution of distances in the left plot between points and the unity line. Pearson correlation coefficients (r) for three scatter groups in left plots are shown in legend on the right.</figcaption>
 </figure>
 
+<header style="text-align: center"><hr style="width:25%">Exploratory Data Analysis<hr style="width:25%"></header>
 
+In order to more systematically and methodically quantify the type of structure found by our BLV model in neural data, we constructed four metrics.
 
-<hr style="width:25%"><header>Exploratory Data Analysis</header><hr style="width:25%">
-
-Exploratory Data Analysis and metrics used to make statements about data
+<strong>(Q1).</strong>  How many cells participate in a CA? Are the CA’s membership boundaries crisp or diffuse?
+<strong>(M1). Membership Crispness ($C_M$)</strong> 
 
 <p align="center" width="100%">
-  <img src='/images/image-alignment-150x150.jpg' align='center' width='750' height='550'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Image Caption Here. </p>
+  <img src='/images/CA_Crispness.png' align='center' width='750' height='150'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Membership Crispness $C_M$ example: Cell assembly $C_M$ values ranging from ”diffuse” (a) to ”crisp” (c). In each panel, numbered ovals represent the cells the receptive fields with the saturation of the red color indicating the degree of CA membership, legend above dashed line. Corresponding column $P_{·a}$ of fitted model parameters shown on the right.</p>
 </p>
 
-<hr style="width:25%"><header style="text-align: center">Results in Retina</header><hr style="width:25%">
+
+
+
+
+
+
+
+<header style="text-align: center"><hr style="width:25%">Results in Retina<hr style="width:25%"></header>
 
 Results on real retina data using EDA paradigm. Have 8 figures. Use all, or just some?
 
+We now apply the BLV model directly to spike train data collected from in vitro rat retinal ganglion cells (RGCs). Activity from 329 cells of 11 different cell types was recorded using a multielectrode array by the lab of Greg Field. We use data from 55 Off-Brisk Transient (offBT), 39 Off-Brisk Sustained (offBS) and 43 On-Brisk Transient (onBT) cells. The remaining 8 cell-types did not have data from a sufficient number of cells for our analysis. Cell receptive fields (RFs) were fit using responses to 1 hour presentation of white noise stimulus. The data we analyze consists of RGC spike-train responses to 200 trial repeats of 5 second clips of white noise and natural movie stimulus. Natural movie stimulus from the ”Cat Cam” data set 
+
+We trained models on between 500k and 1M spike words extracted from raw spike trains binned at 5ms
 
 
 <p align="center" width="100%">
