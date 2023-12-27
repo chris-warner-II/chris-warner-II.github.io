@@ -187,7 +187,6 @@ In order to more systematically and methodically quantify the type of structure 
   $H = \frac{min(\#_{ct1},\#_{ct2})}{avg(\#_{ct1},\#_{ct2})}$<br/><br/>
 </p>
 
-
 <p style="text-align: left; font-size:11pt">
   where $\#_{cti}$ is the number of cells of type i participating in the CA. H is bounded between 0 and 1, requiring mixed CA participation to be nonzero, and taking a maximum value of 1 when each cell type contributes half of the cells to the CA. A sample of a cell assembly involving offBT and offBS cells with high heterogeneity value is shown in Fig 8. 
 </p>
@@ -200,8 +199,24 @@ In order to more systematically and methodically quantify the type of structure 
 
 <p style="text-align:left; font-size:11pt">
   <strong>(Q4).</strong>  Are spike-words observed during CA activity significantly different from what the GLM retinal model would predict for the same stimulus?<br/>
-  <strong>(M4). Cell-type Heterogeneity ($H$)</strong>, is a measure of how mixed the membership of a cell assembly is across a pair of cell-types. We define heterogeneity as:
+  <strong>(M4). Difference from Null Prediction ($\Delta P_y$)</strong>, a measure of the significance of a CA, captures the degree to which observed cell firing associated with a CA differs from predictions of a retinal model that assumes independent firing of the neurons as a null model. The null model is a GLM model without cell interactions, in which each cell is only driven by the stimulus in its RF and its own spike-history. The computation of $\Delta P_y$
+
+<p align="center" width="100%">
+  $\Delta P_y = 1 - cs_{\tau}(PSTH(z_a),p(\mathbf{y})_{null})$<br/><br/>
 </p>
+
+<p style="text-align: left; font-size:11pt">
+  is illustrated with an example in figure 9. The probability under the null model, $p(\mathbf{y})_{null}$, (green trace) is computed at every point in time based on GLM simulated spike-rates and observed spike-word $\mathbf{y}$, averaged across all spike-words observed while $z_a$ is active in the full dataset. The inference time course of the CA, $PSTH(z_a)$, (red trace) is computed by inferring $\mathbf{z}$ activity for all observed $\mathbf{y}$ in full dataset after model parameters have been fixed and placing each $z_a$ activation in time. Differences between the two traces highlight spike-train structure captured by $z_a$ in the latent variable model which is not explained by rate-coded stimulus correlations.
+</p>
+
+<p align="center" width="100%">
+  <img src='/images/CA_Del_Py_null.png' align='center' width='750' height='150'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 9</strong> Difference from Null $\Delta P_y$ example: PSTH of Cell Assembly $z_a$ in red. In green, p(y) under GLM null model for all y observed when $z_a = 1$. In blue, KL-divergence between $p(y_ii)_{null} and p(y_i|z_a = 1, z_{\not a} = 0)$, the probability of an observed state under the BLV model with $z_a$ active and all other z’s inactive (not further used here).</p>
+</p>
+
+
+
+
 
 
 
