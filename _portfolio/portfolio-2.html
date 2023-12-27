@@ -140,8 +140,8 @@ From the model validation procedure, we verified that when two models trained on
 
 In order to more systematically and methodically quantify the type of structure found by our BLV model in neural data, we constructed four metrics.<br/>
 
-<strong>(Q1).</strong>  How many cells participate in a CA? Are the CA’s membership boundaries crisp or diffuse? <br/>
-<strong>(M1). Membership Crispness ($C_M$):</strong> Based on a d′ metric, from Signal Detection Theory, $C_M$ quantifies how well member cells and nonmember cells are separated in the corresponding column $P_{.a}$ of the learned model parameters. The conditional activation probabilities of member and nonmember cells are modeled by normal distributions. $C_M$ is computed as: 
+<strong>(Q1).</strong>  How many cells participate in a CA? Are the CA’s membership boundaries crisp or diffuse? \n
+<strong>(M1). Membership Crispness ($C_M$)</strong>, based on a d′ metric, from Signal Detection Theory, quantifies how well member cells and nonmember cells are separated in the corresponding column $P_{.a}$ of the learned model parameters. The conditional activation probabilities of member and nonmember cells are modeled by normal distributions. $C_M$ is computed as: 
 
 <p align="center" width="100%">
   $C_M = \frac{\mu_{in}-\mu_{out}}{\sqrt(\sigma_{in}^2+\sigma_{out}^2)} $  <br/><br/>
@@ -156,8 +156,8 @@ of cells being labeled as ”out”. Three illustrative examples of CAs with var
   <p style="text-align: center; font-size:10pt"><strong>fig. 6</strong> Membership Crispness $C_M$ example: Cell assembly $C_M$ values ranging from ”diffuse” (a) to ”crisp” (c). In each panel, numbered ovals represent the cells the receptive fields with the saturation of the red color indicating the degree of CA membership, legend above dashed line. Corresponding column $P_{·a}$ of fitted model parameters shown on the right.</p>
 </p>
 
-<strong>(Q2).</strong>  Are individual CAs found robustly across models, with similar spatial membership structure and similar temporal response profiles?<br/>
-<strong>(M2). Cross-validation Robustness ($R_X$)</strong><br/> quantifies how repeatable membership structure and temporal activation of cell assemblies is when learned across training multiple BLV models with the same prior setting on different sub-samplings and cross-validation splits of the same data. Illustrated in figure 7, for a single CA, average membership cosine similarity ($cs_M$) with the matching CA in other models and average temporal similarities (cs_{\tau}) by computing cosine similarity of rows in panel b and columns of panel f. Observing that membership and temporal ⟨cs⟩ across models are highly correlated (c), we combine them into a single Robustness measure, yeilding: 
+<strong>(Q2).</strong>  Are individual CAs found robustly across models, with similar spatial membership structure and similar temporal response profiles? \n
+<strong>(M2). Cross-validation Robustness ($R_X$)</strong> quantifies how repeatable membership structure and temporal activation of cell assemblies is when learned across training multiple BLV models with the same prior setting on different sub-samplings and cross-validation splits of the same data. Illustrated in figure 7, for a single CA, average membership cosine similarity ($cs_M$) with the matching CA in other models and average temporal similarities (cs_{\tau}) by computing cosine similarity of rows in panel b and columns of panel f. Observing that membership and temporal ⟨cs⟩ across models are highly correlated (c), we combine them into a single Robustness measure, yeilding: 
 
 <p align="center" width="100%">
   $R_X = \sqrt{( \langle cs_{\tau} \rangle _X \dot \langle cs_{M} \rangle _X )} $  <br/><br/>
