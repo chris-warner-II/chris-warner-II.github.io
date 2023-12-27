@@ -165,38 +165,43 @@ In order to more systematically and methodically quantify the type of structure 
 </p>
 
 <p align="center" width="100%">
-  $R_X = \sqrt{( \langle cs_{\tau} \rangle _X \dot \langle cs_{M} \rangle _X )}$  <br/><br/>
+  $R_X = \sqrt{( \langle cs_{\tau} \rangle _X . \langle cs_{M} \rangle _X )}$  <br/><br/>
 </p>
 
-<p style="text-align: left; font-size:11pt">
+<p style="text-align:left; font-size:11pt">
   where $\langle cs \rangle _X$ indicates similarity to matching CAs, either membership or temporal, averaged across pairs of fitted BLV models. $R_X$ is bounded between 0 and 1, obtaining large values only when temporal and membership similarity across matching CAs in multiple models are both high.
 </p>
 
 
 <p align="center" width="100%">
   <img src='/images/CA_Robustness.png' align='center' width='750' height='350'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 7</strong> Cross-validation Robustness $R_X$ example: (a). Top two panels show raster plots time vs. trial for activity in latent variable for CA z50 (red) and in observed variables (spikes) for the member cells of z50, y7 (green), y10 (blue), y31 (black), and y35 (cyan). (b). PSTHs of activity of the CA corresponding to z50 above inferred by six cross-validated models, each normalized with total number of activations of this CA (white numbers on right). Different models are arranged on the y-axis, PSTH from CA z50 shown above is the top line, PSTHs from CAs in other models, matched to z50, shown in other rows. (c). Membership cosine similarity ($cs_M$) vs. temporal cosine similarity (cs_{\tau}) for each CA in model with matching CAs, averaged across 5 matching CAs in 5 cross-validation models. (d). Cross-validation Robustness ($R_X$) vs. Membership Crispness ($C_M$) metrics for all CAs in one model. CA z50 highlighted with red ”50” in panels c & d. (e). Cell RFs. Saturation level of red color indicates CA membership strength, $P_{·a}$ value, and outline colors match raster colors in panel a. (f). Matching columns of $\mathbf{P}$ matrices of different models for CA z50, with z50 in the leftmost column and matching CAs of the other cross-validation models in other columns, labels (model, CA id) as in (b).</p>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 7</strong> Cross-validation Robustness $R_X$ example: (a). Top two panels show raster plots time vs. trial for activity in latent variable for CA z50 (red) and in observed variables (spikes) for the member cells of z50, y7 (green), y10 (blue), y31 (black), and y35 (cyan). (b). PSTHs of activity of the CA corresponding to z50 above inferred by six cross-validated models, each normalized with total number of activations of this CA (white numbers on right). Different models are arranged on the y-axis, PSTH from CA z50 shown above is the top line, PSTHs from CAs in other models, matched to z50, shown in other rows. (c). Membership cosine similarity ($cs_M$) vs. temporal cosine similarity ($cs_{\tau}$) for each CA in model with matching CAs, averaged across 5 matching CAs in 5 cross-validation models. (d). Cross-validation Robustness ($R_X$) vs. Membership Crispness ($C_M$) metrics for all CAs in one model. CA z50 highlighted with red ”50” in panels c & d. (e). Cell RFs. Saturation level of red color indicates CA membership strength, $P_{·a}$ value, and outline colors match raster colors in panel a. (f). Matching columns of $\mathbf{P}$ matrices of different models for CA z50, with z50 in the leftmost column and matching CAs of the other cross-validation models in other columns, labels (model, CA id) as in (b).</p>
 </p>
 
-<p style="text-align: left; font-size:11pt">
+<p style="text-align:left; font-size:11pt">
   <strong>(Q3).</strong>  In models trained on multiple cell-types, do CAs cross cell-type boundaries? <br/>
   <strong>(M3). Cell-type Heterogeneity ($H$)</strong>, is a measure of how mixed the membership of a cell assembly is across a pair of cell-types. We define heterogeneity as:
 </p>
 
 <p align="center" width="100%">
-  $H = \frac{min(#_{ct1},#_{ct2})}{avg(#_{ct1},#_{ct2})}$  <br/><br/>
+  $H = \frac{min(\#_{ct1},\#_{ct2})}{avg(\#_{ct1},\#_{ct2})}$<br/><br/>
 </p>
 
 
 <p style="text-align: left; font-size:11pt">
-  where $#_{cti}$ is the number of cells of type i participating in the CA. H is bounded between 0 and 1, requiring mixed CA participation to be nonzero, and taking a maximum value of 1 when each cell type contributes half of the cells to the CA. A sample of a cell assembly involving offBT and offBS cells with high heterogeneity value is shown in Fig 8. 
+  where $\#_{cti}$ is the number of cells of type i participating in the CA. H is bounded between 0 and 1, requiring mixed CA participation to be nonzero, and taking a maximum value of 1 when each cell type contributes half of the cells to the CA. A sample of a cell assembly involving offBT and offBS cells with high heterogeneity value is shown in Fig 8. 
 </p>
 
 <p align="center" width="100%">
-  <img src='/images/CA_Hetero.png' align='center' width='750' height='200'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 8</strong> Hetero</p>
+  <img src='/images/CA_Hetero.png' align='center' width='750' height='150'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 8</strong> Cell-type Heterogeneity H example: Single CA comprised of offBT (red, left) and onBT (blue, right) cell types. Ovals indicate cell RFs and color intensity indicates membership strength, i.e., $P_{·a}$ value. Legend above dashed line.</p>
 </p>
 
+
+<p style="text-align:left; font-size:11pt">
+  <strong>(Q4).</strong>  Are spike-words observed during CA activity significantly different from what the GLM retinal model would predict for the same stimulus?<br/>
+  <strong>(M4). Cell-type Heterogeneity ($H$)</strong>, is a measure of how mixed the membership of a cell assembly is across a pair of cell-types. We define heterogeneity as:
+</p>
 
 
 
