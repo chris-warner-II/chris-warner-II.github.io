@@ -25,7 +25,9 @@ collection: portfolio
 
 <p style="text-align: center; font-size:11pt"><strong>Expertise Demonstrated:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis </p>
 
+<header style="text-align: center"><hr style="width:25%"></header>
 <header style="text-align: center">The Data</header>
+<header style="text-align: center"><hr style="width:25%"></header>
 
 <!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
 <div style="display: flex; width: 100%;">
@@ -64,7 +66,9 @@ White Noise stimulus, uncorrelated in space and time, is very different from Nat
     <figcaption><strong>fig. 2</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering.</figcaption>
   </figure>
 
+<header style="text-align: center"><hr style="width:25%"></header>
 <header style="text-align: center">The Model</header>
+<header style="text-align: center"><hr style="width:25%"></header>
 
 To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model, which allows for two causes of a cell's observed firing $\mathbf{y}$, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership $\mathbf{P}_{ia}$ in an active Cell Assembly $\mathbf{z}$. The model schematic is displayed below.<br/>
 
@@ -98,7 +102,10 @@ We fit the BLV Model using an Expectation Maximization (EM) framework. For each 
 
 where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
 
+
+<header style="text-align: center"><hr style="width:25%"></header>
 <header style="text-align: center">Model Validation</header>
+<header style="text-align: center"><hr style="width:25%"></header>
 
 Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data that  matched certain moments measured in retinal spike train responses to white noise and natural movies, process described in figure 4 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
 
@@ -121,22 +128,26 @@ From the model validation procedure, we verified that when two models trained on
 
   <figure style="width: 49%;">
     <img src="/images/CA_synth_natMov1.png" alt="Image" style="width: 100%;">
-    <figcaption><strong>a)</strong> Assessing similarity of cell assembly structure learned by different models trained on synthetic data fitted to natural movie responses. Left column shows M × M matrices of cosine similarity (cs) values between all cell assembly pairs across a model pair. Top, with arbitrary order and bottom, with cell assemblies matched across models based on pairwise cs. Right shows the pair of $\mathbf{P}$ matrices with columns, cell assemblies, aligned to maximize cs across all matched pairs. Blue bars in bottom right show cs for each matching column pair above. Note that blue bars are equivalent to diagonal elements in matched cs matrix in bottom left. The difference between diagonal means of the matched (bottom left) and the unmatched (top left) cs matrices, $\Delta cs$, provides a simple scalar measure of model similarity.</figcaption>
+    <figcaption><strong>fig. 5a)</strong> Assessing similarity of cell assembly structure learned by different models trained on synthetic data fitted to natural movie responses. Left column shows M × M matrices of cosine similarity (cs) values between all cell assembly pairs across a model pair. Top, with arbitrary order and bottom, with cell assemblies matched across models based on pairwise cs. Right shows the pair of $\mathbf{P}$ matrices with columns, cell assemblies, aligned to maximize cs across all matched pairs. Blue bars in bottom right show cs for each matching column pair above. Note that blue bars are equivalent to diagonal elements in matched cs matrix in bottom left. The difference between diagonal means of the matched (bottom left) and the unmatched (top left) cs matrices, $\Delta cs$, provides a simple scalar measure of model similarity.</figcaption>
   </figure>
 
   <figure style="width: 49%;">
     <img src="/images/CA_synth_natMov2.png" alt="Image" style="width: 100%;">
-    <figcaption><strong>b)</strong> Cross-validation of six models trained on synthetic data matched fitted to natural movie responses. Each element in matrix shows average $\Delta cs$ (relative to null without CA matching) between all matched CA pairs within a model pair. Note that for visual clarity using this color scheme, the unity diagonal elements have been set to zero. Vector labeled ’GT’ on right shows average $\Delta cs$ metric between model and ground truth model used to generate the data. Example described in left panel, comparison between Mod2 and Mod1B, hilighted with orange square. Each element of matrix contains a similar pairwise model comparison.</figcaption>
+    <figcaption><strong>b)</strong> Cross-validation of six models trained on synthetic data matched fitted to natural movie responses. Each element in matrix shows average $\Delta cs$ (relative to null without CA matching) between all matched CA pairs within a model pair. Note that for visual clarity using this color scheme, the unity diagonal elements have been set to zero. Vector labeled ’GT’ on right shows average $\Delta cs$ metric between model and ground truth model used to generate the data. Example described in left panel, comparison between Mod2 and Mod1B, hilighted with orange square. Each element of matrix contains a similar pairwise model comparison. </figcaption>
   </figure>
 
 </div> 
 
+<!--
 <figure style="width: 100%;">
   <img src="/images/CA_synth_natMov3.png" alt="Image" style="width: 100%;">
   <figcaption><strong>fig. 5 c)</strong> Individual cross-validated CAs often match GT: Results for synthetic data fitted to natural movie responses. The left plot compares the cosine similarity (cs) between matched pairs of CAs in two learned models (Mod1 and Mod2) on the x-coordinate to cs between each model’s CA and matching CA in the GT on the y-coordinate. Each point represents similarities between one CA in a model (Mod1 in blue and Mod2 in green) and a matching CA in the GT. The points are connected by a faint grey vertical line if CAs in models are matched to different GT CAs. Red ’o’ highlights CA in model pair with smaller cs match to GT, and a black diamond marks points for which the two models are matched to the same CA in the GT (i.e., where green and blue points coincide). Larger blue and green ’+’ show $\mu$ and $\sigma$ of each model’s CA population. The right plot shows the distribution of distances in the left plot between points and the unity line. Pearson correlation coefficients (r) for three scatter groups in left plots are shown in legend on the right.</figcaption>
 </figure>
+-->
 
-<header style="text-align: center"><hr style="width:25%">Exploratory Data Analysis<hr style="width:25%"></header>
+<header style="text-align: center"><hr style="width:25%"></header>
+<header style="text-align: center">Exploratory Data Analysis</header>
+<header style="text-align: center"><hr style="width:25%"></header>
 
 In order to more systematically and methodically quantify the type of structure found by our BLV model in neural data, we constructed four metrics.<br/>
 
@@ -146,7 +157,7 @@ In order to more systematically and methodically quantify the type of structure 
 </p>
 
 <p align="center" width="100%">
-  $C_M = \frac{\mu_{in}-\mu_{out}}{\sqrt(\sigma_{in}^2+\sigma_{out}^2)} $  <br/><br/>
+  $C_M = \frac{\mu_{in}-\mu_{out}}{\sqrt(\sigma_{in}^2+\sigma_{out}^2)} $  <br/>
 </p>
 
 <p style="text-align: left; font-size:11pt">
@@ -165,7 +176,7 @@ In order to more systematically and methodically quantify the type of structure 
 </p>
 
 <p align="center" width="100%">
-  $R_X = \sqrt{( \langle cs_{\tau} \rangle _X . \langle cs_{M} \rangle _X )}$  <br/><br/>
+  $R_X = \sqrt{( \langle cs_{\tau} \rangle _X . \langle cs_{M} \rangle _X )}$  <br/>
 </p>
 
 <p style="text-align:left; font-size:11pt">
@@ -184,7 +195,7 @@ In order to more systematically and methodically quantify the type of structure 
 </p>
 
 <p align="center" width="100%">
-  $H = \frac{min(\#_{ct1},\#_{ct2})}{avg(\#_{ct1},\#_{ct2})}$<br/><br/>
+  $H = \frac{min(\#_{ct1},\#_{ct2})}{avg(\#_{ct1},\#_{ct2})}$<br/>
 </p>
 
 <p style="text-align: left; font-size:11pt">
@@ -202,7 +213,7 @@ In order to more systematically and methodically quantify the type of structure 
   <strong>(M4). Difference from Null Prediction ($\Delta P_y$)</strong>, a measure of the significance of a CA, captures the degree to which observed cell firing associated with a CA differs from predictions of a retinal model that assumes independent firing of the neurons as a null model. The null model is a GLM model without cell interactions, in which each cell is only driven by the stimulus in its RF and its own spike-history. The computation of $\Delta P_y$
 
 <p align="center" width="100%">
-  $\Delta P_y = 1 - cs_{\tau}(PSTH(z_a),p(\mathbf{y})_{null})$<br/><br/>
+  $\Delta P_y = 1 - cs_{\tau}(PSTH(z_a),p(\mathbf{y})_{null})$<br/>
 </p>
 
 <p style="text-align: left; font-size:11pt">
@@ -211,7 +222,7 @@ In order to more systematically and methodically quantify the type of structure 
 
 <p align="center" width="100%">
   <img src='/images/CA_Del_Py_null.png' align='center' width='750' height='150'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 9</strong> Difference from Null $\Delta P_y$ example: PSTH of Cell Assembly $z_a$ in red. In green, p(y) under GLM null model for all y observed when $z_a = 1$. In blue, KL-divergence between $p(y_ii)_{null} and p(y_i|z_a = 1, z_{\not a} = 0)$, the probability of an observed state under the BLV model with $z_a$ active and all other z’s inactive (not further used here).</p>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 9</strong> Difference from Null $\Delta P_y$ example: PSTH of Cell Assembly $z_a$ in red. In green, p(y) under GLM null model for all y observed when $z_a = 1$. In blue, KL-divergence between $p(y_i)_{null} and p(y_i|z_a = 1, z_{\not a} = 0)$, the probability of an observed state under the BLV model with $z_a$ active and all other z’s inactive (not further used).</p>
 </p>
 
 
@@ -219,9 +230,10 @@ In order to more systematically and methodically quantify the type of structure 
 
 
 
+<header style="text-align: center"><hr style="width:25%"></header>
+<header style="text-align: center">Results in Retina</header>
+<header style="text-align: center"><hr style="width:25%"></header>
 
-
-<header style="text-align: center"><hr style="width:25%">Results in Retina<hr style="width:25%"></header>
 
 Results on real retina data using EDA paradigm. Have 8 figures. Use all, or just some?
 
