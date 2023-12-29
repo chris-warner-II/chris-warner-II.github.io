@@ -219,28 +219,68 @@ In order to systematically and methodically explore the structure found by our B
 
 <br/><header style="text-align: center">Results in Retina</header><br/>
 
-We applied these methods and metrics to real retinal responses, which lack any ground truth, and discussed the structure that the model was ablew to discover in the different data. The BLV model was trained on spike train data collected from in vitro rat retinal ganglion cells (RGCs) from 55 Off-Brisk Transient (offBT), 39 Off-Brisk Sustained (offBS) and 43 On-Brisk Transient (onBT) cells. The data we analyze consists of RGC spike-train responses to 200 trial repeats of 5 second clips of white noise and natural movie stimulus from the ”Cat Cam” data set. As a control, we also generated data from a GLM model fit to natural movie responses and trained a BLV model on those GLM simulated responses. Each model was trained on between 500k and 1M spike words extracted from raw spike trains binned at 5ms. Observing figure 10, it is clear that models trained on offBT responses to each of the different stimuli have learned very different structure.
+We applied these methods and metrics to real retinal responses, which lack any ground truth, and discussed the structure that the model was ablew to discover in the different data. The BLV model was trained on spike train data collected from in vitro rat retinal ganglion cells (RGCs) from 55 Off-Brisk Transient (offBT), 39 Off-Brisk Sustained (offBS) and 43 On-Brisk Transient (onBT) cells. The data we analyze consists of RGC spike-train responses to 200 trial repeats of 5 second clips of white noise and natural movie stimulus from the ”Cat Cam” data set. As a control, we also generated data from a GLM model fit to natural movie responses and trained a BLV model on those GLM simulated responses. Each model was trained on between 500k and 1M spike words extracted from raw spike trains binned at 5ms. Observing figure 10, it is clear that models trained on offBT responses to natural movie stimulus (center panel) learned more complex structure than models trained on white noise responses or GLM simulated responses.
+
 
 <p align="center" width="100%">
   <img src='/images/CA_models_real_data.png' align='center' width='750' height='150'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 10</strong> Models trained on 55 Off-Brisk Transient responses to different stimuli: $\mathbf{P}$ matrices for models trained on retinal responses to white noise stimulus (a), retinal responses to natural movie stimulus (b) and GLM simulated responses to (same) natural movie stimulus (c). Cell ID on y-axis, CA ID on x-axis. Yellow indicates crisply defined cell membership, i.e., $p(y_i=1|z_a=1) \approx 1$.</p>
 </p>
 
-Further, the structure found in a single model trained on natural movie responses is robustly found across multiple models trained on subsets of the same data (middle panels in figure 10 & 11). Less structure is found in models trained on white noise responses and GLM simulated responses.
+Further, that structure is robustly found across six cross-validation models trained on subsets of the retinal responses to natural movie stimulus, whereas less structure is found in models trained on white noise responses and GLM simulated responses.
 
 <p align="center" width="100%">
   <img src='/images/CA_cosSim_real_data.png' align='center' width='750' height='150'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 11</strong> Cross-validation of models trained on recorded retinal responses: Display similar to Fig 5. Similarity of CA membership structure across model pairs for six models trained on white noise retinal responses (a), natural movie responses (b), and GLM simulated responses to same natural movie stimulus (c). Within each panel, matrix off-diagonal elements show average $\Delta cs$ (relative to null without CA matching) between all matched CA pairs within a model pair. Here diagonal value indicates average between a model and all other models, i.e. the average across a row. Numbers on left show average conditional log probability computed on hold out set of half of all spike-words, i.e., cross-validation, for each model. Vector on right shows average change from initialization for all CAs in model, defined as 1 − cs.</p>
 </p>
 
-Finally here we highlight two short illustrative examples of structure found by the BLV model in retinal responses to natural movies which are characterized by the metrics we developed above. Figure 12 
-
-
+Finally, here we highlight two short illustrative examples of the type of structure that is discovered by the BLV model in retinal responses to natural movies, using the metrics we developed above. Figure 12 shows some example cell assemblies found by one model with varying levels of membership crispness ($C_M$). We focus on two cell assemblies of medium crispness in the middle panel (z16 and z29).
 
 <p align="center" width="100%">
   <img src='/images/CA_crispness_real_data.png' align='center' width='750' height='150'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 12</strong> Membership Crispness $C_M$ examples: Receptive fields of cells from CAs projected to the visual field. We show 9 example CAs from 3 separate models trained on [offBT] natural movie responses. In each panel, colored ovals show RFs of cell members from 3 separate CAs with similar $C_M$ values. Small inset scattters robustness $R_X$ on x-axis vs. crispness $C_M$ on y-axis for all CAs in each model with shown CAs highlighted in matching color.</p>
 </p>
+
+These two cell assemblies seem to form roughly parallel horizontal lines. Their fairly high cross-validation robustness indicates that they are reliably found to have consistent spatial and temporal profiles across different retrained models. Their predictions also differ significantly from GLM predictions at fine and coarse time scales. Finally and perhaps most interestingly, we find that the inferred activity of these two cell assemblies that are proximal in space are quite different in time. Focusing on the time between 1 and 2 seconds, we see that z27 is active early and late and z16 is active in the middle.
+
+<p align="center" width="100%">
+  <img src='/images/CA_crispness_real_data.png' align='center' width='750' height='150'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 13</strong> Properties of CAs neighboring in visual space: Receptive Fields from CAs z16 (a) and z27 (b). Membership crispness ($C_M$) vs cross-validation robustness ($R_X$) for all CAs in model, two shown highlighted in red (c). Differnce from GLM null predictions $\Delta P_y$ at fine (1ms) vs coarse (100ms) time scales (d). Temporal response traces of CA inference, $PSTH(z_a)$ red, and $p(y_{null})$ predictions from GLM green (e) & (f).</p>
+</p>
+
+
+And a video:
+
+<!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
+<div style="display: flex; width: 100%;">
+
+  <figure style="width: 31%;">
+    <video controls width="100%" autoplay loop muted >
+      <source src="/images/CA_spikesTrialAvgd_t1300-1400ms.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption><strong>a)</strong>  z27 active in 1.3-1.4 sec</figcaption>
+  </figure>
+
+  <figure style="width: 31%;">
+    <video controls width="100%" autoplay loop muted >
+      <source src="/images/CA_spikesTrialAvgd_t1600-1700ms.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption><strong>b)</strong> z16 active in 1.6-1.7 sec</figcaption>
+  </figure>
+
+    <figure style="width: 31%;">
+    <video controls width="100%" autoplay loop muted >
+      <source src="/images/CA_spikesTrialAvgd_t1700-1800ms.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption><strong>c)</strong> z27 1.7-1.8 sec</figcaption>
+  </figure>
+
+</div> 
+
+<p style="text-align: center; font-size:10pt"><strong>fig. 1</strong> Stimulus and Retinal Ganglion Cell Receptive Field Lattice </p>
 
 
 
