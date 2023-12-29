@@ -141,11 +141,11 @@ From the model validation procedure, we verified that when two models trained on
 
 <br/><header style="text-align: center">Exploratory Data Analysis</header><br/>
 
-In order to systematically and methodically explore the structure found by our BLV model in neural data, we constructed four metrics.<br/>
+In order to systematically and methodically explore the structure found by our BLV model in neural data, we constructed four metrics to quantitatively answer four questions.<br/>
 
 <p style="text-align: left; font-size:11pt">
   <strong>(Q1).</strong>  How many cells participate in a CA? Are the CA’s membership boundaries crisp or diffuse? <br/>
-  <strong>(M1). Membership Crispness ($C_M$)</strong>, based on a d′ metric, from Signal Detection Theory, quantifies how well member cells and nonmember cells are separated in the corresponding column $P_{.a}$ of the learned model parameters. The conditional activation probabilities of member and nonmember cells are modeled by normal distributions. $C_M$ is computed as: 
+  <strong>(M1). Membership Crispness ($C_M$)</strong>, based on the d′ metric from Signal Detection Theory, quantifies how well member cells and nonmember cells are separated in the corresponding column $P_{.a}$ of the learned model parameters. The conditional activation probabilities of member and nonmember cells are modeled by normal distributions and $C_M$ is computed as: 
 </p>
 
 <p align="center" width="100%">
@@ -163,8 +163,8 @@ In order to systematically and methodically explore the structure found by our B
 </p>
 
 <p style="text-align: left; font-size:11pt">
-  <strong>(Q2).</strong>  Are individual CAs found robustly across models, with similar spatial membership structure and similar temporal response profiles? <br/>
-  <strong>(M2). Cross-validation Robustness ($R_X$)</strong> quantifies how repeatable membership structure and temporal activation of cell assemblies is when learned across training multiple BLV models with the same prior setting on different sub-samplings and cross-validation splits of the same data. Illustrated in figure 7, for a single CA, average membership cosine similarity ($cs_M$) with the matching CA in other models and average temporal similarities ($cs_{\tau}$) by computing cosine similarity of rows in panel b and columns of panel f. Observing that membership and temporal ⟨cs⟩ across models are highly correlated (c), we combine them into a single Robustness measure, yeilding: 
+  <strong>(Q2).</strong>  Are individual CAs found robustly and reliably across models, with similar spatial membership structure and similar temporal response profiles? <br/>
+  <strong>(M2). Cross-validation Robustness ($R_X$)</strong> quantifies how repeatable membership structure and temporal activation of cell assemblies is when learned across training multiple BLV models on different sub-samplings and cross-validation splits of the same data. Figure 7 illustrates how average membership cosine similarity ($cs_M$) and average temporal similarities ($cs_{\tau}$) are computed for a set of corresponding CA's learned across multiple models and how they are combined into a single Robustness measure: 
 </p>
 
 <p align="center" width="100%">
@@ -182,7 +182,7 @@ In order to systematically and methodically explore the structure found by our B
 </p>
 
 <p style="text-align:left; font-size:11pt">
-  <strong>(Q3).</strong>  In models trained on multiple cell-types, do CAs cross cell-type boundaries? <br/>
+  <strong>(Q3).</strong>  In models trained on multiple cell-types, do CAs cross cell-type boundaries and include interactions between cells of different types? <br/>
   <strong>(M3). Cell-type Heterogeneity ($H$)</strong>, is a measure of how mixed the membership of a cell assembly is across a pair of cell-types. We define heterogeneity as:
 </p>
 
@@ -202,35 +202,30 @@ In order to systematically and methodically explore the structure found by our B
 
 <p style="text-align:left; font-size:11pt">
   <strong>(Q4).</strong>  Are spike-words observed during CA activity significantly different from what the GLM retinal model would predict for the same stimulus?<br/>
-  <strong>(M4). Difference from Null Prediction ($\Delta P_y$)</strong>, a measure of the significance of a CA, captures the degree to which observed cell firing associated with a CA differs from predictions of a retinal model that assumes independent firing of the neurons as a null model. The null model is a GLM model without cell interactions, in which each cell is only driven by the stimulus in its RF and its own spike-history. The computation of $\Delta P_y$
+  <strong>(M4). Difference from Null Prediction ($\Delta P_y$)</strong>, a measure of the significance of a CA, captures the degree to which observed cell firing associated with a CA differs from predictions of a retinal model that assumes independent firing of the neurons as a null model. The null hypothesis is a Generalized Linear Model (GLM) without cell interactions, in which each cell is only driven by the stimulus in its RF and its own spike-history. The computation of $\Delta P_y$
 
 <p align="center" width="100%">
   $\Delta P_y = 1 - cs_{\tau}(PSTH(z_a),p(\mathbf{y})_{null})$<br/>
 </p>
 
 <p style="text-align: left; font-size:11pt">
-  is illustrated with an example in figure 9. The probability under the null model, $p(\mathbf{y})_{null}$, (green trace) is computed at every point in time based on GLM simulated spike-rates and observed spike-word $\mathbf{y}$, averaged across all spike-words observed while $z_a$ is active in the full dataset. The inference time course of the CA, $PSTH(z_a)$, (red trace) is computed by inferring $\mathbf{z}$ activity for all observed $\mathbf{y}$ in full dataset after model parameters have been fixed and placing each $z_a$ activation in time. Differences between the two traces highlight spike-train structure captured by $z_a$ in the latent variable model which is not explained by rate-coded stimulus correlations.
+  illustrated in figure 9 includes a computation of the temporal cosine similarity ($cs_{\tau}$) between null model predictions and predictions from the BLV model. The probability under the null model, $p(\mathbf{y})_{null}$, (green trace) is computed at every point in time based on GLM simulated spike-rates and observed spike-word $\mathbf{y}$, averaged across all spike-words observed while $z_a$ is active in the full dataset. The inference time course of the CA, $PSTH(z_a)$, (red trace) is computed by inferring $\mathbf{z}$ activity for all observed $\mathbf{y}$ in full dataset after model parameters have been fixed and placing each $z_a$ activation in time. Differences between the two traces highlight spike-train structure captured by $z_a$ in the latent variable model which is not explained by rate-coded stimulus correlations.
 </p>
 
 <p align="center" width="100%">
   <img src='/images/CA_Del_Py_null.png' align='center' width='750' height='150'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 9</strong> Difference from Null $\Delta P_y$ example: PSTH of Cell Assembly $z_a$ in red. In green, p(y) under GLM null model for all y observed when $z_a = 1$. In blue, KL-divergence between $p(y_i)_{null} and p(y_i|z_a = 1, z_{\not a} = 0)$, the probability of an observed state under the BLV model with $z_a$ active and all other z’s inactive (not further used).</p>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 9</strong> Difference from Null $\Delta P_y$ example: PSTH of Cell Assembly $z_a$ in red. In green, p(y) under GLM null model for all y observed when $z_a = 1$. In blue, KL-divergence between $p(y_i)_{null}$ and $p(y_i|z_a = 1, z_{\not a} = 0)$, the probability of an observed state under the BLV model with $z_a$ active and all other z’s inactive (not further used).</p>
 </p>
 
 
 <br/><header style="text-align: center">Results in Retina</header><br/>
 
-
-Results on real retina data using EDA paradigm. Have 8 figures. Use all, or just some?
-
-We now apply the BLV model directly to spike train data collected from in vitro rat retinal ganglion cells (RGCs). Activity from 329 cells of 11 different cell types was recorded using a multielectrode array by the lab of Greg Field. We use data from 55 Off-Brisk Transient (offBT), 39 Off-Brisk Sustained (offBS) and 43 On-Brisk Transient (onBT) cells. The remaining 8 cell-types did not have data from a sufficient number of cells for our analysis. Cell receptive fields (RFs) were fit using responses to 1 hour presentation of white noise stimulus. The data we analyze consists of RGC spike-train responses to 200 trial repeats of 5 second clips of white noise and natural movie stimulus. Natural movie stimulus from the ”Cat Cam” data set 
-
-We trained models on between 500k and 1M spike words extracted from raw spike trains binned at 5ms
+We applied these methods and metrics to real retinal responses, which lack any ground truth, and discussed the structure that the model was ablew to discover in the different data. The BLV model was trained on spike train data collected from in vitro rat retinal ganglion cells (RGCs) from 55 Off-Brisk Transient (offBT), 39 Off-Brisk Sustained (offBS) and 43 On-Brisk Transient (onBT) cells. The data we analyze consists of RGC spike-train responses to 200 trial repeats of 5 second clips of white noise and natural movie stimulus from the ”Cat Cam” data set. As a control, we also generated data from a GLM model fit to natural movie responses and trained a BLV model on those GLM simulated responses. Each model was trained on between 500k and 1M spike words extracted from raw spike trains binned at 5ms. Observing figure 10, it is clear that models trained on offBT responses to each of the different stimuli have learned very different structure.
 
 
 <p align="center" width="100%">
-  <img src='/images/CA_Robustness.png' align='center' width='750' height='550'/>
-  <p style="text-align: center; font-size:10pt"><strong>fig. 7</strong> Image Caption Here. </p>
+  <img src='/images/CA_models_real_data.png' align='center' width='750' height='150'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 10</strong> Models trained on 55 Off-Brisk Transient responses to different stimuli: $\mathbf{P}$ matrices for models trained on retinal responses to white noise stimulus (a), retinal responses to natural movie stimulus (b) and GLM simulated responses to (same) natural movie stimulus (c). Cell ID on y-axis, CA ID on x-axis. Yellow indicates crisply defined cell membership, i.e., $p(y_i=1|z_a=1) \approx 1$.</p>
 </p>
 
 
