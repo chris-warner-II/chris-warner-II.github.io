@@ -217,15 +217,20 @@ In order to systematically and methodically explore the structure found by our B
   <p style="text-align: center; font-size:10pt"><strong>fig. 9</strong> Difference from Null $\Delta P_y$ example: PSTH of Cell Assembly $z_a$ in red. In green, p(y) under GLM null model for all y observed when $z_a = 1$. In blue, KL-divergence between $p(y_i)_{null}$ and $p(y_i|z_a = 1, z_{\not a} = 0)$, the probability of an observed state under the BLV model with $z_a$ active and all other z’s inactive (not further used).</p>
 </p>
 
-
 <br/><header style="text-align: center">Results in Retina</header><br/>
 
 We applied these methods and metrics to real retinal responses, which lack any ground truth, and discussed the structure that the model was ablew to discover in the different data. The BLV model was trained on spike train data collected from in vitro rat retinal ganglion cells (RGCs) from 55 Off-Brisk Transient (offBT), 39 Off-Brisk Sustained (offBS) and 43 On-Brisk Transient (onBT) cells. The data we analyze consists of RGC spike-train responses to 200 trial repeats of 5 second clips of white noise and natural movie stimulus from the ”Cat Cam” data set. As a control, we also generated data from a GLM model fit to natural movie responses and trained a BLV model on those GLM simulated responses. Each model was trained on between 500k and 1M spike words extracted from raw spike trains binned at 5ms. Observing figure 10, it is clear that models trained on offBT responses to each of the different stimuli have learned very different structure.
 
-
 <p align="center" width="100%">
   <img src='/images/CA_models_real_data.png' align='center' width='750' height='150'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 10</strong> Models trained on 55 Off-Brisk Transient responses to different stimuli: $\mathbf{P}$ matrices for models trained on retinal responses to white noise stimulus (a), retinal responses to natural movie stimulus (b) and GLM simulated responses to (same) natural movie stimulus (c). Cell ID on y-axis, CA ID on x-axis. Yellow indicates crisply defined cell membership, i.e., $p(y_i=1|z_a=1) \approx 1$.</p>
+</p>
+
+Further, the structure found in a single model trained on natural movie responses (in figure 10) is robustly found across multiple models trained on subsets of the same data (in figure 11). Less structure is found in models trained on white noise responses and GLM simulated responses.
+
+<p align="center" width="100%">
+  <img src='/images/CA_cosSim_real_data.png' align='center' width='750' height='150'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 11</strong> Cross-validation of models trained on recorded retinal responses: Display similar to Fig 5. Similarity of CA membership structure across model pairs for six models trained on white noise retinal responses (a), natural movie responses (b), and GLM simulated responses to same natural movie stimulus (c). Within each panel, matrix off-diagonal elements show average $\Delta cs$ (relative to null without CA matching) between all matched CA pairs within a model pair. Here diagonal value indicates average between a model and all other models, i.e. the average across a row. Numbers on left show average conditional log probability computed on hold out set of half of all spike-words, i.e., cross-validation, for each model. Vector on right shows average change from initialization for all CAs in model, defined as 1 − cs.</p>
 </p>
 
 
