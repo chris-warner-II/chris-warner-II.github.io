@@ -23,11 +23,9 @@ collection: portfolio
 </style>
 
 
-<p style="text-align: center; font-size:11pt"><strong>Expertise Demonstrated:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis </p>
+<p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis </p>
 
-<header style="text-align: center"><hr style="width:25%"></header>
-<header style="text-align: center">The Data</header>
-<header style="text-align: center"><hr style="width:25%"></header>
+<br/><header style="text-align: center">The Data</header><br/>
 
 <!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
 <div style="display: flex; width: 100%;">
@@ -66,9 +64,7 @@ White Noise stimulus, uncorrelated in space and time, is very different from Nat
     <figcaption><strong>fig. 2</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering.</figcaption>
   </figure>
 
-<header style="text-align: center"><hr style="width:25%"></header>
-<header style="text-align: center">The Model</header>
-<header style="text-align: center"><hr style="width:25%"></header>
+<br/><header style="text-align: center">The Model</header><br/>
 
 To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model, which allows for two causes of a cell's observed firing $\mathbf{y}$, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership $\mathbf{P}_{ia}$ in an active Cell Assembly $\mathbf{z}$. The model schematic is displayed below.<br/>
 
@@ -103,9 +99,7 @@ We fit the BLV Model using an Expectation Maximization (EM) framework. For each 
 where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
 
 
-<header style="text-align: center"><hr style="width:25%"></header>
-<header style="text-align: center">Model Validation</header>
-<header style="text-align: center"><hr style="width:25%"></header>
+<br/><header style="text-align: center">Model Validation</header><br/>
 
 Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data that  matched certain moments measured in retinal spike train responses to white noise and natural movies, process described in figure 4 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
 
@@ -145,11 +139,9 @@ From the model validation procedure, we verified that when two models trained on
 </figure>
 -->
 
-<header style="text-align: center"><hr style="width:25%"></header>
-<header style="text-align: center">Exploratory Data Analysis</header>
-<header style="text-align: center"><hr style="width:25%"></header>
+<br/><header style="text-align: center">Exploratory Data Analysis</header><br/>
 
-In order to more systematically and methodically quantify the type of structure found by our BLV model in neural data, we constructed four metrics.<br/>
+In order to systematically and methodically explore the structure found by our BLV model in neural data, we constructed four metrics.<br/>
 
 <p style="text-align: left; font-size:11pt">
   <strong>(Q1).</strong>  How many cells participate in a CA? Are the CA’s membership boundaries crisp or diffuse? <br/>
@@ -226,13 +218,7 @@ In order to more systematically and methodically quantify the type of structure 
 </p>
 
 
-
-
-
-
-<header style="text-align: center"><hr style="width:25%"></header>
-<header style="text-align: center">Results in Retina</header>
-<header style="text-align: center"><hr style="width:25%"></header>
+<br/><header style="text-align: center">Results in Retina</header><br/>
 
 
 Results on real retina data using EDA paradigm. Have 8 figures. Use all, or just some?
