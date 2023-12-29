@@ -23,7 +23,7 @@ collection: portfolio
 </style>
 
 
-<p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis </p>
+<p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis, Data Visualization </p>
 
 <br/><header style="text-align: center">The Data</header><br/>
 
@@ -226,14 +226,35 @@ We applied these methods and metrics to real retinal responses, which lack any g
   <p style="text-align: center; font-size:10pt"><strong>fig. 10</strong> Models trained on 55 Off-Brisk Transient responses to different stimuli: $\mathbf{P}$ matrices for models trained on retinal responses to white noise stimulus (a), retinal responses to natural movie stimulus (b) and GLM simulated responses to (same) natural movie stimulus (c). Cell ID on y-axis, CA ID on x-axis. Yellow indicates crisply defined cell membership, i.e., $p(y_i=1|z_a=1) \approx 1$.</p>
 </p>
 
-Further, the structure found in a single model trained on natural movie responses (in figure 10) is robustly found across multiple models trained on subsets of the same data (in figure 11). Less structure is found in models trained on white noise responses and GLM simulated responses.
+Further, the structure found in a single model trained on natural movie responses is robustly found across multiple models trained on subsets of the same data (middle panels in figure 10 & 11). Less structure is found in models trained on white noise responses and GLM simulated responses.
 
 <p align="center" width="100%">
   <img src='/images/CA_cosSim_real_data.png' align='center' width='750' height='150'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 11</strong> Cross-validation of models trained on recorded retinal responses: Display similar to Fig 5. Similarity of CA membership structure across model pairs for six models trained on white noise retinal responses (a), natural movie responses (b), and GLM simulated responses to same natural movie stimulus (c). Within each panel, matrix off-diagonal elements show average $\Delta cs$ (relative to null without CA matching) between all matched CA pairs within a model pair. Here diagonal value indicates average between a model and all other models, i.e. the average across a row. Numbers on left show average conditional log probability computed on hold out set of half of all spike-words, i.e., cross-validation, for each model. Vector on right shows average change from initialization for all CAs in model, defined as 1 − cs.</p>
 </p>
 
+Finally here we highlight two short illustrative examples of structure found by the BLV model in retinal responses to natural movies which are characterized by the metrics we developed above. Figure 12 
 
+
+
+<p align="center" width="100%">
+  <img src='/images/CA_crispness_real_data.png' align='center' width='750' height='150'/>
+  <p style="text-align: center; font-size:10pt"><strong>fig. 12</strong> Membership Crispness $C_M$ examples: Receptive fields of cells from CAs projected to the visual field. We show 9 example CAs from 3 separate models trained on [offBT] natural movie responses. In each panel, colored ovals show RFs of cell members from 3 separate CAs with similar $C_M$ values. Small inset scattters robustness $R_X$ on x-axis vs. crispness $C_M$ on y-axis for all CAs in each model with shown CAs highlighted in matching color.</p>
+</p>
+
+
+
+
+
+Crispness, Robustness, NM significance & Heterogeneity
+
+Fig 15 Crispness.
+
+Fig 16 CAs neighboring in visual space. (z16 & z27)
+
+Maybe show video with trial average spiking.
+
+Fig 18 Heterogeneity.
 
 
 
