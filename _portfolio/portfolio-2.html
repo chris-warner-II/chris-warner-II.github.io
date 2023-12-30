@@ -9,12 +9,6 @@ collection: portfolio
     margin: 0;
   }
 
-  figure {
-    width: 31%; /* Adjusted to leave space for boundaries */
-    margin: 0.5 0.5%; /* Added margin for space between figures */
-    padding: 10px;
-  }
-
   video,
   img {
     width: 100%;
@@ -30,7 +24,7 @@ collection: portfolio
 <!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
 <div style="display: flex; width: 100%;">
 
-  <figure style="width: 31%;">
+  <figure style="width: 31%; margin: 0.5 0.5%; padding: 10px;">
     <video controls width="100%" autoplay loop muted >
       <source src="/images/movie_wnrep.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -38,12 +32,12 @@ collection: portfolio
     <figcaption><strong>a)</strong>  White Noise Stimulus</figcaption>
   </figure>
 
-  <figure style="width: 31%;">
+  <figure style="width: 31%; margin: 0.5 0.5%; padding: 10px;">
     <img src="/images/CA_RFs.jpg" alt="Image" style="width: 100%;">
     <figcaption><strong>b)</strong> Receptive Fields of 55 RGC's</figcaption>
   </figure>
 
-  <figure style="width: 31%;">
+  <figure style="width: 31%; margin: 0.5 0.5%; padding: 10px;">
     <video controls width="100%" autoplay loop muted >
       <source src="/images/movie_catrep.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -98,7 +92,6 @@ We fit the BLV Model using an Expectation Maximization (EM) framework. For each 
 
 where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
 
-
 <br/><header style="text-align: center">Model Validation</header><br/>
 
 Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data that  matched certain moments measured in retinal spike train responses to white noise and natural movies, process described in figure 4 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
@@ -116,7 +109,6 @@ Multiple models were trained on synthetic data and the structure discovered by e
 </p>
 
 From the model validation procedure, we verified that when two models trained on structure resembling natural movie responses learned similar structure, that structure also existed in the ground truth model. This allows us to be reasonably confident that cell assembly structure that is learned robustly across multiple models in real neural data is meaningful.
-
 
 <div style="display: flex; width: 100%;">
 
@@ -281,7 +273,7 @@ These two cell assemblies seem to form roughly parallel horizontal lines. Their 
     <figcaption><strong>c)</strong> z27 active in 1.7-1.8 sec</figcaption>
   </figure>
 
-  <figure style="width: 59%;">
+  <figure style="width: 49%;">
     <img src="/images/CA_crisp_16n27.png" alt="Image" style="width: 100%;">
     <figcaption><strong>b)</strong> RFs for cells in CAs z16 & z27</figcaption>
   </figure>
