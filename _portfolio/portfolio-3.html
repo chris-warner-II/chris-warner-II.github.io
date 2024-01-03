@@ -13,24 +13,22 @@ CODA Biotherapeutics develops a chemogenetic platform designed to modulate neuro
 
 <br/><header style="text-align: center">Goal of ML team</header><br/>
 
-High level stuff here.
+The goal of this project is to predict functional properties of unobserved receptor mutants from measured properties of synthesized receptors and to make recommendations to biology team for fruitful directions for future receptor synthesis.
 
 <br/><header style="text-align: center">Data Embedding</header><br/>
 
   <figure style="width: 100%;">
-    <img src="/images/CODA_ec50_posteriors.png" alt="Image" style="width: 100%;">
+    <img src="/images/CODA_ec50_posteriors.png" alt="Image" style="width: 70%;">
     <figcaption><strong>fig. 1</strong> EC50 posterior estimation examples for 4 receptor-ligand (RL) pairs. Each row represents an RL-pair. In each row, left panel: Blue dots show plate-reader input data points, ligand concentration vs. observed fluorescence measurements. By bootstrapping, multiple logistic curves can be fit to subsampling of data points, black lines. From each logistic curve, EC50 is concentration level (x-axis) at which curve predicts 50% quench. Right panels show probability density function of EC50 values across bootstrapping iterations.</figcaption>
   </figure>
 
 Using a set of biological assays, a dataset is collected consisting of a specific ligand-gated ion channel (protein), a particular ligand at a known concentration (drug) and the fluorescence inside of a cell indicating how sensitive the protein was to the drug at the given concentration. We use subsets of that data to compute logistic functions of fluorescence vs concentration and can find a distribution of "half-maximal effective concentration" (EC50) values. Samples from the EC50 distribution become the output  of our model. 
 
-The model's input consists of embedding representations of the drug molecular features and protein amino acid sequence. 
-
-
-
-
+The model's input consists of embedding representations of the drug molecular features and protein amino acid (AA) sequence. With the protein, we try to leverage transfer learning by using embeddings that were trained on large databases of proteins such as Prottrans and Protvec. We also supplement the protein embedding representation with physiochemical signatures of particular AA residues of interest. Drug / ligand embeddings are constructed from extended connectivity fingerprints which determine whether common molecular domains are present or absent.
 
 <br/><header style="text-align: center">Model Training</header><br/>
+
+We built and trained a Multi-Layer Perceptron (MLP) model using 85% of the data for training and 15% for validation. We trained single models sweeping over hyperparameter values and choosing the pair that minimized the validation loss between model predicted EC50 and value extracted from EC50 posterior distribution constructed from lab measurements. For this process we used a Bayesian sweep over model hyperparameters from <a href="https://wandb.ai/site">Weights and Biases</a>. Once settled upon hyperparameter values, we fixed them and trained an ensemble model to make a distribution of predictions for EC50 value for a particular protein-ligand pair. 
 
 <br/><header style="text-align: center">Evaluation & Model Comparison</header><br/>
 
