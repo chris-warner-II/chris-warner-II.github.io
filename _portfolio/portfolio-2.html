@@ -239,7 +239,7 @@ These two cell assemblies seem to form roughly parallel horizontal lines. Their 
   <p style="text-align: center; font-size:10pt"><strong>fig. 13</strong> Properties of CAs neighboring in visual space: Receptive Fields from CAs z16 (a) and z27 (b). Membership crispness ($C_M$) vs cross-validation robustness ($R_X$) for all CAs in model, two shown highlighted in red (c). Differnce from GLM null predictions $\Delta P_y$ at fine (1ms) vs coarse (100ms) time scales (d). Temporal response traces of CA inference, $PSTH(z_a)$ red, and $p(y_{null})$ predictions from GLM green (e) & (f).</p>
 </p>
 
-Below, we display videos of the natural movie stimulus during the three prominent peaks in cell assembly activity displayed in fig 13 along with cell trial-averaged spiking activity overlayed. For clarity, we also show the cells associated with each of the two cell assemblies in question in panel d. There is tantalizing evidence that the activity of these CAs might reflect underlying objects or regions of interest during each clip - a clay pot and stick in panel a, a stick and darker region in panel b, an edge or darker region in panel c. It 
+Below, we display videos of the natural movie stimulus during the three prominent peaks in cell assembly activity displayed in fig 13 along with cell trial-averaged spiking activity overlayed. For clarity, we also show the cells associated with each of the two cell assemblies in question in panel d. There is tantalizing evidence that the activity of these CAs might reflect underlying objects or regions of interest during each clip - a clay pot and stick in panel a, a stick and darker region in panel b, an edge or darker region in panel c. But given the very limited nature of this natural movie data (200 trials of retina cells responding to a 5 second unstructured clip), it is difficult to make any strong conclusions about retinal processing using the BLV model. 
 
 <!--  Embed videos of stimulus and trial average spike rates -->
 <div style="display: flex; width: 100%;">
@@ -281,13 +281,49 @@ Below, we display videos of the natural movie stimulus during the three prominen
 
 <p style="text-align: center; font-size:10pt"><strong>fig. 14</strong> Natural movie stimulus clips with trial averaged spikes overlayed as color of receptive field oval. Brighter colors indicate larger percentage of (200) trials when cell spiked within 1ms time bin. Each frame of video is 1ms. </p>
 
-Not clear what to pull out of the movies. Need more data. We also find Heterogeneous CAs, shown in fig 15. 
-
+A second piece of evidence discovered by the BLV model in retinal responses to natural movies is some cell assemblies that cross cell-type boundaries leading to high values of CA heterogeneity, an example of which are shown in fig 15. CAs are found that cross between onBT and offBT cell types. This is further explored in the paper, but is left out here for brevity. More data is needed to say anything more definitive.
 
 <p align="center" width="100%">
   <img src='/images/CA_hetero_real_data.png' align='center' width='750' height='150'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 15</strong> Heterogeneity of CAs across cell-types: BLV models trained on natural movie responses from 55 offBT and 43 offBS RGCs (a) and responses from 55 offBT and 39 onBT RGCs (b). In each panel, $\mathbf{P}$ matrices shown on top with columns indicating CAs. OffBT cells below dashed white line. Bottom shows histogram of $H$ metric values for all CAs in model. Black arrow indicates larger number of heterogeneous CAs in [offBT, onBT] population.</p>
 </p>
+
+
+<br/><header style="text-align: center">Suggestions for Future Work</header><br/>
+
+
+
+<!--  Embed videos of stimulus and trial average spike rates -->
+<div style="display: flex; width: 100%;">
+
+  <figure style="width: 49%;">
+    <video controls width="100%" autoplay loop muted >
+      <source src="/images/Exploratorium_Segmentation_crop.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption><strong>a)</strong> Behaviorally relevant natural stimulus requiring segmentation.</figcaption>
+  </figure>
+
+  <figure style="width: 49%;">
+    <video controls width="100%" autoplay loop muted >
+      <source src="/images/two_ovals.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption><strong>b)</strong> Naturalistic stimulus that could be presented to retina to further explore model.</figcaption>
+  </figure>
+
+</div> 
+
+<p style="text-align: center; font-size:10pt"><strong>fig. 15</strong> Natural movie stimulus for future experiments </p>
+
+
+
+
+<br/><header style="text-align: center">Summary</header><br/>
+
+
+
+
 
 We refer the interested reader to the paper for further discussion.
 
