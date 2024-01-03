@@ -42,7 +42,37 @@ The model does not predict which receptor will have good characteristics; rather
 
 <br/><br/><header style="text-align: center">Model Evaluation</header><br/>
 
+
+A major thrust of my work on this project has been replacing the Protvecs protein embedding with a ProtBert embedding (referred to here as Prottrans), as discussed in sec II. That replacement requires a head-to-head comparison of model performance with both embeddings. One way to compare the performance of different models is to look at the average validation loss across the training procedure, routinely done to find optimal hyperparameter values during model selection with wandb. This yeilds a coarse measure of how well the model as a whole represents data it did not see during training.
+To get a more nuanced picture of how accurately an ensemble model represents the entire EC50 pos- terior distribution for an RL-pair, we use the model fit with optimal parameters to predict an distribu- tion of EC50 values and quantify the overlap of the model predicted EC50 distribution with the poste- rior distribution fit to measured EC50 values. This is done for each RL-pair in the data set. We per- formed this model comparison for three models: Protvecs, Prottrans and Prottrans-PCA100. That pro- cess, consisely described in fig 4, is further documented in Comparing Protvec and Prottrans Models.pdf and compare models meas n pred cumsum stats plots 20211102.ipynb.
+
+<p align="center" width="100%">
+  <figure style="width: 100%;">
+    <img src="/images/CODA_model_compare.png" alt="Image" style="width: 100%;">
+    <figcaption><strong>fig. 3</strong> caption.</figcaption>
+  </figure>
+</p>
+
+The procedure of model comparison is accomplished by 3 functions after models with optimal parameters have been set using the process discussed in sec III. First, generate straight thru receptors.py (now paired with featurize seq protvecs pscs.py and featurize seq prottrans.py) generates parquet files containing pscs, protvecs and prottrans representations of all receptors in the CODA receptors table. Next, sim receptor eval.py takes as input those parquet files along with the model name and the features used in the model (in ‘def main’ function) and generates model predicted EC50 distributions for pairs of all receptors in the CODA receptors table and all ligands indicated in the input. Those model predictions are saved in the SimReceptorPred SQL database. Finally, in model prediction results analysis.py with straight thru receptors flag==True, plots can be made of RL-pairs where model ec50 predictions match measured posterior distributions, as in fig 5. Note: The process so far described in this paragraph, at the level of functions and parquet files, is similar to the high-level process of simulating receptors and evaluating model predictions on simulated receptors discussed in sec VI.
+
+<p align="center" width="100%">
+  <figure style="width: 100%;">
+    <img src="/images/CODA_meas_n_pred.png" alt="Image" style="width: 100%;">
+    <figcaption><strong>fig. 4</strong> caption.</figcaption>
+  </figure>
+</p>
+
+Each time model prediction results analysis.py is run for a different model with com- pute meas n pred cumsum stats==True, posterior and prediction EC50 histograms will be computed for all RL-pairs and the two measures of their overlap referenced in fig 4 are saved into a parquet file. Once made for each model, those parquet files are input by compare models meas n pred cumsum stats plots 20211102.ipynb and a full statistical analysis is made of the comparative performace of Prottrans, Protvecs and Prottrans-PCA100 models.
+
+
 <br/><br/><header style="text-align: center">Implementation & Deployment</header><br/>
+
+<p align="center" width="100%">
+  <figure style="width: 100%;">
+    <img src="/images/CODA_Airflow_Dags_flowchart.pdf" alt="Image" style="width: 100%;">
+    <figcaption><strong>fig. 5</strong> caption.</figcaption>
+  </figure>
+</p>
 
 <br/><br/><header style="text-align: center">Summary</header><br/>
 
