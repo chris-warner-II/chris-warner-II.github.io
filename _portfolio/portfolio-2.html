@@ -232,14 +232,14 @@ Finally, here we highlight two short illustrative examples of the type of struct
   <p style="text-align: center; font-size:10pt"><strong>fig. 12</strong> Membership Crispness $C_M$ examples: Receptive fields of cells from CAs projected to the visual field. We show 9 example CAs from 3 separate models trained on [offBT] natural movie responses. In each panel, colored ovals show RFs of cell members from 3 separate CAs with similar $C_M$ values. Small inset scattters robustness $R_X$ on x-axis vs. crispness $C_M$ on y-axis for all CAs in each model with shown CAs highlighted in matching color.</p>
 </p>
 
-These two cell assemblies seem to form roughly parallel horizontal lines. Their fairly high cross-validation robustness indicates that they are reliably found to have consistent spatial and temporal profiles across different retrained models. Their predictions also differ significantly from GLM predictions at fine and coarse time scales. Finally and perhaps most interestingly, we find that the inferred activity of these two cell assemblies that are proximal in space are quite different in time. Focusing on the time between 1 and 2 seconds, we see that z27 is active early and late and z16 is active in the middle.
+These two cell assemblies seem to form roughly parallel horizontal lines. Their fairly high cross-validation robustness indicates that they are reliably learned by different models when retrained on subsets of the data and found to have consistent spatial and temporal profiles. Their predictions also differ significantly from GLM predictions at fine and coarse time scales. Most interestingly perhaps, we find that the inferred activity of these two cell assemblies that are proximal in space are quite different in time. Focusing on the time between 1 and 2 seconds in figure 13 e & f, we see that z27 is active early and late and z16 is active in the middle.
 
 <p align="center" width="100%">
   <img src='/images/CA_z16_and_z27.png' align='center' width='750' height='150'/>
   <p style="text-align: center; font-size:10pt"><strong>fig. 13</strong> Properties of CAs neighboring in visual space: Receptive Fields from CAs z16 (a) and z27 (b). Membership crispness ($C_M$) vs cross-validation robustness ($R_X$) for all CAs in model, two shown highlighted in red (c). Differnce from GLM null predictions $\Delta P_y$ at fine (1ms) vs coarse (100ms) time scales (d). Temporal response traces of CA inference, $PSTH(z_a)$ red, and $p(y_{null})$ predictions from GLM green (e) & (f).</p>
 </p>
 
-Here are some videos.
+Below, we display videos of the natural movie stimulus during the three prominent peaks in cell assembly activity displayed in fig 13 along with cell trial-averaged spiking activity overlayed. For clarity, we also show the cells associated with each of the two cell assemblies in question in panel d. There is tantalizing evidence that the activity of these CAs might reflect underlying objects or regions of interest during each clip - a clay pot and stick in panel a, a stick and darker region in panel b, an edge or darker region in panel c. It 
 
 <!--  Embed videos of stimulus and trial average spike rates -->
 <div style="display: flex; width: 100%;">
@@ -273,13 +273,13 @@ Here are some videos.
   </figure>
 
   <figure style="width: 49%;">
-    <img src="/images/CA_RFs_wZs.jpg" alt="Image" style="width: 90%; height: 60%">
+    <img src="/images/CA_RFs_wZs.jpg" alt="Image" style="width: 90%; height: 75%">
     <figcaption><strong>d)</strong> RFs for cells in CAs z16 (green) & z27 (blue)</figcaption>
   </figure>
 
 </div> 
 
-<p style="text-align: center; font-size:10pt"><strong>fig. 14</strong> Natural movie stimulus clips with trial averaged spikes overlayed as color of receptive field oval.</p>
+<p style="text-align: center; font-size:10pt"><strong>fig. 14</strong> Natural movie stimulus clips with trial averaged spikes overlayed as color of receptive field oval. Brighter colors indicate larger percentage of (200) trials when cell spiked within 1ms time bin. Each frame of video is 1ms. </p>
 
 Not clear what to pull out of the movies. Need more data. We also find Heterogeneous CAs, shown in fig 15. 
 
