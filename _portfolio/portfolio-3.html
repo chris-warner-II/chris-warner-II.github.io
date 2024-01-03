@@ -4,13 +4,33 @@ excerpt: "<img src='/images/CODA_Airflow_Dags_flowchart.pdf' width='550' height=
 collection: portfolio
 ---
 
+<p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> AWS Cloud Computing, </p>
+
+
 <br/><header style="text-align: center">The Company & Mission</header><br/>
 
 CODA Biotherapeutics develops a chemogenetic platform designed to modulate neuronal activity. With chemogenetics, target neuronal populations are modified using gene therapy to express a tunable ligand-gated ion channel. These ligand-gated ion channels are engineered to be highly responsive to a specific proprietary small molecule but are otherwise inactive. The interaction of the small molecule and engineered receptor allows for exquisite, dose-dependent control of the neurons to generate the therapeutic effect.
 
 <br/><header style="text-align: center">Goal of ML team</header><br/>
 
-<br/><header style="text-align: center">Data Prep & Model Training</header><br/>
+High level stuff here.
+
+<br/><header style="text-align: center">Data Embedding</header><br/>
+
+  <figure style="width: 100%;">
+    <img src="/images/CODA_ec50_posteriors.png" alt="Image" style="width: 100%;">
+    <figcaption><strong>fig. 1</strong> EC50 posterior estimation examples for 4 receptor-ligand (RL) pairs. Each row represents an RL-pair. In each row, left panel: Blue dots show plate-reader input data points, ligand concentration vs. observed fluorescence measurements. By bootstrapping, multiple logistic curves can be fit to subsampling of data points, black lines. From each logistic curve, EC50 is concentration level (x-axis) at which curve predicts 50% quench. Right panels show probability density function of EC50 values across bootstrapping iterations.</figcaption>
+  </figure>
+
+Using a set of biological assays, a dataset is collected consisting of a specific ligand-gated ion channel (protein), a particular ligand at a known concentration (drug) and the fluorescence inside of a cell indicating how sensitive the protein was to the drug at the given concentration. We use subsets of that data to compute logistic functions of fluorescence vs concentration and can find a distribution of "half-maximal effective concentration" (EC50) values. Samples from the EC50 distribution become the output  of our model. 
+
+The model's input consists of embedding representations of the drug molecular features and protein amino acid sequence. 
+
+
+
+
+
+<br/><header style="text-align: center">Model Training</header><br/>
 
 <br/><header style="text-align: center">Evaluation & Model Comparison</header><br/>
 
