@@ -9,23 +9,40 @@ redirect_from:
 
 {% include base_path %}
 
+A PDF version of my CV can be found [here](https://chris-warner-ii.github.io/files/Warner_resume.pdf).
+
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Physics, Ohio State University, 2005
+* Ph.D in Biophysics, University of California, Berkeley 2019
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Oct 2023 - Present: Affiliate Postdoc Researcher
+  * Berkeley Lab
+  * Duties included: Stuff
+  * Supervisor: Person
+
+* Jul 2021 - Mar 2022: Machine Learning Consultant
+  * CODA Biotherapeutics
+  * Duties included: Stuff
+  * Supervisor: Person
+
+* Sep 2019 - Oct 2023: Freelance Musician and Producer
+  * Warner Records
+  * Duties included: Stuff
+  * Supervisor: Self  
+
+* Sep 2011 - Sep 2019: Graduate Student Researcher
+  * Redwood Center for Theoretical Neuroscience - UC Berkeley
+  * Duties included: Stuff
+  * Supervisor: Person
+
+* Sep 2005 - Sep 2009: Assistant Staff Electrical Engineer
+  * MIT Lincoln Laboratory - Advanced Techniques & Systems Group
+  * Duties included: Stuff
+  * Supervisor: Person  
   
 Skills
 ======
@@ -42,6 +59,7 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
+<!--  
 Talks
 ======
   <ul>{% for post in site.talks %}
@@ -53,6 +71,8 @@ Teaching
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+
+-->  
   
 Service and leadership
 ======

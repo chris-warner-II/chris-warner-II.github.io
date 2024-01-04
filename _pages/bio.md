@@ -5,6 +5,8 @@ permalink: /bio/
 author_profile: true
 ---
 
+{% include base_path %}
+
 About Me / Bio Section
 
 
