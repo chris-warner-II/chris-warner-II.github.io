@@ -42,35 +42,32 @@ The model does not predict which receptor will have good characteristics; rather
 
 <br/><br/><header style="text-align: center">Model Evaluation</header><br/>
 
-
-A major thrust of my work on this project has been replacing the Protvecs protein embedding with a ProtBert embedding (referred to here as Prottrans), as discussed in sec II. That replacement requires a head-to-head comparison of model performance with both embeddings. One way to compare the performance of different models is to look at the average validation loss across the training procedure, routinely done to find optimal hyperparameter values during model selection with wandb. This yeilds a coarse measure of how well the model as a whole represents data it did not see during training.
-To get a more nuanced picture of how accurately an ensemble model represents the entire EC50 pos- terior distribution for an RL-pair, we use the model fit with optimal parameters to predict an distribu- tion of EC50 values and quantify the overlap of the model predicted EC50 distribution with the poste- rior distribution fit to measured EC50 values. This is done for each RL-pair in the data set. We per- formed this model comparison for three models: Protvecs, Prottrans and Prottrans-PCA100. That pro- cess, consisely described in fig 4, is further documented in Comparing Protvec and Prottrans Models.pdf and compare models meas n pred cumsum stats plots 20211102.ipynb.
+A major thrust of my work on this project has been replacing the Protvecs protein embedding with a ProtBert embedding (referred to here as Prottrans). That replacement requires a head-to-head comparison of model performance with both embeddings. To get a picture of how accurately an ensemble model represents the entire EC50 posterior distribution for an RL-pair, we use the model fit with optimal parameters to predict an distribution of EC50 values and quantify the overlap of the model predicted EC50 distribution with the posterior distribution fit to measured EC50 values. This is done for each RL-pair in the data set. We performed this model comparison for three models: Protvecs, Prottrans and Prottrans-PCA100.
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
     <img src="/images/CODA_model_compare.png" alt="Image" style="width: 100%;">
-    <figcaption><strong>fig. 3</strong> caption.</figcaption>
+    <figcaption><strong>fig. 3</strong> Left side: For each protein-compound pair for which we have measured posterior EC50 values (red), we train an ensemble model to predict a distribution of EC50 values (blue). These are shown in the top plot. Similar to a KolmogorovSmirnov test, we use the CDF of these two distributions to assess their similarity. CDFs are shown in bottom plot with green dashed line indicating the absolute value their difference. The metric we compute for a model/RL-pair combination is the mean value of the green curve, mean cs diff. Right side: Distribution of mean cs diff metric across 5462 RL-pairs for each of 3 models compared. Smaller values indicate more tightly fitting distributions for measured EC50 values and model predictions.</figcaption>
   </figure>
 </p>
 
-The procedure of model comparison is accomplished by 3 functions after models with optimal parameters have been set using the process discussed in sec III. First, generate straight thru receptors.py (now paired with featurize seq protvecs pscs.py and featurize seq prottrans.py) generates parquet files containing pscs, protvecs and prottrans representations of all receptors in the CODA receptors table. Next, sim receptor eval.py takes as input those parquet files along with the model name and the features used in the model (in ‘def main’ function) and generates model predicted EC50 distributions for pairs of all receptors in the CODA receptors table and all ligands indicated in the input. Those model predictions are saved in the SimReceptorPred SQL database. Finally, in model prediction results analysis.py with straight thru receptors flag==True, plots can be made of RL-pairs where model ec50 predictions match measured posterior distributions, as in fig 5. Note: The process so far described in this paragraph, at the level of functions and parquet files, is similar to the high-level process of simulating receptors and evaluating model predictions on simulated receptors discussed in sec VI.
+We found that the model trained using 100 dimensional Protvec embeddings and the model trained using 1024 dimensional Prottrans embeddings performed comparably. When we used PCA to take only the top 100 dimensions of the Prottrans embedding, model performance declined significantly.
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
     <img src="/images/CODA_meas_n_pred.png" alt="Image" style="width: 100%;">
-    <figcaption><strong>fig. 4</strong> caption.</figcaption>
+    <figcaption><strong>fig. 4</strong> Example RL-pairs where model prediction (smoother, more transparent distribution) well matches measured EC50 posterior (tighter, more opaque histogram). Each panel shows different model and ligand. All panels show endogenous molecule in yellow. Receptors are ordered by mean cs diff, see fig 3, for ligand and endogenous molecule from top to bottom, labeled in each plot by “fit”.</figcaption>
   </figure>
 </p>
 
-Each time model prediction results analysis.py is run for a different model with com- pute meas n pred cumsum stats==True, posterior and prediction EC50 histograms will be computed for all RL-pairs and the two measures of their overlap referenced in fig 4 are saved into a parquet file. Once made for each model, those parquet files are input by compare models meas n pred cumsum stats plots 20211102.ipynb and a full statistical analysis is made of the comparative performace of Prottrans, Protvecs and Prottrans-PCA100 models.
-
+A second significant component of my effort on this project was to deploy the entire analysis pipeline to AWS. Figure 5 below depicts a flowchart of the pipeline that was implemented using Airflow DAGs, Docker containers, AWS S3 and PostgreSQL databases and AWS EC2 compute nodes. 
 
 <br/><br/><header style="text-align: center">Implementation & Deployment</header><br/>
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
     <img src="/images/CODA_Airflow_Dags_flowchart.pdf" alt="Image" style="width: 100%;">
-    <figcaption><strong>fig. 5</strong> caption.</figcaption>
+    <figcaption><strong>fig. 5</strong> Visual depiction of 5 docker containers and 4 airflow subdags that make up the coda discovery receptor prediction pipeline as of Feb 2022.</figcaption>
   </figure>
 </p>
 
@@ -86,3 +83,4 @@ In this project, the big take-aways are:
     <li>one</li>
     <li>one</li>
   </ol>
+
