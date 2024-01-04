@@ -4,12 +4,12 @@ excerpt: "<img src='/images/CODA_Airflow_Dags_flowchart.pdf' width='550' height=
 collection: portfolio
 ---
 
-<p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> AWS Cloud Computing, </p>
+<p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> AWS Cloud Computing, Weights & Biases, </p>
 
 
 <br/><header style="text-align: center">The Goal</header><br/>
 
-CODA Biotherapeutics develops a chemogenetic platform designed to modulate neuronal activity. With chemogenetics, target neuronal populations are modified using gene therapy to express a tunable ligand-gated ion channel. These ligand-gated ion channels are engineered to be highly responsive to a specific proprietary small molecules but are otherwise inactive. The interaction of the small molecule and engineered receptor allows for exquisite, dose-dependent control of the neurons to generate the therapeutic effect. The goal of the ML team within CODA is to predict functional properties of unobserved receptor mutants from measured properties of synthesized receptors and to make recommendations to biology team for fruitful directions for future receptor synthesis.
+Through gene therapy, CODA Biotherapeutics has developed a chemogenetic platform designed to modulate neuronal activity with a tunable ligand-gated ion channel. These ligand-gated ion channels are engineered to be highly responsive to a specific proprietary small molecules but are otherwise inactive. The interaction of the small molecule and engineered receptor allows for exquisite, dose-dependent control of the neurons to generate the therapeutic effect. The goal of the ML team within CODA is to predict functional properties of unobserved receptor mutants from measured properties of synthesized receptors and to make recommendations to biology team for fruitful directions for future receptor synthesis.
 
 <br/><br/><header style="text-align: center">The Data</header><br/>
 
@@ -20,29 +20,27 @@ CODA Biotherapeutics develops a chemogenetic platform designed to modulate neuro
   </figure>
 </p>
 
-Using a set of biological assays, a dataset is collected consisting of a specific ligand-gated ion channel (protein), a particular ligand at a known concentration (drug) and the fluorescence inside of a cell indicating how sensitive the protein was to the drug at the given concentration. We use subsets of that data to compute logistic functions of fluorescence vs concentration and can find a distribution of "half-maximal effective concentration" (EC50) values. Samples from the EC50 distribution become the output  of our model. 
-
-The model's input consists of embedding representations of the drug molecular features and protein amino acid (AA) sequence. With the protein, we try to leverage transfer learning by using embeddings that were trained on large databases of proteins such as Prottrans and Protvec. We also supplement the protein embedding representation with physiochemical signatures of particular AA residues of interest. Drug / ligand embeddings are constructed from extended connectivity fingerprints which determine whether common molecular domains are present or absent.
+Using a set of biological assays, a dataset is collected consisting of a specific ligand-gated ion channel (protein), a particular ligand at a known concentration (drug) and the fluorescence inside of a cell indicating how sensitive the protein is to the drug at the given concentration. We use bootstrapping to compute logistic functions of fluorescence vs concentration and can find a distribution of "half-maximal effective concentration" (EC50) values. Samples from the EC50 distribution become the output of our model, what the model attempts to predict. The model's input consists of embedding representations of the drug molecular features and protein amino acid (AA) sequence. With the protein, we attempt to leverage transfer learning by using embeddings that were trained on large databases of proteins and supplement protein embedding representation with physiochemical signatures for particular AA residues of interest. Drug / ligand embeddings are constructed from extended connectivity fingerprints which determine whether common molecular domains are present or absent.
 
 <br/><br/><header style="text-align: center">Model Training</header><br/>
 
-We built and trained a Multi-Layer Perceptron (MLP) model using 85% of the data for training and 15% for validation. We trained single models sweeping over hyperparameter values and choosing the pair that minimized the validation loss between model predicted EC50 and value extracted from EC50 posterior distribution constructed from lab measurements. For this process we used a Bayesian sweep over model hyperparameters from <a href="https://wandb.ai/site">Weights and Biases</a>. Once settled upon hyperparameter values, we fixed them and trained an ensemble model to make a distribution of predictions for EC50 value for a particular protein-ligand pair. 
+We build and train a Multi-Layer Perceptron (MLP) model using 85% of the data for training and 15% for validation. We trained single models sweeping over hyperparameter values and choosing the pair that minimized the validation loss between model predicted EC50 and value extracted from EC50 posterior distribution constructed from lab measurements. For this process we used a Bayesian sweep over model hyperparameters from <a href="https://wandb.ai/site">Weights and Biases</a>. Once settled upon hyperparameter values, we fix them and train an ensemble model to make a distribution of predictions for EC50 value for a particular protein-ligand pair. 
 
 <br/><br/><header style="text-align: center">Receptor Simulation & Evaluation</header><br/>
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
-    <img src="/images/CODA_ec50_ligand_and_ach2.png" alt="Image" style="width: 100%;">
+    <img src="/images/CODA_ec50_ligand_and_ach2.png" alt="Image" style="width: 80%;">
     <figcaption><strong>fig. 2</strong> EC50 distributions of exogenous ligand in blue and endogenous molecule in yellow for a few unnamed mutated receptors. Ligand concentration on x-axis. Smaller concentrations and more leftward EC50 values indicate receptor sensitivity to ligand binding. Benchmark value in solid vertical line indicates median EC50 distribution for parental response to ligand. Target value in dashed vertical line is chosen by CODA researchers based on biological factors.</figcaption>
   </figure>
 </p>
 
-The model does not predict which receptor will have good characteristics; rather it predicts the distribution of EC50 values for a given receptor. Suggesting a new simulated protein mutation is done by “breeding” mutated proteins made in the lab for which we have EC50 measurements, selecting for the mutations that yield high fitness. The fitness of a receptor-ligand pair is determined by this combination of factors: (1). how responsive the receptor is to that ligand (smaller ec50 distribution in fig 2) and (2). how relatively unresponsive the receptor is to endogenous molecules (larger ec50 distribution in fig 2). At a conceptual level, the process of simulating receptors can be thought of in the following way: Each mutated protein is viewed as a bag-of-mutations, with each mutation consisting of a single amino acid change from the parental backbone. First, a pair of lab-made mutated proteins are drawn by weighted sampling based on their realtive fitness score. Then, the mutations from the pair are mixed together by randomly grabbing individual AA mutations, with a cap on maximum number of mutations allowed in a simulated protein. The novel receptor is fed through the model and a distribution of EC50 predictions are made. Simulated receptors sorted by their fitness scores for a particular ligand are delivered to biology team as recommendations for further exploration.
+The model does not predict which receptor will have good characteristics; rather it predicts the distribution of EC50 values for a given receptor. Suggesting a new simulated protein mutation is done by “breeding” mutated proteins made in the lab for which we have EC50 measurements, selecting for the mutations that yield high fitness. The fitness of a receptor-ligand pair is determined by this combination of factors: (1). how responsive the receptor is to that ligand (smaller EC50 values in fig 2) and (2). how relatively unresponsive the receptor is to endogenous molecules (larger EC50 values in fig 2). At a conceptual level, the process of simulating receptors can be thought of in the following way: Each mutated protein is viewed as a bag-of-mutations, with each mutation consisting of a single amino acid change from the parental backbone. First, a pair of lab-made mutated proteins are drawn by weighted sampling based on their realtive fitness score. Then, the mutations from the pair are mixed together by randomly grabbing individual AA mutations, with a cap on maximum number of mutations allowed in a simulated protein. The novel receptor is fed through the model and a distribution of EC50 predictions are made. Simulated receptors sorted by their fitness scores for a particular ligand are delivered to biology team as recommendations for further exploration.
 
 
 <br/><br/><header style="text-align: center">Model Evaluation</header><br/>
 
-A major thrust of my work on this project has been replacing the Protvecs protein embedding with a ProtBert embedding (referred to here as Prottrans). That replacement requires a head-to-head comparison of model performance with both embeddings. To get a picture of how accurately an ensemble model represents the entire EC50 posterior distribution for an RL-pair, we use the model fit with optimal parameters to predict an distribution of EC50 values and quantify the overlap of the model predicted EC50 distribution with the posterior distribution fit to measured EC50 values. This is done for each RL-pair in the data set. We performed this model comparison for three models: Protvecs, Prottrans and Prottrans-PCA100.
+A major thrust of my work on this project has been replacing the Protvecs protein embedding with a Prottrans embedding to take advantage of transfer learning from large language model trained on a large corpus of proteins. That replacement requires a head-to-head comparison of model performance with both embeddings. This comparison, illustrated in figure 3, is done for each RL-pair in the data set for three models: Protvecs, Prottrans and Prottrans-PCA100.
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
@@ -51,7 +49,7 @@ A major thrust of my work on this project has been replacing the Protvecs protei
   </figure>
 </p>
 
-We found that the model trained using 100 dimensional Protvec embeddings and the model trained using 1024 dimensional Prottrans embeddings performed comparably. When we used PCA to take only the top 100 dimensions of the Prottrans embedding, model performance declined significantly.
+We found that the model trained using 100 dimensional Protvec embeddings and the model trained using 1024 dimensional Prottrans embeddings performed comparably (green and red curves respectively in fig 3 right panel). When we used PCA to take only the top 100 dimensions of the Prottrans embedding, model performance declined significantly (blue curve in fig 3, right). Figure 4 shows some sample model predictions alongside measured EC50 distributions for the 3 models compared.
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
@@ -60,7 +58,7 @@ We found that the model trained using 100 dimensional Protvec embeddings and the
   </figure>
 </p>
 
-A second significant component of my effort on this project was to deploy the entire analysis pipeline to AWS. Figure 5 below depicts a flowchart of the pipeline that was implemented using Airflow DAGs, Docker containers, AWS S3 and PostgreSQL databases and AWS EC2 compute nodes. 
+A second significant component of my effort on this project was to deploy the entire analysis pipeline to the AWS Cloud Computing architecture. Figure 5 below depicts a flowchart of the pipeline that was implemented using Airflow DAGs, Docker containers, AWS S3 and PostgreSQL databases and AWS EC2 compute nodes. 
 
 <br/><br/><header style="text-align: center">Implementation & Deployment</header><br/>
 
