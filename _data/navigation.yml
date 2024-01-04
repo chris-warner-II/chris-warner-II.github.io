@@ -4,11 +4,11 @@ main:
   - title: "Portfolio"
     url: /portfolio/
 
-  - title: "CV"
-    url: /cv/
-
   - title: "Publications"
     url: /publications/
+
+  - title: "CV"
+    url: /cv/
 
   - title: "About"
     url: /bio/  
@@ -19,15 +19,12 @@ main:
 
 # # # # # # # # # # # # # # # # # # # # #
 
-
-
 #  - title: "Talks"
 #    url: /talks/    
 
 #  - title: "Teaching"
 #    url: /teaching/    
-
-        
+  
 #  - title: "Blog Posts"
 #    url: /year-archive/
     

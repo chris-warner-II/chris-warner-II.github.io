@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Warner Home"
-excerpt: "Warner Home"
+excerpt: "Welcome"
 author_profile: true
 redirect_from: 
   - /about/
