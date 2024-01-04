@@ -11,7 +11,7 @@ collection: portfolio
 
 Through gene therapy, CODA Biotherapeutics has developed a chemogenetic platform designed to modulate neuronal activity with a tunable ligand-gated ion channel. These ligand-gated ion channels are engineered to be highly responsive to a specific proprietary small molecules but are otherwise inactive. The interaction of the small molecule and engineered receptor allows for exquisite, dose-dependent control of the neurons to generate the therapeutic effect. The goal of the ML team within CODA is to predict functional properties of unobserved receptor mutants from measured properties of synthesized receptors and to make recommendations to biology team for fruitful directions for future receptor synthesis.
 
-<br/><br/><header style="text-align: center">The Data</header><br/>
+<br/><br/><header style="text-align: center">The Data</header>
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
@@ -26,7 +26,7 @@ Using a set of biological assays, a dataset is collected consisting of a specifi
 
 We build and train a Multi-Layer Perceptron (MLP) model using 85% of the data for training and 15% for validation. We trained single models sweeping over hyperparameter values and choosing the pair that minimized the validation loss between model predicted EC50 and value extracted from EC50 posterior distribution constructed from lab measurements. For this process we used a Bayesian sweep over model hyperparameters from <a href="https://wandb.ai/site">Weights and Biases</a>. Once settled upon hyperparameter values, we fix them and train an ensemble model to make a distribution of predictions for EC50 value for a particular protein-ligand pair. 
 
-<br/><br/><header style="text-align: center">Receptor Simulation & Evaluation</header><br/>
+<br/><br/><header style="text-align: center">Receptor Simulation & Evaluation</header>
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
@@ -58,9 +58,8 @@ We found that the model trained using 100 dimensional Protvec embeddings and the
   </figure>
 </p>
 
-A second significant component of my effort on this project was to deploy the entire analysis pipeline to the AWS Cloud Computing architecture. Figure 5 below depicts a flowchart of the pipeline that was implemented using Airflow DAGs, Docker containers, AWS S3 and PostgreSQL databases and AWS EC2 compute nodes. 
 
-<br/><br/><header style="text-align: center">Implementation & Deployment</header><br/>
+<br/><br/><header style="text-align: center">Implementation & Deployment</header>
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
@@ -69,6 +68,9 @@ A second significant component of my effort on this project was to deploy the en
   </figure>
 </p>
 
+A second significant component of my effort on this project was to deploy the entire analysis pipeline to the AWS Cloud Computing architecture. Figure 5 below depicts a flowchart of the pipeline that was implemented using Airflow DAGs, Docker containers, AWS S3 and PostgreSQL databases and AWS EC2 compute nodes. 
+
+<!--
 <br/><br/><header style="text-align: center">Summary</header><br/>
 
 In this project, the big take-aways are:
@@ -81,4 +83,5 @@ In this project, the big take-aways are:
     <li>one</li>
     <li>one</li>
   </ol>
+-->
 
