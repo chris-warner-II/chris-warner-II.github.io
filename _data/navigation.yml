@@ -11,7 +11,10 @@ main:
     url: /publications/
 
   - title: "About"
-    url: /personal/  
+    url: /bio/  
+
+  - title: "Contact"
+    url: /contact/  
 
 
 # # # # # # # # # # # # # # # # # # # # #
