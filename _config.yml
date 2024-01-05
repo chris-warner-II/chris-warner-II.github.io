@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Christopher Warner"
   avatar           : "https://chris-warner-ii.github.io/images/Warner_Head_Shot_smol.jpg"
-  bio              : "I am a scientist & artist; <br/> with a growth-mindset; <br/> interested in neuroscience, machine learning  & creativity."
+  bio              : "I am a scientist & software-engineer; <br/> with a creative bent and a growth-mindset; <br/> interested in neuroscience & machine learning."
   location         : "Berkeley, CA"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=hZgw88_xd7UC&hl=en"
-  email            :
+  email            : "cwarner@berkeley.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :

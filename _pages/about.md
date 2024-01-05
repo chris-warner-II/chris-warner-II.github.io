@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Home"
+title: "Welcome!"
 excerpt: "Welcome"
 author_profile: true
 redirect_from: 
@@ -8,16 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-Welcome!  Say something here as intro.
+<!-- Photo of me here -->
+<img src='/images/500x300.png'><br/>
 
-Professional
-======
+This is my professional website, showcasing research interests and projects I have worked on. View the [Portfolio](https://chris-warner-ii.github.io/portfolio/) for generally accessible descriptions of various projects, ranging from academic work to professional contributions to personal projects. 
 
-Say something about me as a professional here.
 
-Personal
-======
-
-Say something here about me personally.
 
 

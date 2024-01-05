@@ -19,30 +19,30 @@ Education
 Work experience
 ======
 
-* Oct 2023 - Present: Affiliate Postdoc Researcher
-  * Berkeley Lab
+* **Affiliate Postdoc Researcher** (Oct 2023 - Present)
+  * Lawrence Berkeley Lab
   * Duties included: Stuff
-  * Supervisor: Person
+  * Supervisor: Kris Bouchard
 
-* Jul 2021 - Mar 2022: Machine Learning Consultant
+* **Machine Learning Consultant** (Jul 2021 - Mar 2022)
   * CODA Biotherapeutics
   * Duties included: Stuff
-  * Supervisor: Person
+  * Supervisor: Andres Vargas
 
-* Sep 2019 - Oct 2023: Freelance Musician and Producer
+* **Freelance Musician, Recording Engineer and Producer** (Sep 2019 - Oct 2023)
   * Warner Records
   * Duties included: Stuff
   * Supervisor: Self  
 
-* Sep 2011 - Sep 2019: Graduate Student Researcher
+* **Graduate Student Researcher** (Sep 2011 - Sep 2019)
   * Redwood Center for Theoretical Neuroscience - UC Berkeley
   * Duties included: Stuff
-  * Supervisor: Person
+  * Supervisor: Friedrich Sommer
 
-* Sep 2005 - Sep 2009: Assistant Staff Electrical Engineer
+* **Assistant Staff Electrical Engineer** (Sep 2005 - Sep 2009)
   * MIT Lincoln Laboratory - Advanced Techniques & Systems Group
   * Duties included: Stuff
-  * Supervisor: Person  
+  * Supervisor: Pamela Evans  
   
 Skills
 ======
