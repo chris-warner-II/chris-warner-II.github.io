@@ -12,4 +12,4 @@ This is my professional website, showcasing research interests and projects I ha
 
 
 <!-- Photo of me here -->
-<img src='/images/Warner_HS2.HEIC'><br/>
+<img src='/images/Warner_HS2.jpg'><br/>
