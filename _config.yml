@@ -119,7 +119,7 @@ author:
 
 
 header:
-  image: images/brown_chucks_patience.JPG
+  image: "https://chris-warner-ii.github.io/images/brown_chucks_patience.JPG"
 
 # Reading Files
 include:
