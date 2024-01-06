@@ -20,5 +20,5 @@ I am currently a postdoctoral affiliate researcher at [Lawrence Berkeley Lab](ht
 Personal
 ======
 
-I am more of a mesh than a spear. Meaning, I have a breadth of experience combined with the skill and fortitude to excel in unfamiliar territory. I have worked in 
+I am more of a mesh than a spear. Meaning, I have a breadth of experience combined with the skill and fortitude to excel in unfamiliar territory. I have worked in many interesting fields throughout my academic and professional career including geophysics, radar, robotics, neuroscience and machine learning. 
 
