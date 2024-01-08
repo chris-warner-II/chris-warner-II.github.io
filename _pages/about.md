@@ -3,7 +3,7 @@ permalink: /
 title: "Welcome!"
 excerpt: "Welcome"
 header:
-  image: /images/brown_chucks_patience.jpg
+  image: "/images/img_seg_model.png" 
 author_profile: true
 redirect_from: 
   - /about/
