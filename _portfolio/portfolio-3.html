@@ -1,14 +1,17 @@
 ---
-title: "1. Predicting Protein-Drug Interaction using Machine Learning (Professional Work)"
-excerpt: "<img src='/images/CODA_Airflow_Dags_flowchart.pdf' width='500' height='400'><img src='/images/CODA_ec50_ligand_and_ach2.png' width='400' height='350'><br/> As a Machine Learning consultant for CODA Biotherapeutics, I contributed to an algorithm that guides development of a chemogenetic platform designed to modulate neuronal activity to therapeutic effect. The model predicts the fitness of novel synthetic ligand-gated ion channels engineered to be highly and selectively responsive to specific small molecules but otherwise inactive. Models are trained on data from proteins synthesized and measured in the lab, a slow and expensive process. We used machine learning to predict on novel protein-ligand combinations to decrease the time and cost of the discovery process."
+title: "3. Predicting Protein-Drug Interaction using Machine Learning (Professional Work)"
+excerpt: "<img src='/images/CODA_Airflow_Dags_flowchart.pdf' width='500' height='400'><img src='/images/CODA_ec50_ligand_and_ach2.png' width='400' height='350'><br/> As Machine Learning Engineering consultant for CODA Biotherapeutics, I contributed to an algorithm that guides development of a chemogenetic platform designed to modulate neuronal activity to therapeutic effect. The model predicts the fitness of novel synthetic ligand-gated ion channels engineered to be selectively responsive to specific small molecules. Models are trained on data from proteins synthesized and measured in the lab, a slow and expensive process. We used machine learning to predict on novel protein-ligand combinations to decrease the time and cost of the discovery process."
 collection: portfolio
 ---
 
 <p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> Bioinformatics, Multi-layer Perceptron, Keras, LLM Embeddings, AWS Cloud Computing, Weights & Biases, Docker containers, Python </p>
 
+
+Note: Even though <a href="https://www.biospace.com/article/in-tough-market-bay-area-biotech-coda-shutters/">CODA Biotherapeutics</a> has closed since my employment, I will be selective about what details of the project I share. I am attempting to strike a balance between being clear about what I did while not disclosing proprietary information. 
+
 <br/><header style="text-align: center">The Goal</header><br/>
 
-Through gene therapy, CODA Biotherapeutics has developed a chemogenetic platform designed to modulate neuronal activity with a tunable ligand-gated ion channel. These ligand-gated ion channels are engineered to be highly responsive to a specific proprietary small molecules but are otherwise inactive. The interaction of the small molecule and engineered receptor allows for exquisite, dose-dependent control of the neurons to generate the therapeutic effect. The goal of the ML team within CODA is to predict functional properties of unobserved receptor mutants from measured properties of synthesized receptors and to make recommendations to biology team for fruitful directions for future receptor synthesis.
+Through gene therapy, CODA Biotherapeutics has developed a chemogenetic platform designed to modulate neuronal activity with a tunable ligand-gated ion channel. These ligand-gated ion channels are engineered to be highly responsive to a specific proprietary small molecules and inactive otherwise. The interaction of the small molecule and engineered receptor allows for exquisite, dose-dependent control of the neurons to generate the therapeutic effect. The goal of the ML team is to predict functional properties of unobserved receptor mutants from measured properties of synthesized receptors in order to make recommendations to biology team of fruitful directions for future receptor synthesis.
 
 <br/><br/><header style="text-align: center">The Data</header>
 
@@ -19,7 +22,7 @@ Through gene therapy, CODA Biotherapeutics has developed a chemogenetic platform
   </figure>
 </p>
 
-Using a set of biological assays, a dataset is collected consisting of a specific ligand-gated ion channel (protein), a particular ligand at a known concentration (drug) and the fluorescence inside of a cell indicating how sensitive the protein is to the drug at the given concentration. We use bootstrapping to compute logistic functions of fluorescence vs concentration and can find a distribution of "half-maximal effective concentration" (EC50) values. Samples from the EC50 distribution become the output of our model, what the model attempts to predict. The model's input consists of embedding representations of the drug molecular features and protein amino acid (AA) sequence. With the protein, we attempt to leverage transfer learning by using embeddings that were trained on large databases of proteins and supplement protein embedding representation with physiochemical signatures for particular AA residues of interest. Drug / ligand embeddings are constructed from extended connectivity fingerprints which determine whether common molecular domains are present or absent.
+Using a set of biological assays, a dataset is collected consisting of a specific ligand-gated ion channel (protein), a particular ligand at a known concentration (drug) and the fluorescence inside of a cell indicating how sensitive the protein is to the drug at the given concentration. Bootstrapping is used to compute many logistic functions of fluorescence vs concentration in order tp find a distribution of "half-maximal effective concentration" (EC50) values. Samples from the EC50 distribution become the output of our model, what the model attempts to predict for unseen protein-ligand pairs. The model's input consists of embedding representations of the drug molecular features and protein amino acid (AA) sequence. We attempt to leverage transfer learning by using embeddings that were trained on large databases of proteins and supplement protein embedding representation with physiochemical signatures for particular AA residues of interest. Drug / ligand embeddings represent whether common molecular domains that will interact with regions of the ion channel are present or absent.
 
 <br/><br/><header style="text-align: center">Model Training</header><br/>
 
@@ -65,13 +68,13 @@ We found that the model trained using 100 dimensional Protvec embeddings and the
 <p align="center" width="100%">
   <figure style="width: 100%;">
     <img src="/images/CODA_Airflow_Dags_flowchart.pdf" alt="Image" style="width: 100%;">
-    <figcaption><strong>fig. 5</strong> Visual depiction of 5 docker containers and 4 airflow subdags that make up the coda discovery receptor prediction pipeline as of Feb 2022.</figcaption>
+    <figcaption><strong>fig. 5</strong> Visual depiction of 5 Docker containers and 4 Airflow subdags that make up the coda discovery receptor prediction pipeline as of Feb 2022.</figcaption>
   </figure>
 </p>
 
 A second significant component of my effort on this project was to deploy the entire analysis pipeline to the AWS Cloud Computing architecture. Figure 5 below depicts a flowchart of the pipeline that was implemented using Airflow DAGs, Docker containers, AWS S3 and PostgreSQL databases and AWS EC2 compute nodes. 
 
-Unfortunately, since I handed off the project, CODA Biotherapeutics has gone <a href="https://www.biospace.com/article/in-tough-market-bay-area-biotech-coda-shutters/">out of business</a>. I did learn a lot from this experience and added many tools to my toolkit, which I carry forward.
+I learned a lot from this experience, contributed significantly to the success of the project and added many tools to my toolkit, which I carry forward.
 
 <br/><br/><header style="text-align: center">Summary</header><br/>
 
