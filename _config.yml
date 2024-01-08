@@ -117,10 +117,6 @@ author:
   wikipedia        :
 
 
-
-header:
-  image: /images/brown_chucks_patience.jpg
-
 # Reading Files
 include:
   - .htaccess

@@ -2,6 +2,8 @@
 permalink: /
 title: "Welcome!"
 excerpt: "Welcome"
+header:
+  overlay_image: "/images/brown_chucks_patience.jpg"
 author_profile: true
 redirect_from: 
   - /about/

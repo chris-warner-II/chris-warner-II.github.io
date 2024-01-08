@@ -8,7 +8,7 @@ author_profile: true
 {% include base_path %}
 
 <!-- Photo of me here -->
-<img src='/images/500x300.png'><br/> 
+<img src='/images/Warner_HS2.jpg'><br/>
 
 
 Professional
