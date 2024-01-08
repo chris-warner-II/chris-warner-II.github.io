@@ -7,10 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- Photo of me here -->
-<img src='/images/Warner_HS2.jpg'><br/>
-
-
 Professional
 ======
 
@@ -21,4 +17,7 @@ Personal
 ======
 
 I am more of a mesh than a spear. Meaning, I have a breadth of experience combined with the skill and fortitude to excel in unfamiliar territory. I have worked in many interesting fields throughout my academic and professional career including geophysics, radar, robotics, neuroscience and machine learning. 
+
+<!-- Photo of me here -->
+<img src='/images/Warner_HS2.jpg'><br/>
 

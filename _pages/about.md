@@ -3,7 +3,7 @@ permalink: /
 title: "Welcome!"
 excerpt: "Welcome"
 header:
-  image: "/images/img_seg_model.png" 
+  image: images/img_seg_model.png
 author_profile: true
 redirect_from: 
   - /about/
