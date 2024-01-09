@@ -14,7 +14,7 @@ main:
     url: /bio/  
 
   - title: "Art"
-    url: /art_visual/  
+    url: /art/  
 
   - title: "Contact"
     url: /contact/  
