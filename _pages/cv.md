@@ -20,25 +20,33 @@ Work experience
 ======
 
 * **Lawrence Berkeley Lab** : *Affiliate Postdoctoral Researcher* (Oct 2023 - Present)
-<!---  * Duties: Python coding, improving algorithm efficiency, applying PI calculation to new dataset, project development
-  * Supervisor: Kris Bouchard -->
+<!---  
+* Duties: Python coding, improving algorithm efficiency, applying PI calculation to new dataset, project development
+  * Supervisor: Kris Bouchard 
+-->
 
 * **CODA Biotherapeutics** : *Machine Learning Engineering Consultant* (Jul 2021 - Mar 2022)
-<!---   * Duties: Python coding, Algorithm advancement, Code integration and automation, AWS Cloud computing 
-  * Supervisor: Andres Vargas  -->
+<!---   
+* Duties: Python coding, Algorithm advancement, Code integration and automation, AWS Cloud computing 
+  * Supervisor: Andres Vargas  
+-->
 
 <!--- 
 * **Freelance Musician, Recording Engineer and Producer** (Sep 2019 - Oct 2023)
   * Duties: Logic software expert, Creative director, Musical artist, Song-writer, Recording engineer, Mixer, Producer 
-  * Supervisor: Self   -->
+  * Supervisor: Self  
+   -->
 
 * **Redwood Center for Theoretical Neuroscience, UC Berkeley** : *Ph.D. Researcher* (Sep 2011 - Sep 2019)
 <!---   * Duties: MATLAB & Python coding, project development, teaching & mentoring students, technical communication
-  * Supervisor: Friedrich Sommer  -->
+  * Supervisor: Friedrich Sommer  
+-->
 
 * **MIT Lincoln Laboratory, Advanced Techniques & Systems Group** : *Assistant Staff* (Sep 2005 - Sep 2009)
-<!---   * Duties: MATLAB coding, hardware development, software integration, data collection, data analysis 
-  * Supervisor: Pamela Evans   -->
+<!---   
+* Duties: MATLAB coding, hardware development, software integration, data collection, data analysis 
+  * Supervisor: Pamela Evans   
+-->
   
 Skills
 ======
