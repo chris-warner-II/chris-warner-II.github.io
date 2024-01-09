@@ -12,5 +12,5 @@ author_profile: true
 {% include base_path %}
 
 <ol>{% for post in site.publications reversed %}
-  {% include archive-single.html %}
+  <li>{% include archive-single.html %}</li>
 {% endfor %}</ol>
