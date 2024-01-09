@@ -11,6 +11,15 @@ redirect_from:
 
 A PDF version of my CV can be found [here](https://chris-warner-ii.github.io/files/Warner_resume.pdf).
 
+Skills
+======
+* Python coding
+* Data visualization & analysis
+* Building Machine Learning algorithms
+* Visual neuroscience & image processing
+* Dynamical systems modelling
+* Graph Theory
+
 Education
 ======
 * B.S. in Physics, Ohio State University, 2005
@@ -20,42 +29,25 @@ Work experience
 ======
 
 * **Lawrence Berkeley Lab** : *Affiliate Postdoctoral Researcher* (Oct 2023 - Present)
-<!---  
-* Duties: Python coding, improving algorithm efficiency, applying PI calculation to new dataset, project development
+  * Duties: Python coding, improving algorithm efficiency, applying PI calculation to new dataset, project development
   * Supervisor: Kris Bouchard 
--->
 
-* **CODA Biotherapeutics** : *Machine Learning Engineering Consultant* (Jul 2021 - Mar 2022)
-<!---   
-* Duties: Python coding, Algorithm advancement, Code integration and automation, AWS Cloud computing 
+* **CODA Biotherapeutics** : *Machine Learning Engineering Consultant* (Jul 2021 - Mar 2022) 
+  * Duties: Python coding, Algorithm advancement, Code integration and automation, AWS Cloud computing 
   * Supervisor: Andres Vargas  
--->
 
-<!--- 
-* **Freelance Musician, Recording Engineer and Producer** (Sep 2019 - Oct 2023)
+* **Musician, Recording Engineer and Producer** : *Freelance*  (Sep 2019 - Oct 2023)
   * Duties: Logic software expert, Creative director, Musical artist, Song-writer, Recording engineer, Mixer, Producer 
   * Supervisor: Self  
-   -->
 
 * **Redwood Center for Theoretical Neuroscience, UC Berkeley** : *Ph.D. Researcher* (Sep 2011 - Sep 2019)
-<!---   * Duties: MATLAB & Python coding, project development, teaching & mentoring students, technical communication
+  * Duties: MATLAB & Python coding, project development, teaching & mentoring students, technical communication
   * Supervisor: Friedrich Sommer  
--->
 
 * **MIT Lincoln Laboratory, Advanced Techniques & Systems Group** : *Assistant Staff* (Sep 2005 - Sep 2009)
-<!---   
-* Duties: MATLAB coding, hardware development, software integration, data collection, data analysis 
+  * Duties: MATLAB coding, hardware development, software integration, data collection, data analysis 
   * Supervisor: Pamela Evans   
--->
   
-Skills
-======
-* Dynamical systems modelling
-* Building Machine Learning algorithms
-* Graph Theory
-* Bayesian inference
-* Visual neuroscience & image processing
-* Time-series analysis
 
 Publications
 ======
