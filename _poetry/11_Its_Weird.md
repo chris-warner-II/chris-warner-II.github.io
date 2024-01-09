@@ -1,28 +1,21 @@
 ---
 title: 'Its Weird'
 permalink: /poetry/4_Its_Weird/
-excerpt: "It's weird not to be weird ..."
-tags:
-  - John Lennon
-  - Individuality
-  - Existentialism
+excerpt: "It's weird not to be weird..."
 ---
-
-It's Weird
-======
 
 ***Chorus 1:*** \
   It's weird not to be weird. \
   And it's strange to never be a stranger. \
   An untenable absurdity \
   To never wrestle with uncertainty \
-  At any time. \
+  At any time.
        
 ***Verse 1:*** \
   When logic verses intuition \
   Pits science against religion, \
   It's either black or white; It's either wrong or right. \
-  You'd better join the fight. Take up your position. \
+  You'd better join the fight. Take up your position.
 
 ***Chorus 2:*** \
   But I'm saying \
@@ -32,13 +25,13 @@ It's Weird
   To never wrestle with uncertainty; \
   Yea, an absolute catastrophe \
   To never get to paint your masterpiece \
-  With this life. \
+  With this life.
         
 ***Verse 2:*** \
   It's red or blue, You’d better choose. \
   There’s nothing new to belong to. \
   When All you care to be’s your group identity, \
-  Know you can never see because you'll never listen. \
+  Know you can never see because you'll never listen.
 
 ***Chorus 3:*** \
   But don't you think that \
@@ -50,7 +43,7 @@ It's Weird
   To never get to paint your masterpiece; \
   See, it's something of a sacrilege \
   To be so motherfuckin’ vacuous \
-  just to fall in line. \
+  just to fall in line.
                 
 ***Outro:*** \
   Just to fall in line, just to fall in line. \
