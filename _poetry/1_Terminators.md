@@ -1,7 +1,7 @@
 ---
 title: 'Poem 1: Terminators'
 date: 2024-01-08
-permalink: /posts/1_Terminators/
+permalink: /poetry/1_Terminators/
 tags:
   - A.I.
   - 3D Printing

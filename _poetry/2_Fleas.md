@@ -1,7 +1,7 @@
 ---
 title: '2: Fleas'
 date: 2024-01-08
-permalink: /posts/2_Fleas/
+permalink: /poetry/2_Fleas/
 tags:
   - Fleas
   - Floods

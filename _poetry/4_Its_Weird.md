@@ -1,7 +1,7 @@
 ---
 title: '4: Its Weird'
 date: 2024-01-08
-permalink: /posts/4_Its_Weird/
+permalink: /poetry/4_Its_Weird/
 tags:
   - John Lennon
   - Individuality

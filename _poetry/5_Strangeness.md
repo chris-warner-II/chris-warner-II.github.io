@@ -1,7 +1,7 @@
 ---
 title: '5: Strangeness'
 date: 2024-01-08
-permalink: /posts/5_Strangeness/
+permalink: /poetry/5_Strangeness/
 tags:
   - Psychadelics
   - Love

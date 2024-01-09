@@ -1,7 +1,7 @@
 ---
 title: '3: Rhapsody in Red'
 date: 2024-01-08
-permalink: /posts/3_Rhapsody_in_Red/
+permalink: /poetry/3_Rhapsody_in_Red/
 tags:
   - Dreams
   - Brains
