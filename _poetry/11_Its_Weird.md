@@ -1,6 +1,6 @@
 ---
 title: 'Its Weird'
-permalink: /poetry/4_Its_Weird/
+permalink: /poetry/11_Its_Weird/
 excerpt: "It's weird not to be weird..."
 ---
 

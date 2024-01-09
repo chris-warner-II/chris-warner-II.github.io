@@ -1,6 +1,6 @@
 ---
 title: 'Rhapsody in Red'
-permalink: /poetry/3_Rhapsody_in_Red/
+permalink: /poetry/10_Rhapsody_in_Red/
 excerpt: "She’s a storm in a teacup, A Rhapsody in red..."
 ---
 

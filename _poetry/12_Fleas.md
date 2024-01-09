@@ -1,6 +1,6 @@
 ---
 title: 'Fleas'
-permalink: /poetry/2_Fleas/
+permalink: /poetry/12_Fleas/
 excerpt: "I got fleas crawling up my leg..."
 ---
 
