@@ -1,5 +1,5 @@
 ---
-title: "Various PyTorch portfolio projects (Personal Project)"
+title: "Self-advancement with PyTorch portfolio projects (Personal Project)"
 excerpt: "Short description of portfolio item number 1 <br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
