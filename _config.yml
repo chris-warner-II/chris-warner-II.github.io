@@ -187,6 +187,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  poetry:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -231,6 +234,15 @@ defaults:
   - scope:
       path: ""
       type: portfolio
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+  # _poetry
+  - scope:
+      path: ""
+      type: poetry
     values:
       layout: single
       author_profile: true
