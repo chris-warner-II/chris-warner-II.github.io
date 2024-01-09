@@ -61,9 +61,9 @@ Publications
 
 Portfolio Projects
 ======
-  <ul>{% for post in site.portfolio %}
+  <ol>{% for post in site.portfolio %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>  
+  {% endfor %}</ol>  
   
 <!--  
 Talks

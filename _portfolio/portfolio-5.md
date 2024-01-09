@@ -1,5 +1,5 @@
 ---
-title: "Personal Project: Poetry exploration with Phoneme Aware Transformer model"
+title: "Poetry exploration with Phoneme Aware Transformer model (Personal Project)"
 excerpt: "Short description of portfolio item number 4 <br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
