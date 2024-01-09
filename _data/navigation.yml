@@ -8,7 +8,7 @@ main:
     url: /publications/
 
   - title: "CV"
-    url: /files/Warner_resume.pdf #/cv/
+    url: /cv/
 
   - title: "About"
     url: /bio/  
