@@ -236,24 +236,6 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _bio
-  - scope:
-      path: ""
-      type: bio
-    values:
-      layout: default
-      author_profile: true
-      share: true
-      comment: true
-  # _contact
-  - scope:
-      path: ""
-      type: contact
-    values:
-      layout: default
-      author_profile: true
-      share: true
-      comment: true
   # _talks
   - scope:
       path: ""

@@ -13,6 +13,9 @@ main:
   - title: "About"
     url: /bio/  
 
+  - title: "Art"
+    url: /art_visual/  
+
   - title: "Contact"
     url: /contact/  
 
