@@ -1,5 +1,5 @@
 ---
-title: '4: Its Weird'
+title: 'Its Weird'
 date: 2024-01-08
 permalink: /poetry/4_Its_Weird/
 tags:

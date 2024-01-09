@@ -1,5 +1,5 @@
 ---
-title: '3: Rhapsody in Red'
+title: 'Rhapsody in Red'
 date: 2024-01-08
 permalink: /poetry/3_Rhapsody_in_Red/
 tags:

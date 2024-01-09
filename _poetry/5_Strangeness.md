@@ -1,5 +1,5 @@
 ---
-title: '5: Strangeness'
+title: 'Strangeness'
 date: 2024-01-08
 permalink: /poetry/5_Strangeness/
 tags:

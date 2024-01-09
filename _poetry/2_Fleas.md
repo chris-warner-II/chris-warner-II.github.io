@@ -1,5 +1,5 @@
 ---
-title: '2: Fleas'
+title: 'Fleas'
 date: 2024-01-08
 permalink: /poetry/2_Fleas/
 tags:
