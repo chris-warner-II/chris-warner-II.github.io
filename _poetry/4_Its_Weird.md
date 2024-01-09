@@ -1,7 +1,7 @@
 ---
 title: 'Its Weird'
-date: 2024-01-08
 permalink: /poetry/4_Its_Weird/
+excerpt: "It's weird not to be weird ..."
 tags:
   - John Lennon
   - Individuality
@@ -11,41 +11,48 @@ tags:
 It's Weird
 ======
 
-Chorus 1:
-  It's weird not to be weird. It's strange to never be a stranger.
-  An untenable absurdity to never wrestle with uncertainty at any time.
+***Chorus 1:*** \
+  It's weird not to be weird. \
+  And it's strange to never be a stranger. \
+  An untenable absurdity \
+  To never wrestle with uncertainty \
+  At any time. \
        
-Verse 1:      
-  When Logic verses intuition 
-  Pits Science against religion       
-  Its either black or white, either wrong or right
-  You'd better join the fight, Take up your position 
+***Verse 1:*** \
+  When logic verses intuition \
+  Pits science against religion, \
+  It's either black or white; It's either wrong or right. \
+  You'd better join the fight. Take up your position. \
 
-Chorus 2:
-Its [D] weird not to be [A] weird.
-Its [Bm] strange to never be a [E] stranger.
-An [G] untenable absurdity to never wrestle with /
-  entertain [A] uncertainty
-   An [G] absolute catastrophe to never get to paint
-   your [A] masterpiece with this [D] life [A] [D].
+***Chorus 2:*** \
+  But I'm saying \
+  It's weird not to be weird. \
+  And it's strange to never be a stranger. \
+  An untenable absurdity \
+  To never wrestle with uncertainty; \
+  Yea, an absolute catastrophe \
+  To never get to paint your masterpiece \
+  With this life. \
         
-Verse 2:
-  Red or blue   |   When All you care to be’s
-  You’d better choose | Your group identity
-  There’s nothing new | You know, you’ll never see 
-  To belong to    | Because you never listen
+***Verse 2:*** \
+  It's red or blue, You’d better choose. \
+  There’s nothing new to belong to. \
+  When All you care to be’s your group identity, \
+  Know you can never see because you'll never listen. \
 
-Chorus 3:
-Its [D] weird not to be [A] weird.
-Its [Bm] strange to never be a [E] stranger.
-An [G] untenable absurdity to never wrestle with /
-  entertain [A] uncertainty
-   An [G] absolute catastrophe to never get to paint
-   your [A] masterpiece
-   Its something of a [G] sacrilege to be so (mother-) fuckin’  
-  [A] vacuous just to fall in [D] line [A] [D]
+***Chorus 3:*** \
+  But don't you think that \
+  It's weird not to be weird? \
+  Ain't it strange to never be a stranger? \
+  An untenable absurdity \
+  To never wrestle with uncertainty; \
+  Yea, an absolute catastrophe \
+  To never get to paint your masterpiece; \
+  See, it's something of a sacrilege \
+  To be so motherfuckin’ vacuous \
+  just to fall in line. \
                 
-Outro:
-Just to fall in [G] line, just to fall in [A] line.
-Just to feel [G] fine, just to feel [A] fine.
-So just fall in line. [D A D]
+***Outro:*** \
+  Just to fall in line, just to fall in line. \
+  Just to feel fine, just to feel fine. \
+  So just fall in line.
