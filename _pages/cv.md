@@ -46,12 +46,12 @@ Work experience
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Dynamical systems modelling
+* Building Machine Learning algorithms
+* Graph Theory
+* Bayesian inference
+* Visual neuroscience & image processing
+* Time-series analysis
 
 Publications
 ======
