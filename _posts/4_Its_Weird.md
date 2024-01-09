@@ -12,16 +12,14 @@ It's Weird
 ======
 
 Chorus 1:
-Its [D] weird not to be [A] weird.
-Its [Bm] strange to never be a [E] stranger.
-An [G] untenable absurdity to never wrestle with /
-  entertain [A] uncertainty at [D] any time [A] [D].
+  It's weird not to be weird. It's strange to never be a stranger.
+  An untenable absurdity to never wrestle with uncertainty at any time.
        
 Verse 1:      
-  When Logic    | Its black or white
-  verses intuition  | Wrong or right
-  Pits Science    | You'd better join the fight
-  Against religion  | Take up your position       
+  When Logic verses intuition 
+  Pits Science against religion       
+  Its either black or white, either wrong or right
+  You'd better join the fight, Take up your position 
 
 Chorus 2:
 Its [D] weird not to be [A] weird.
