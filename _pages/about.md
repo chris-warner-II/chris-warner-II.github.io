@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Welcome!"
-excerpt: "Welcome"
+excerpt: "Warner"
 header:
   image: "https://chris-warner-ii.github.io/images/brown_chucks_patience_crop.JPG"
 author_profile: true
