@@ -4,7 +4,7 @@ title: "Art"
 permalink: /art/
 author_profile: true
 header:
-  image: "https://chris-warner-ii.github.io/images/Chris_Guitar.jpg"
+  overlay_image: "https://chris-warner-ii.github.io/images/Chris_Guitar.jpg"
 ---
 
 {% include base_path %}
