@@ -3,8 +3,6 @@ layout: archive
 title: "About Me"
 permalink: /bio/
 author_profile: true
-header:
-  image: "https://chris-warner-ii.github.io/images/Warner_HS2.jpg"
 ---
 
 {% include base_path %}
@@ -19,8 +17,10 @@ Personal
 
 More of a mesh than a spear, I have a breadth of experience - casting a wide net of interests and support - combined with the skill and fortitude to attempt challenging things and excel in unfamiliar territory. Following my inate sense of adventure has led me to work in many interesting fields including geophysics, radar, robotics, neuroscience and machine learning. It has also led me to travel extensively across India and America, even spending a season working as a commercial fisherman in Alaska. In my freetime, I have pursued self-expression through [art]((https://chris-warner-ii.github.io/art) by writing poetry, performing and recording music and creating works of visual art. I aspire to live creatively, courageously and honestly. I value collaboration and community and I would like to find right livelihood working with a team where I can contribute to and grow into something larger. Thank you for reading.
 
-<!-- Photo of me here 
-<img src='/images/Warner_HS2.jpg'><br/> -->
+<!-- Photo of me here  width='600' height='200' -->
+<p align="center" width="60%"> 
+  <img src='/images/Warner_HS2.jpg' align='center'/> 
+</p>
 
 Contact
 ======

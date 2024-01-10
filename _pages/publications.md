@@ -4,7 +4,7 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 header:
-  image: "https://chris-warner-ii.github.io/images/flower_path.JPG"
+  overlay_image: "https://chris-warner-ii.github.io/images/hindi.jpg"
 ---
 
 {% include base_path %}

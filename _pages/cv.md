@@ -3,13 +3,18 @@ layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
+header:
+  overlay_image: "https://chris-warner-ii.github.io/images/flower_path.JPG"
+  actions:
+    - label: "CV PDF"
+      url: "https://chris-warner-ii.github.io/files/Warner_resume.pdf"
 redirect_from:
   - /resume
 ---
 
 {% include base_path %}
 
-A PDF version of my CV can be found [here](https://chris-warner-ii.github.io/files/Warner_resume.pdf).
+<!--A PDF version of my CV can be found [here](https://chris-warner-ii.github.io/files/Warner_resume.pdf).-->
 
 Skills
 ======
