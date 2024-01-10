@@ -3,7 +3,7 @@ layout: archive
 title: "About Me"
 permalink: /bio/
 header:
-  image: "https://chris-warner-ii.github.io/images/feather_n_compass.JPG"
+  overlay_image: "https://chris-warner-ii.github.io/images/feather_n_compass.JPG"
 author_profile: true
 ---
 
@@ -19,9 +19,9 @@ Personal
 
 More of a mesh than a spear, I have a breadth of experience - casting a wide net of interests and support - combined with the skill and fortitude to attempt challenging things and excel in unfamiliar territory. Following my inate sense of adventure has led me to work in many interesting fields including geophysics, radar, robotics, neuroscience and machine learning. I have also travelled extensively across India and America, even spending a season working as a commercial fisherman in Alaska. In my freetime, I have pursued self-expression through [art](https://chris-warner-ii.github.io/art) by writing poetry, performing and recording music and creating works of visual art. I am an active member of church and recovery communities. I aspire to live creatively, courageously and honestly. I value collaboration and community and I would like to find right livelihood working with a team where I can contribute to and grow into something larger.
 
-<!-- Photo of me here  width='600' height='200' -->
-<p align="center" width="40%"> 
-  <img src='/images/Warner_HS2.jpg' align='center'/> 
+<!-- Photo of me here   -->
+<p align="center" width="100%"> 
+  <img src='/images/Warner_HS2.jpg' align='center' width='50%'/> 
 </p>
 
 Contact
