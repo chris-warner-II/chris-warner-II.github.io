@@ -4,7 +4,7 @@ title: "Art"
 permalink: /art/
 author_profile: true
 header:
-  overlay_image: "https://chris-warner-ii.github.io/images/Chris_Guitar.jpg"
+  image: "https://chris-warner-ii.github.io/images/Chris_Guitar.jpg"
 ---
 
 {% include base_path %}
@@ -19,7 +19,7 @@ Poetry [here](https://chris-warner-ii.github.io/poetry/). -->
 I have long been inspired by words. The sounds they make 
 
 
-digital visual art
+digital art
 ======
 
 <figure style="width: 100%; margin: 0.5 0.5%; padding: 10px;">
@@ -27,7 +27,7 @@ digital visual art
 	<figcaption> 1. scared vs. sacred made in blender</figcaption>
 </figure>
 
-screen printing art
+screen printing
 ======
 
 <div style="display: flex; width: 100%;">
