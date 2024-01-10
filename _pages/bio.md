@@ -19,3 +19,14 @@ More of a mesh than a spear, I have a breadth of experience - casting a wide net
 
 <!-- Photo of me here -->
 <img src='/images/Warner_HS2.jpg'><br/>
+
+Contact
+======
+
+Please feel free to reach out if you would like to connect. <br/>
+
+**email:** cwarner at berkeley dot edu <br/>
+
+**github:** [https://github.com/chris-warner-II](https://github.com/chris-warner-II) <br/>
+
+**linkedin:** [https://www.linkedin.com/in/chris-warner-ii/](https://www.linkedin.com/in/chris-warner-ii/) <br/>

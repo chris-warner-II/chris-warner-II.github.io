@@ -10,17 +10,16 @@ main:
   - title: "CV"
     url: /cv/
 
+  - title: "Art"
+    url: /art/      
+
   - title: "About"
     url: /bio/  
 
-  - title: "Art"
-    url: /art/  
-
-  - title: "Contact"
-    url: /contact/  
-
-
 # # # # # # # # # # # # # # # # # # # # #
+
+# - title: "Contact"
+#   url: /contact/  
 
 #  - title: "Talks"
 #    url: /talks/    
