@@ -1,7 +1,7 @@
 ---
 title: 'Fleas'
 permalink: /poetry/12_Fleas/
-excerpt: "I got fleas crawling up my leg..."
+excerpt: "I got fleas crawling up my leg as I drum..."
 ---
 
 ***Verse 1:*** \

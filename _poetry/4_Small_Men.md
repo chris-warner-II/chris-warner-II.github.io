@@ -7,8 +7,8 @@ excerpt: "As cold as science; As hot as hate; ..."
 ***Verse 1:*** \
   As cold as science; As hot as hate; \
   As far as love is from masturbate. \
-  Seems only small men can become great \
-  For they’ve nothing else to lend them weight. \
+  Seems only small men can become great. \
+  For they’ve nothing else to lend them weight, \
   And they've so much missing for which to compensate. 
 
 ***Chorus 1:*** \
@@ -22,7 +22,7 @@ excerpt: "As cold as science; As hot as hate; ..."
   As meaningless; As ludicrous. \
   We are led here by the least of us. \
   And your culture is not your friend. \
-  Seems that Rome is teetering again.
+  Turns out that Rome is teetering again.
 
 ***Chorus 2:*** \
   Cause these days, \

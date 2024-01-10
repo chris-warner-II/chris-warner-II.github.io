@@ -14,10 +14,10 @@ excerpt: "The time that we turned on the Terminators..."
   The alliance of science considered for years \
   If it was feasible and conceivable that we could. \
   But never so much as one second considered \
-  Whether or not we should.
+  Whether or not that we should.
 
 ***Bridge 1:*** \
-  And now since they’ve designed themselves \
+  And now, since they’ve designed themselves \
   Wheels and treads and rotors and engines, The drones \
   Have erected an empire in printed ramparts \
   From atop of their printed thrones.

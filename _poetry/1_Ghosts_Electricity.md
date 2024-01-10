@@ -1,10 +1,7 @@
 ---
 title: "Ghosts' Electricity"
 permalink: /poetry/1_Ghosts_Electricity/
-excerpt: "These Ghosts’ electricity \
-  Mingle inside of your head. \
-  Some call it Maximum Entropy, \
-  These electrons conspire instead."
+excerpt: "These ghosts’ electricity mingle inside of your head..."
 ---
 
 ***Verse 1:*** \

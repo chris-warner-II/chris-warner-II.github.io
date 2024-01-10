@@ -17,7 +17,6 @@ excerpt: "Mother, I’ve had to exorcise you from me,..."
   Soak it up like sponges, just born to believe \
   What you tell them bout themselves, bout yourself, bout me. \
   A tabula rasa on the greenest of screens. \
-  ... \
   Porous as a forest or a great coral reef.
 
 ***Verse 2:*** \

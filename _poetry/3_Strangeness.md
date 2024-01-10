@@ -1,13 +1,13 @@
 ---
 title: 'Strangeness'
 permalink: /poetry/3_Strangeness/
-excerpt: "What is this? Its a strangeness that encompasses everything I see..."
+excerpt: "What is this? It's a strangeness that encompasses everything I see..."
 ---
 
 ***Verse 1:*** \
-  What is this? Its a strangeness \
+  What is this? It's a strangeness \
   That encompasses everything I see. \
-  Opened the gates to an Altered State, \
+  Opened the gates to an altered state, \
   Now I'm out here just swimming in this sea. \
   Just me, these stars, these trees, this LSD.
 

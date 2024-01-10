@@ -19,10 +19,10 @@ excerpt: "Little filthy drifter floatin' down the street,..."
   But the Pacific patch is in the distance floatin', \
   And it stretches on for miles and miles. \
   Some claim that a rising tide will raise all the ships in the ocean, \
-  As the Refuse accretes into gyres.
+  As The Refuse accretes into gyres.
 
 ***Bridge:*** \
-  But If its beyond what my-y-y-y eye can see, \
+  But if its beyond what my-y-y-y eye can see, \
   Then it don’t concern me. \
   And as long as my-y-y-y front porch clean, \
   Then it ain’t effectin' me. \

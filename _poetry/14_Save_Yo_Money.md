@@ -1,7 +1,7 @@
 ---
 title: 'Save Yo Money'
 permalink: /poetry/14_Save_Yo_Money/
-excerpt: "Don't slip, don’t trip; Don't lose your grip,..."
+excerpt: "Don't slip, don’t trip; Don't lose your grip..."
 ---
 
 ***Verse 1:*** \

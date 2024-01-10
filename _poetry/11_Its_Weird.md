@@ -43,7 +43,7 @@ excerpt: "It's weird not to be weird..."
   To never get to paint your masterpiece; \
   See, it's something of a sacrilege \
   To be so motherfuckin’ vacuous \
-  just to fall in line.
+  Just to fall in line.
                 
 ***Outro:*** \
   Just to fall in line, just to fall in line. \

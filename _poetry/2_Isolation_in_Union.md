@@ -26,7 +26,7 @@ excerpt: "Gathered together; Hidden from view. Imperceptibly tethered, Me and yo
   Broken and misused chances, \
   Strange and solo dances \
   Led from within each hull. \
-  Intertwined and interfacing, \ 
+  Intertwined and interfacing, \
   But, Individual.
 
 ***Pre-Chorus:*** \
@@ -51,7 +51,7 @@ excerpt: "Gathered together; Hidden from view. Imperceptibly tethered, Me and yo
 
   Assayed to be the source of a new solution. \
   Come ride into the ranks of the revolution. \
-  Climb up through the cracks of your own pollution. \
+  Climb up through the cracks in your own pollution. \
   Or dive down to the depths of your destitution.
 
 ***Chorus 2:*** \

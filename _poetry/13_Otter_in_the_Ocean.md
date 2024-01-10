@@ -1,7 +1,7 @@
 ---
 title: 'Otter in the Ocean'
 permalink: /poetry/13_Otter_in_the_Ocean/
-excerpt: "What is this emotion got him loping around, ..."
+excerpt: "What is this emotion got him loping around..."
 ---
 
 ***Verse 1:*** \
