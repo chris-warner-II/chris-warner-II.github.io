@@ -9,14 +9,7 @@ header:
 
 {% include base_path %}
 
-<!--Visual art [here](https://chris-warner-ii.github.io/art_visual/).
-
-Poetry [here](https://chris-warner-ii.github.io/poetry/). -->
-
-{% include base_path %}
-
-
-I have long been inspired by words. The sounds they make 
+I have long been inspired by words. The sounds they make as they play off one another in an artfully crafted flow. The revealing relationships between them hidden in their etymology. The coincidences I discover in them as I turn them over in my head, idly or intentionally.
 
 
 digital art
