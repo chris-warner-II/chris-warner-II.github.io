@@ -89,7 +89,7 @@ I have recorded an album of these songs - learning the art of mixing, mastering 
 
 <figure style="width: 60%; margin: 0.5 0.5%; padding: 10px;">
 	<img src="/images/in-complete-ness.png" alt="Image" style="width: 100%;">
-	<figcaption>album cover</figcaption>
+	<!--<figcaption>album cover</figcaption>-->
 </figure>
 
 
