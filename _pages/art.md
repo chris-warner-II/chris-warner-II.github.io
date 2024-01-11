@@ -15,14 +15,14 @@ I have long been inspired by words. The sounds they make as they play off one an
 digital art
 ======
 
-I have dabbled in digital art making in [Blender](https://www.blender.org) to express some of my ideas.
+I have dabbled in digital art making in [Blender](https://www.blender.org).
 
   <figure style="width: 100%; margin: 0.5 0.5%; padding: 10px;">
     <video controls width="100%" autoplay loop muted >
       <source src="/images/art_visual/scared_sacred.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <figcaption>Only by doing what you are scared of can your life become sacred</figcaption>
+    <!--<figcaption>Only by doing what you are scared of can your life become sacred</figcaption>-->
   </figure>
 
 screen printing
@@ -34,12 +34,12 @@ I have screen printed some t-shirts for myself, friends and family.
 
   <figure style="width: 49%; margin: 0.5 0.5%; padding: 10px;">
     <img src="/images/art_visual/Entrainment.jpg" alt="Image" style="width: 100%;">
-    <figcaption> Entrainment through Entertainment</figcaption>
+    <!--<figcaption> Entrainment through Entertainment</figcaption>-->
   </figure>
 
   <figure style="width: 49%; margin: 0.5 0.5%; padding: 10px;">
     <img src="/images/art_visual/Questions.JPG" alt="Image" style="width: 100%;">
-    <figcaption>A reminder to myself and others</figcaption>
+    <!--<figcaption>A reminder to myself and others</figcaption>-->
   </figure>
 
 </div> 
@@ -48,12 +48,12 @@ I have screen printed some t-shirts for myself, friends and family.
 
   <figure style="width: 49%; margin: 0.5 0.5%; padding: 10px;">
     <img src="/images/art_visual/Raccoon.png" alt="Image" style="width: 100%;">
-    <figcaption> My niece and nephew making a t-shirt</figcaption>
+    <!--<figcaption> My niece and nephew making a t-shirt</figcaption>-->
   </figure>
 
   <figure style="width: 49%; margin: 0.5 0.5%; padding: 10px;">
     <img src="/images/art_visual/Nephews.png" alt="Image" style="width: 100%;">
-    <figcaption>My nephews and I showing off shirts we made</figcaption>
+    <!--<figcaption>My nephews and I showing off shirts we made</figcaption>-->
   </figure>
 
 </div> 
@@ -62,12 +62,12 @@ I have screen printed some t-shirts for myself, friends and family.
 
   <figure style="width: 49%; margin: 0.5 0.5%; padding: 10px;">
     <img src="/images/art_visual/Absurdist.jpg" alt="Image" style="width: 100%;">
-    <figcaption> absurdist art</figcaption>
+    <!--<figcaption> absurdist art</figcaption>-->
   </figure>
 
   <figure style="width: 49%; margin: 0.5 0.5%; padding: 10px;">
     <img src="/images/art_visual/Feedback.JPG" alt="Image" style="width: 100%;">
-    <figcaption>inspired by Jimi Hendrix</figcaption>
+    <!--<figcaption>inspired by Jimi Hendrix</figcaption>-->
   </figure>
 
 </div> 
