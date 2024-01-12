@@ -1,7 +1,7 @@
 ---
 title: "Predictive Information of Human Speech with TIMIT dataset (Postdoc Project)"
-excerpt: "Short description of portfolio item number 4 <br/><img src='/images/500x300.png'>"
+excerpt: "<img src='/images/TIMIT_waveform.png' width='500' height='400'> <img src='/images/TIMIT_spectrogram.png' width='400' height='300'> <br/> The goal of this project is to understand the hierarchical temporal complexity of auditory signals. ['Predictive information'](https://arxiv.org/abs/cond-mat/9902341) (PI) quantifies how much information about the future of a signal is contained in its past. We apply the PI framework to human speech in the TIMIT dataset to explore how acoustical and phonetic features contribute to the complexity of vocal signals. We also compare results from human speech to other animal vocalizations, like bird song.
 collection: portfolio
 ---
 
-This is a markdown file for my PI with TIMIT project.
+Under Construction
