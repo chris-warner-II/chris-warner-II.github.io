@@ -4,6 +4,12 @@ excerpt: "<img src='/images/pytorch.jpg' width='500' height='400'> <img src='/im
 collection: portfolio
 ---
 
+Skills & Expertise:
+------
+machine learning, pytorch, regression, binary classification, multiclass classification, computer vision, CNN, transfer learning, 
+
+
+
 Though I have been steeped in deep/machine learning due to pursuing my Ph.D. in computational neuroscience during its rise (2011-2019), my specific projects focused on other topics within neuroscience and data modelling. While I am quite comfortable with neural networks on a conceptual and academic level, I have not coded up many neural network algorithms ... until now! This [repo](https://github.com/chris-warner-II/pytorch_projects) contains a *growing* number of projects implemented in PyTorch and showcased in Jupyter Notebooks that demonstrate my ability to develop machine learning algorithms. 
 
 Finished projects include:
