@@ -85,7 +85,9 @@ I write lyrical poetry and have performed these and other songs solo and with a 
 music production
 ======
 
-I have recorded an album of these songs - learning the art of mixing, mastering and producing in [Logic Pro](https://www.apple.com/logic-pro/). It can be found on [Spotify](https://www.google.com), [iTunes](https://www.google.com) and [YouTube](https://www.google.com).
+I have recorded an album of these songs - learning the art of mixing, mastering and producing in [Logic Pro](https://www.apple.com/logic-pro/). It can currently be found on [Soundcloud](https://soundcloud.com/chris-warner-10/sets/in-complete-ness)
+
+<!--[Spotify](https://www.google.com), [iTunes](https://www.google.com) and [YouTube](https://www.google.com). --> 
 
 <figure style="width: 60%; margin: 0.5 0.5%; padding: 10px;">
 	<img src="/images/in-complete-ness.png" alt="Image" style="width: 100%;">
