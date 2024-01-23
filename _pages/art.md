@@ -19,7 +19,7 @@ I have dabbled in digital art making in [Blender](https://www.blender.org).
 
   <figure style="width: 100%; margin: 0.5 0.5%; padding: 10px;">
     <video controls width="100%" autoplay loop muted >
-      <source src="/images/art_visual/scared_sacred.mp4" type="video/mp4">
+      <source src="/images/art_visual/scared_sacred_v2.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <!--<figcaption>Only by doing what you are scared of can your life become sacred</figcaption>-->
