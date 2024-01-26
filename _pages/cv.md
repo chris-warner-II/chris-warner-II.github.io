@@ -13,14 +13,11 @@ redirect_from:
 
 Find a PDF version of my CV [here](https://chris-warner-ii.github.io/files/Warner_resume.pdf).
 
-Skills
+Technical Skills
 ======
-* Python coding
-* Data visualization & analysis
-* Building Machine Learning algorithms
-* Visual neuroscience & image processing
-* Dynamical systems modelling
-* Graph Theory
+
+Python coding | Data Science | Building Machine Learning algorithms | Visual neuroscience | Image processing
+Dynamical systems simulation | Graph Theory | Signal processing
 
 Education
 ======
@@ -30,24 +27,24 @@ Education
 Work experience
 ======
 
-* **Lawrence Berkeley Lab** : *Affiliate Postdoctoral Researcher* (Oct 2023 - Present)
-  * Duties: Python coding, improving algorithm efficiency, applying PI calculation to new dataset, project development
+* **Lawrence Berkeley Lab** : *Postdoctoral Machine Learning Researcher & Data Scientist* (Oct 2023 - Present)
+  * Duties: Python coding, signal processing, machine learning in PyTorch, improving algorithm efficiency, applying Predictive Information calculation to new dataset, project development
   * Supervisor: Kris Bouchard 
 
-* **CODA Biotherapeutics** : *Machine Learning Engineering Consultant* (Jul 2021 - Mar 2022) 
-  * Duties: Python coding, Algorithm advancement, Code integration and automation, AWS Cloud computing 
+* **CODA Biotherapeutics** : *Machine Learning Engineering & Data Scientist* (Jul 2021 - Mar 2022) 
+  * Duties: Python coding, SQL, Docker containerization, integration and automation with Apache Airflow, AWS Cloud computing, project development 
   * Supervisor: Andres Vargas  
 
 * **Musician, Recording Engineer and Producer** : *Freelance*  (Sep 2019 - Oct 2023)
-  * Duties: Logic software expert, Creative director, Musical artist, Song-writer, Recording engineer, Mixer, Producer 
+  * Duties: Signal processing in Logic Pro, Creative director, Musical artist, Song-writer, Recording engineer, Mixer, Producer 
   * Supervisor: Self  
 
-* **Redwood Center for Theoretical Neuroscience, UC Berkeley** : *Ph.D. Researcher* (Sep 2011 - Sep 2019)
-  * Duties: MATLAB & Python coding, project development, teaching & mentoring students, technical communication
+* **Redwood Center for Theoretical Neuroscience, UC Berkeley** : *Ph.D. Machine Learning Researcher* (Sep 2011 - Sep 2019)
+  * Duties: MATLAB & Python coding, image processing, machine learning, data science, teaching & mentoring students, technical communication, project development
   * Supervisor: Friedrich Sommer  
 
-* **MIT Lincoln Laboratory, Advanced Techniques & Systems Group** : *Assistant Staff* (Sep 2005 - Sep 2009)
-  * Duties: MATLAB coding, hardware development, software integration, data collection, data analysis 
+* **MIT Lincoln Laboratory, Advanced Techniques & Systems Group** : *Signal Processing Engineer* (Sep 2005 - Sep 2009)
+  * Duties: MATLAB coding, signal processing, hardware development, software integration, data collection, data analysis 
   * Supervisor: Pamela Evans   
   
 
