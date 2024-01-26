@@ -16,8 +16,7 @@ Find a PDF version of my CV [here](https://chris-warner-ii.github.io/files/Warne
 Technical Skills
 ======
 
-> `Python coding`, `Data Science`, `Machine Learning`, `Visual & auditory neuroscience`, `Image processing`,
-> `Dynamical systems simulation`, `Graph Theory`, `Signal processing`
+> `Python coding` &nbsp; `Data Science` &nbsp; `Machine Learning` &nbsp; `Visual & auditory neuroscience` &nbsp; `Image processing` &nbsp; `Dynamical systems simulation` &nbsp; `Graph Theory` &nbsp; `Signal processing`
 
 Education
 ======
