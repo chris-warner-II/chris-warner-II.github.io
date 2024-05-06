@@ -18,7 +18,7 @@ collection: portfolio
 
 <p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> Latent Variable Model, Bayesian probability, Expectation Maximization, Synthetic Data, Model Validation, Exploratory Data Analysis, Data Visualization, Python </p>
 
-<br/><header style="text-align: center">The Data</header><br/>
+<br/><br/><header style="text-align: center"><strong> The Data</strong> </header>
 
 <!--  Embed video of white noise stim and natural movie stim with PSTH and RFs. -->
 <div style="display: flex; width: 100%;">
@@ -57,7 +57,7 @@ White Noise stimulus, uncorrelated in space and time, is very different from Nat
     <figcaption><strong>fig. 2</strong> Responses and Receptive Fields of Off-Brisk Transient Retinal Ganglion cells: Left Top, responses to white noise. Left Bottom, responses to natural movie. Color indicates #Trials in which cell (y-axis) spiked during a 1ms interval of stimulus presentation (x-axis). Right, receptive fields for 55 recorded RGCs. Geometric RF relationships in visual space maintained in cell ordering.</figcaption>
   </figure>
 
-<br/><header style="text-align: center">The Model</header><br/>
+<br/><br/><header style="text-align: center"><strong>The Model</strong></header>
 
 To explore this phenomenon, we introduce the Binary Latent Variable (BLV) Model, which allows for two causes of a cell's observed firing $\mathbf{y}$, its individual intrinsic firing rate, $\mathbf{R}_i$, and its membership $\mathbf{P}_{ia}$ in an active Cell Assembly $\mathbf{z}$. The model schematic is displayed below.<br/>
 
@@ -91,7 +91,7 @@ We fit the BLV Model using an Expectation Maximization (EM) framework. For each 
 
 where $C_i := \sigma(r_i)^{\big ( 1-\frac{|\mathbf{z}|}{M} \big )} \prod_{a=1}^M \sigma(\rho_{ia})^{z_a}$ <br/><br/>
 
-<br/><header style="text-align: center">Model Validation</header><br/>
+<br/><br/><header style="text-align: center"><strong>Model Validation</strong></header>
 
 Before applying the model to real retinal data, it is important to first validate the model using synthetic data to ensure that the model is able to learn known structure that has been embedded into the data. To that end, we constructed synthetic data that  matched certain moments measured in retinal spike train responses to white noise and natural movies, process described in figure 4 below. Interestingly, the difference between model parameters fit to the regimes yield an intuitive interpretation. The best-fit parameters reveal that, under the assumptions of the model, responses to natural movie stimulus contain fewer active cell assemblies in any observed spike-word, while each individual cell assembly contains more cells with stronger membership or participation in that assembly, when compared to responses of the same cell population responding to white noise stimulus.
 
@@ -130,7 +130,7 @@ From the model validation procedure, we verified that when two models trained on
 </figure>
 -->
 
-<br/><header style="text-align: center">Exploratory Data Analysis</header><br/>
+<br/><br/><header style="text-align: center"><strong>Exploratory Data Analysis</strong></header>
 
 In order to systematically and methodically explore the structure found by our BLV model in neural data, we constructed four metrics to quantitatively answer four questions.<br/>
 
@@ -208,7 +208,7 @@ In order to systematically and methodically explore the structure found by our B
   <p style="text-align: center; font-size:10pt"><strong>fig. 9</strong> Difference from Null $\Delta P_y$ example: PSTH of Cell Assembly $z_a$ in red. In green, p(y) under GLM null model for all y observed when $z_a = 1$. In blue, KL-divergence between $p(y_i)_{null}$ and $p(y_i|z_a = 1, z_{\not a} = 0)$, the probability of an observed state under the BLV model with $z_a$ active and all other z’s inactive (not further used).</p>
 </p>
 
-<br/><header style="text-align: center">Results in Retina</header><br/>
+<br/><br/><header style="text-align: center"><strong>Results in Retina</strong></header>
 
 We applied these methods and metrics to real retinal responses, which lack any ground truth, and discussed the structure that the model was ablew to discover in the different data. The BLV model was trained on spike train data collected from in vitro rat retinal ganglion cells (RGCs) from 55 Off-Brisk Transient (offBT), 39 Off-Brisk Sustained (offBS) and 43 On-Brisk Transient (onBT) cells. The data we analyze consists of RGC spike-train responses to 200 trial repeats of 5 second clips of white noise and natural movie stimulus from the ”Cat Cam” data set. As a control, we also generated data from a GLM model fit to natural movie responses and trained a BLV model on those GLM simulated responses. Each model was trained on between 500k and 1M spike words extracted from raw spike trains binned at 5ms. Observing figure 10, it is clear that models trained on offBT responses to natural movie stimulus (center panel) learned more complex structure than models trained on white noise responses or GLM simulated responses.
 
@@ -289,7 +289,7 @@ A second piece of evidence discovered by the BLV model in retinal responses to n
 </p>
 
 
-<br/><header style="text-align: center">Suggestions for Future Work</header><br/>
+<br/><br/><header style="text-align: center"><strong>Suggestions for Future Work</strong></header>
 
 The BLV model shows promise in its ability to extract latent structure in data where that latent structure exists and retinal responses to natural scenes seem to contain latent structure. For this work, we had only a limited dataset to which to apply the model which had been collected before the model was introduced. We suggest the two following videos as options for data that should be presented to retina in future work to further explore latent cell assembly structure in retinal coding. The first in fig 16a, is a clip recorded at the <a href="https://www.exploratorium.edu">Exploratorium</a> in SF showing a small textured object moving across a background of varying texture - mimicking a mouse moving across a background of treebark and leaves. The second in fig 16b is a naturalistic stimulus movie showing objects of different textures and luminence moving across the retinal field. This stimulus would be constructed, perhaps generated by a "Dead Leaves Model", on the fly so that there are times in the stimulus when neighboring RGCs will look at the same object and times when they will be separated by object boundaries. With this type of stimulus, it would be possible to more systematically embed into and explore the latent structure existing in retina spike trains.
 
@@ -317,9 +317,9 @@ The BLV model shows promise in its ability to extract latent structure in data w
 
 <p style="text-align: center; font-size:10pt"><strong>fig. 16</strong> Natural movie stimulus suggestions for future experiments.</p>
 
-<br/><header style="text-align: center">Summary</header><br/>
+<br/><br/><header style="text-align: center"><strong>Summary</strong></header>
 
-In this project, the big take-aways are:
+The big take-aways from this project are:
   <ul>
     <li>Real retinal responses to white noise and natural movie look quite different</li>
     <li>We presented a BLV model that is able to extract latent structure in binary data</li>
@@ -330,10 +330,6 @@ In this project, the big take-aways are:
     <li>We suggest what kind of data should be collected to properly verify and test out the model in the future</li>
   </ul>
 
-We refer the interested reader to the paper for further discussion.
-
-Find the full publication <a href="https://chris-warner-ii.github.io/publication/2022-paper-3">here</a>,
-
-and the code repo <a href="https://github.com/chris-warner-II/Cell_Assembly_Codebase">here</a>.
+We refer the interested reader to the paper for further discussion. Find the full publication <a href="https://chris-warner-ii.github.io/publication/2022-paper-3">here</a>, and the code repo <a href="https://github.com/chris-warner-II/Cell_Assembly_Codebase">here</a>.
 
 
