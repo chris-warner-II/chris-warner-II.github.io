@@ -1,12 +1,12 @@
 ---
 layout: archive
 title: "Resumé"
-permalink: /resume/
+permalink: /cv/
 author_profile: true
 header:
   overlay_image: "https://chris-warner-ii.github.io/images/flower_path.JPG"
 redirect_from:
-  - /cv
+  - /resume
 ---
 
 {% include base_path %}
