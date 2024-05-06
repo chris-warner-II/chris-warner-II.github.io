@@ -1,5 +1,5 @@
 ---
-title: "Self-starting with PyTorch portfolio projects (Personal Project)"
+title: "Assorted PyTorch portfolio projects (Personal Project)"
 excerpt: "<img src='/images/pytorch.jpg' width='500' height='400'> <img src='/images/jupyter.png' width='250' height='250'> <br/> This portfolio contains a number of machine learning projects in PyTorch demonstrate ability to implement algorithms in that domain. They range from topics like regression to binary and multiclass classification to computer vision to creating custom datasets to transfer learning with pretrained models. This is a *growing* repository and I am currently working to add example projects focusing on Transformers, RNNs, LSTMs, speech recongnition using CNNs and spectrograms, etc."
 collection: portfolio
 ---

@@ -1,12 +1,12 @@
 ---
 layout: archive
-title: "resumé"
-permalink: /cv/
+title: "Resumé"
+permalink: /resume/
 author_profile: true
 header:
   overlay_image: "https://chris-warner-ii.github.io/images/flower_path.JPG"
 redirect_from:
-  - /resume
+  - /cv
 ---
 
 {% include base_path %}
@@ -27,7 +27,7 @@ Work experience
 ======
 
 * **Diffusion AI** : *Cofounder & AI Researcher* (Oct 2023 - Present)
-  * Duties: Building and training Densoising Diffusion Probabilistic Models and Diffusion Autoencoder models to generate face images conditioned on identity and pose. Expanding diffusion models to phoneme-conditioned text generation and protein design.
+  * Duties: Building and training Denoising Diffusion Probabilistic Models and Diffusion Autoencoder models to generate face images conditioned on identity and pose. Expanding diffusion models to phoneme-conditioned text generation and protein design.
 
 * **Lawrence Berkeley Lab** : *Postdoc AI Researcher & Data Scientist* (Oct 2023 - Present)
   * Duties: Python coding, signal processing, machine learning in PyTorch, improving algorithm efficiency, applying Predictive Information calculation to new dataset, project development
