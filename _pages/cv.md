@@ -11,7 +11,7 @@ redirect_from:
 
 {% include base_path %}
 
-Find a PDF version of my resume [here](https://chris-warner-ii.github.io/files/Warner_resume.pdf).
+Find a PDF version of my resumé [here](https://chris-warner-ii.github.io/files/Warner_resume.pdf).
 
 Technical Skills
 ======
@@ -37,7 +37,7 @@ Work experience
   * Duties: Python coding, SQL, Docker containerization, integration and automation with Apache Airflow, AWS Cloud computing, project development 
   * Supervisor: Andres Vargas  
 
-* **Musician, Recording Engineer & Producer** : *Freelance*  (Sep 2019 - Oct 2023)
+* **Musician, Recording Engineer, Producer, Computational Linguist** : *Freelance*  (Sep 2019 - Present)
   * Duties: Signal processing in Logic Pro, Creative director, Musical artist, Song-writer, Recording engineer, Mixer, Producer, Researcher  
 
 * **Redwood Center for Theoretical Neuroscience, UC Berkeley** : *Ph.D. AI Researcher* (Sep 2011 - Sep 2019)
