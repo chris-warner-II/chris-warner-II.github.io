@@ -12,7 +12,7 @@ author_profile: true
 Professional
 ======
 
-I am currently a postdoctoral affiliate researcher at [Lawrence Berkeley Lab](https://www.lbl.gov), where I am investigating the temporal complexity of bird song and human speech in the Neural Systems Data Science Lab with Dr. Kris Bouchard. I am also cofounder of a startup exploring Generative AI using diffusion models in image, text and protein domains.
+I am currently a postdoctoral affiliate researcher at [Lawrence Berkeley Lab](https://www.lbl.gov), where I am investigating the temporal complexity of bird song and human speech in the Neural Systems Data Science Lab with Dr. Kris Bouchard. I am also currently co-founder and AI researcher at [Diffusion AI](https://chris-warner-ii.github.io/diffusion), a Generative AI startup exploring diffusion models in image, text and protein domains.
 
 Before that, I was a Machine Learning Researcher at [CODA Biotherapeutics](https://www.crunchbase.com/organization/coda-biotherapeutics) applying machine learning and NLP models to drug discovery and gene therapy. I earned my Ph.D. in Biophysics studying visual processing with Dr. Friedrich Sommer at the [Redwood Center for Theoretical Neuroscience](https://redwood.berkeley.edu), University of California, Berkeley. 
 
