@@ -7,13 +7,13 @@ collection: portfolio
 <p style="text-align: center; font-size:11pt"><strong>Skills & Expertise:</strong> Bioinformatics, Multi-layer Perceptron, Keras, LLM Embeddings, AWS Cloud Computing, Weights & Biases, Docker containers, Python </p>
 
 
-Note: Even though <a href="https://www.biospace.com/article/in-tough-market-bay-area-biotech-coda-shutters/">CODA Biotherapeutics</a> has closed since my employment, I will be selective about what details of the project I share. I am attempting to strike a balance between being clear about what I did while not disclosing proprietary information. 
+<em> <strong>Note:</strong> Even though <a href="https://www.biospace.com/article/in-tough-market-bay-area-biotech-coda-shutters/">CODA Biotherapeutics</a> has closed since my employment, I will be selective about what details of the project I share. I am attempting to strike a balance between being clear about what I did while not disclosing proprietary information. </em>
 
-<br/><header style="text-align: center">The Goal</header><br/>
+<br/><br/><header style="text-align: center"><strong>The Goal</strong></header>
 
 Through gene therapy, CODA Biotherapeutics has developed a chemogenetic platform designed to modulate neuronal activity with a tunable ligand-gated ion channel. These ligand-gated ion channels are engineered to be highly responsive to a specific proprietary small molecules and inactive otherwise. The interaction of the small molecule and engineered receptor allows for exquisite, dose-dependent control of the neurons to generate the therapeutic effect. The goal of the ML team is to predict functional properties of unobserved receptor mutants from measured properties of synthesized receptors in order to make recommendations to biology team of fruitful directions for future receptor synthesis.
 
-<br/><br/><header style="text-align: center">The Data</header>
+<br/><br/><header style="text-align: center"><strong>The Data</strong></header>
 
 Using a set of biological assays, a dataset is collected consisting of a specific ligand-gated ion channel (protein), a particular ligand at a known concentration (drug) and the fluorescence inside of a cell indicating how sensitive the protein is to the drug at the given concentration. Bootstrapping is used to compute many logistic functions of fluorescence vs concentration in order to find a distribution of "half-maximal effective concentration" (EC50) values. Samples from the EC50 distribution become the output of our model, what the model attempts to predict for unseen protein-ligand pairs. The model's input consists of embedding representations of the drug molecular features and protein amino acid (AA) sequence. We attempt to leverage transfer learning by using embeddings that were trained on large databases of proteins and supplement protein embedding representation with physiochemical signatures for particular AA residues of interest. Drug / ligand embeddings represent whether common molecular domains that will interact with regions of the ion channel are present or absent.
 
@@ -24,11 +24,11 @@ Using a set of biological assays, a dataset is collected consisting of a specifi
   </figure>
 </p>
 
-<br/><br/><header style="text-align: center">Model Training</header><br/>
+<br/><br/><header style="text-align: center"><strong>Model Training</strong></header>
 
 We used a version of a Multi-Layer Perceptron (MLP) model to predict EC50 values from receptor and ligand embeddings. We trained single models sweeping over hyperparameter values and choosing the parameter values that minimized the validation loss between model predicted EC50 and value extracted from EC50 posterior distribution constructed from lab measurements. For this process we used a Bayesian sweep over model hyperparameters from <a href="https://wandb.ai/site">Weights and Biases</a>. Once settled upon hyperparameter values, we fix them and train an ensemble model to make a distribution of predictions for EC50 value for a particular protein-ligand pair. 
 
-<br/><br/><header style="text-align: center">Receptor Simulation & Evaluation</header>
+<br/><br/><header style="text-align: center"><strong>Receptor Simulation & Evaluation</strong></header>
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
@@ -42,7 +42,7 @@ The model does not predict which receptor will have good characteristics; rather
 At a conceptual level, the process of simulating receptors can be thought of in the following way: Each mutated protein is viewed as a bag-of-mutations, with each mutation consisting of a single amino acid change from the parental backbone. First, a pair of lab-made mutated proteins are drawn by weighted sampling based on their realtive fitness score. Then, the mutations from the pair are mixed together by randomly grabbing individual AA mutations, with a cap on maximum number of mutations allowed in a simulated protein. The novel receptor is fed through the model and a distribution of EC50 predictions are made. Simulated receptors, sorted by their fitness scores for a particular ligand, are delivered to biology team as recommendations for further exploration.
 
 
-<br/><br/><header style="text-align: center">Model Evaluation</header><br/>
+<br/><br/><header style="text-align: center"><strong>Model Evaluation</strong></header>
 
 A major thrust of my work on this project has been replacing the existing protein embedding with a LLM embedding to take advantage of transfer learning from large language model trained on a large corpus of proteins. That replacement requires a head-to-head comparison of model performance with both embeddings. This comparison, illustrated in figure 3, is done for each RL-pair in the data set for three models.
 
@@ -63,7 +63,7 @@ We found that the model trained using 100 dimensional original embeddings and th
 </p>
 
 
-<br/><header style="text-align: center">Implementation & Deployment</header>
+<br/><header style="text-align: center"><strong>Implementation & Deployment</strong></header>
 
 <p align="center" width="100%">
   <figure style="width: 100%;">
@@ -76,9 +76,9 @@ A second significant component of my effort on this project was to deploy the en
 
 I learned a lot from this experience, contributed significantly to the success of the project and added many tools to my toolkit, which I carry forward.
 
-<br/><br/><header style="text-align: center">Summary</header><br/>
+<br/><br/><header style="text-align: center"><strong>Summary</strong></header>
 
-In summary, our main accomplishments in this project are:
+Our main accomplishments in this project are:
   <ol>
     <li>embedding protein and ligand information as inputs</li>
     <li>encoding laboratory measurements as outputs</li>
