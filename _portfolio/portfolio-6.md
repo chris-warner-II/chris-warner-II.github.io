@@ -1,5 +1,5 @@
 ---
-title: "Assorted PyTorch portfolio projects (Personal Project)"
+title: "Assorted PyTorch projects (Personal Project)"
 excerpt: "<img src='/images/pytorch.jpg' width='500' height='400'> <img src='/images/jupyter.png' width='250' height='250'> <br/> This portfolio contains a number of machine learning projects in PyTorch demonstrate ability to implement algorithms in that domain. They range from topics like regression to binary and multiclass classification to computer vision to creating custom datasets to transfer learning with pretrained models. This is a *growing* repository and I am currently working to add example projects focusing on Transformers, RNNs, LSTMs, speech recongnition using CNNs and spectrograms, etc."
 collection: portfolio
 ---
@@ -8,9 +8,7 @@ Skills & Expertise:
 ------
 machine learning, pytorch, regression, binary classification, multiclass classification, computer vision, CNN, transfer learning, 
 
-
-
-Though I have been steeped in deep/machine learning due to pursuing my Ph.D. in computational neuroscience during its rise (2011-2019), my specific projects focused on other topics within neuroscience and data modelling. While I am quite comfortable with neural networks on a conceptual and academic level, I have not coded up many neural network algorithms ... until now! This [repo](https://github.com/chris-warner-II/pytorch_projects) contains a *growing* number of projects implemented in PyTorch and showcased in Jupyter Notebooks that demonstrate my ability to develop machine learning algorithms. 
+This [repo](https://github.com/chris-warner-II/pytorch_projects) contains a *growing* number of projects implemented in PyTorch and showcased in Jupyter Notebooks that demonstrate my ability to develop machine learning algorithms. 
 
 Finished projects include:
 ------
