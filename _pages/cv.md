@@ -26,10 +26,13 @@ Education
 Work experience
 ======
 
-* **Diffusion AI** : *Cofounder & AI Researcher* (Oct 2023 - Present)
+* **Zyphra Technologies, Inc.** : *Member of Tecnhical Staff* (Jun 2024 - Present)
+  * Duties: Led audio dataset processing and contributed to architecture \& multi-node training for Zonos TTS model. Trained diffusion autoencoder model on EEG data as part of Brain Computer Interface foundation model.
+
+* **Diffusion AI** : *Cofounder & AI Researcher* (Feb 2024 - Jun 2024)
   * Duties: Building and training Denoising Diffusion Probabilistic Models and Diffusion Autoencoder models to generate face images conditioned on identity and pose. Expanding diffusion models to phoneme-conditioned text generation and protein design.
 
-* **Lawrence Berkeley Lab** : *Postdoc AI Researcher & Data Scientist* (Oct 2023 - Present)
+* **Lawrence Berkeley Lab** : *Postdoc AI Researcher & Data Scientist* (Oct 2023 - Jun 2024)
   * Duties: Python coding, signal processing, machine learning in PyTorch, improving algorithm efficiency, applying Predictive Information calculation to new dataset, project development
   * Supervisor: Kris Bouchard 
 
@@ -37,7 +40,7 @@ Work experience
   * Duties: Python coding, SQL, Docker containerization, integration and automation with Apache Airflow, AWS Cloud computing, project development 
   * Supervisor: Andres Vargas  
 
-* **Musician, Recording Engineer, Producer, Computational Linguist** : *Freelance*  (Sep 2019 - Present)
+* **Musician, Recording Engineer, Producer, Computational Linguist** : *Freelance*  (Sep 2019 - Jun 2024)
   * Duties: Signal processing in Logic Pro, Creative director, Musical artist, Song-writer, Recording engineer, Mixer, Producer, Researcher  
 
 * **Redwood Center for Theoretical Neuroscience, UC Berkeley** : *Ph.D. AI Researcher* (Sep 2011 - Sep 2019)
